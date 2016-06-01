@@ -1,5 +1,5 @@
 import angular from 'angular';
-
+require('../../../node_modules/angular-material/angular-material.css');
 
 let header = ()=>{
     return {
