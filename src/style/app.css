@@ -1,12 +1,53 @@
 /* styles in src/style directory are applied to the whole page */
 
-main {
-  padding: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  margin-top: 50px;
-  display: block;
+@font-face {
+    /* Définition d'une nouvelle police nommée LearningCurveProRegular */
+    font-family: 'BNPP Sans',sans-serif;
+    src: url('../assets/fonts/BNPP Sans.ttf');
 }
+
+body *, md-content * {
+  font-family:'BNPP Sans', sans-serif;
+    font-size: .8em;
+    color: #40403e;
+}
+
+header span {
+    padding: 0 5px 0 5px;
+}
+
+header span.bank-separator{
+    padding:0;
+}
+
+header span.bank-label{
+    font-weight: bold;
+}
+
+header span.logo{
+    font-family: 'BNPP Sans', sans-serif;
+    max-width: 152px;
+    max-height: 42px;
+}
+
+header span.text-link{
+    padding-left: 12px;
+    text-decoration: underline;
+}
+
+header span.separator{
+    display: inline-block;
+    border-right: solid 1px #efefef;
+    height: 64px;
+    padding-left: 5px;
+}
+
+md-toolbar *, md-toolbar *:before, md-toolbar *:after{
+    color: #40403e;
+}
+
+
+
 
 footer {
   text-align: center;
