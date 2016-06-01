@@ -1,6 +1,7 @@
 import angular from 'angular';
 import 'angular-material';
 import '../style/app.css';
+import header from '../components/header/header.js';
 
 let app = () => {
     return {
@@ -32,7 +33,7 @@ class NameService {
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, ['ngMaterial'])
+angular.module(MODULE_NAME, ['ngMaterial','header'])
     .directive('app', app)
     .controller('AppCtrl',AppCtrl)
     .service('NameService',NameService);
