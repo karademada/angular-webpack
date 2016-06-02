@@ -1,0 +1,25 @@
+<md-content>
+<section>
+    <md-button ng-click="sidepanel.openLeftMenu()">open/close</md-button>
+</section>
+<section layout="row" flex style="background-color: #000066">
+
+    <md-sidenav
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="true">
+        <md-toolbar>
+            <h1 class="md-toolbar-tools">Sidenav Left</h1>
+        </md-toolbar>
+        <md-content layout-padding>
+            <md-button ng-click="close()" class="md-primary" hide-gt-md>
+                Close Sidenav Left
+            </md-button>
+            <p hide-md show-gt-md>
+                This sidenav is locked open on your device. To go back to the default behavior,
+                narrow your display.
+            </p>
+        </md-content>
+    </md-sidenav>
+</section>
+</md-content>
