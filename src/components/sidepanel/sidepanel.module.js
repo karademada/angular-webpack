@@ -13,18 +13,16 @@ let sidepanel = ()=>{
 class SidePanelCtrl{
 
     constructor($mdSidenav){
-        this.$mdSidenav = $mdSidenav;
+        this.mdSidenav = $mdSidenav;
         console.log('SidePanelCtrl');
 
-        this.openLeftMenu;
     }
 
     openLeftMenu(){
-        $mdSidenav('left').toggle();
+        mdSidenav('left').toggle();
     }
 }
 
-SidePanelCtrl.$inject = ['$mdSidenav'];
 
 
 class SidePanel{

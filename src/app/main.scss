@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'BNPP Sans', sans-serif;
+  src: url('../public/assets/fonts/BNPP Sans.ttf');
+}
+
+/**
+BGL stuff Header
+
+
+
+**/
+
+body *, .md-content * {
+  font-family: 'BNPP Sans', sans-serif;
+  font-size: 1em;
+}
+
+header span {
+  padding: 0 5px 0 5px;
+}
+
+header span.bank-separator {
+  padding: 0;
+}
+
+header span.bank-label {
+  font-weight: bold;
+}
+
+header span.logo {
+  font-family: 'BNPP Sans', sans-serif;
+  max-width: 152px;
+  max-height: 42px;
+}
+
+header span.text-link {
+  padding-left: 12px;
+  text-decoration: underline;
+}
+
+header span.separator {
+  display: inline-block;
+  border-right: solid 1px #efefef;
+  height: 64px;
+  padding-left: 5px;
+}

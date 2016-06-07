@@ -22,10 +22,38 @@ let app = () => {
 class AppCtrl {
     /*@ngInject*/
     constructor(NameService) {
+        this.hideAfterLoad = false;
+        this.myName = '';
+
+        this.currencies = [
+            {
+                "id":"0",
+                "country":'USA'
+            },
+            {
+                "id":"1",
+                "country":'FRANCE'
+            },
+            {
+                "id":"2",
+                "country":'CHINA'
+            },
+            {
+                "id":"3",
+                "country":'RUSSIA'
+            }
+
+        ];
+
+        function changePercent(data){
+            console.log('data : ',data);
+        }
+
         console.log('appCtrl');
-        NameService.getName().then((data)=> {
-            console.log('data : ', data);
-        })
+        console.log('currencies : ',this.currencies);
+        /*NameService.getName().then((data)=> {
+         console.log('data : ', data);
+         })*/
     }
 }
 ;
@@ -33,7 +61,9 @@ class AppCtrl {
 class NameService {
     constructor($q) {
         this._$q = $q;
-    };
+    }
+
+;
 
     getName() {
         return this._$q.when('christophe lazantsy');
@@ -53,7 +83,7 @@ angular.module(MODULE_NAME,
         'container.module',
         'assets.module'
     ])
-    .config(($stateProvider, $urlRouterProvider)=> {
+    .config(($stateProvider, $urlRouterProvider, $mdIconProvider)=> {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
@@ -67,11 +97,11 @@ angular.module(MODULE_NAME,
                 controller: 'AssetsCtrl',
                 template: require('./../add-assets/assets.html')
             })
-            /*.state('add-assets-no-financial', {
-                url: '/assets-no-financial',
-                controller: 'AssetsNoFinancialCtrl',
-                template: require('./../add-assets-no-financial.html')
-            })*/
+        /*.state('add-assets-no-financial', {
+         url: '/assets-no-financial',
+         controller: 'AssetsNoFinancialCtrl',
+         template: require('./../add-assets-no-financial.html')
+         })*/
 
     })
     .directive('app', app)

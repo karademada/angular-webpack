@@ -1,12 +1,72 @@
 <!doctype html>
-<html ng-app="app" lang="en">
+<html ng-app="app" lang="en" ng-hide="app.hideAfterLoad">
 <head>
     <meta charset="UTF-8">
     <title>Angular App</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <base href="/">
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none !important;
+        }
+
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+
+    </style>
 </head>
 <body>
-<ui-view></ui-view>
+<div ng-cloak ng-controller="AppCtrl as app">
+    <header></header>
+    <main layout="row" flex style="background-color: #fff">
+        <!--div>
+            <md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
+        </div-->
+        <aside style="background-color: #40403e">
+            <h3>Menu</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">Vision</a></li>
+                    <li><a href="#">Detailled view</a></li>
+                    <li><a href="#">Manage assets</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div style="background-color: #f3eeea" flex>
+            <submenu>submenu</submenu>
+            <img src="assets/img/sub-menu-back.png" alt="submenu background" style="width: 100%"/>
+            <article>
+                <breadcrumb>breadcrumb</breadcrumb>
+                <div>
+                    <div>Donut</div>
+                    <div>block assets filters</div>
+                </div>
+                <div>Situation</div>
+                <div>
+                    <nav>
+                        <ul>
+                            <li><a href="#">BY ASSET TYPE</a></li>
+                            <li><a href="#">BY CURRENCY</a></li>
+                            <li><a href="#">BY GEOGRAPHY</a></li>
+                            <li><a href="#">BY ASSET DOMAIN</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </article>
+        </div>
+    </main>
+    <footer layout="row" style="background-color: #fff" flex>
+        <div>
+            <span>VISION</span>
+            <span>DETAILED VIEW</span>
+            <span>MANAGE ASSETS</span>
+        </div>
+        <md-divider></md-divider>
+    </footer>
+</div>
 </body>
 </html>
