@@ -49,6 +49,57 @@ header span.separator {
     padding-left: 5px;
 }
 
+
+a{
+    text-decoration: none;
+    width: 100%;
+    color: #c2c2c1;
+}
+
+.vision{
+    background-image: url('../public/assets/img/vision.png');
+    background-repeat: no-repeat;
+    background-position: 190px;
+}
+
+
+.detail{
+    background-image: url('../public/assets/img/detail.png');
+    background-repeat: no-repeat;
+    background-position: 190px;
+}
+.manage{
+    background-image: url('../public/assets/img/manage.png');
+    background-repeat: no-repeat;
+    background-position: 190px;
+}
+
+/* aside-menu */
+.aside-menu{
+    background-color: #40403e;
+    text-align: right;
+}
+
+aside > div.title{
+    border-bottom: solid 1px #636261;
+}
+
+.aside-menu > nav >ul {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
+    overflow: visible;
+
+}
+.aside-menu > nav > ul >li {
+    list-style: none;
+    border-bottom: solid 1px #636261;
+    text-align: center;
+    width:auto;
+    padding: 20px;
+}
+
 /*
 footer
 */

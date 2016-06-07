@@ -25,18 +25,56 @@
         <!--div>
             <md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
         </div-->
-        <aside style="background-color: #40403e">
-            <h3>Menu</h3>
+        <aside class="aside-menu" flex="15">
+            <div class="title">
+                <img layout-padding src="assets/img/menu.png"/>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#">Vision</a></li>
-                    <li><a href="#">Detailled view</a></li>
-                    <li><a href="#">Manage assets</a></li>
+                    <li class="vision"><a href="#">Vision</a></li>
+                    <li class="detail"><a href="#">Detailled view</a></li>
+                    <li class="manage"><a href="#">Manage assets</a></li>
                 </ul>
             </nav>
         </aside>
-        <div style="background-color: #f3eeea" flex>
-            <submenu>submenu</submenu>
+        <div style="background-color: #f3eeea" flex="100">
+            <submenu>
+                <md-toolbar>
+                    <div class="md-toolbar-tools" style="background-color: #e9dfca" flex>
+                        <span>Don't forget to </span><span class="text-link">update your assets</span>
+                        <span flex></span>
+                        <span class="separator-sub"></span>
+                        <span flex></span>
+                        <span class="date"> View at </span>
+                        <span flex></span>
+                        <md-datepicker ng-model="myDate" md-placeholder="Enter date"
+                                       md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                        <span flex></span>
+                        <span class="separator-sub"></span>
+                        <span flex></span>
+                        <span class="currency">Currency</span>
+                        <span flex></span>
+                        <form name="currencyForm" novalidate>
+                            <md-input-container class="currency">
+                                <md-select ng-model="app.currencies" placeholder="Select Country">
+                                    <md-option ng-repeat="state in app.currencies" value="{{state.id}}">
+                                        {{state.country}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                        </form>
+
+                        <span class="separator-sub"></span>
+                        <md-switch layout-padding class="md-primary" ng-model="data.cb" aria-label="change currency"
+                                   ng-change="app.changePercent(data)">Percentage
+                        </md-switch>
+
+                        <span class="separator-sub"></span>
+                        <span class="text-link">Print</span>
+
+                    </div>
+                </md-toolbar>
+            </submenu>
             <img src="assets/img/sub-menu-back.png" alt="submenu background" style="width: 100%"/>
             <article>
                 <breadcrumb>breadcrumb</breadcrumb>
