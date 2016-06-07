@@ -2,6 +2,8 @@ import angular from 'angular';
 import 'angular-material';
 import '../../../node_modules/angular-material/angular-material.css';
 
+const MODULE_NAME = 'header';
+
 let header = ()=> {
     return {
         template: require('./header.html'),
@@ -41,7 +43,6 @@ function ConfigRouter($stateProvider, $urlRouterProvider){
 }
 
 
-const MODULE_NAME = 'header';
 
 angular.module(MODULE_NAME, ['ngMaterial'])
     .directive('header', header)

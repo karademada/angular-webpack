@@ -3,9 +3,10 @@ import uiRouter from 'angular-ui-router';
 import 'angular-material';
 import 'angular-breadcrumb';
 
-import header from '../components/header/header.module.js';
-import sidepanel from '../components/sidepanel/sidepanel.module.js';
-import container from '../components/container/container.module.js';
+import header from '../components/header/header.js';
+import sidepanel from '../components/sidepanel/sidepanel.js';
+import container from '../components/container/container.js';
+import subheader from '../components/subheader/subheader';
 
 import assets from './../add-assets/add-assets.js';
 
@@ -75,9 +76,10 @@ angular.module(MODULE_NAME,
         'ngMaterial',
         'ui.router',
         'header',
-        'sidepanel.module',
-        'container.module',
-        'assets.module',
+        'sidepanel',
+        'container',
+        'assets',
+        'subheader',
         'ncy-angular-breadcrumb'
     ])
     .config(($stateProvider, $urlRouterProvider, $mdIconProvider)=> {
@@ -108,7 +110,6 @@ angular.module(MODULE_NAME,
          })*/
 
     })
-    .directive('app', app)
     .controller('AppCtrl', AppCtrl)
     .service('NameService', NameService)
 

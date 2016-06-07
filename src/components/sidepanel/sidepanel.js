@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-const MODULE_NAME = 'sidepanel.module';
+const MODULE_NAME = 'sidepanel';
 
 let sidepanel = ()=>{
     return{

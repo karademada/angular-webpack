@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 
-const MODULE_NAME = 'container.module';
+const MODULE_NAME = 'container';
 
 let container = ()=>{
     return{

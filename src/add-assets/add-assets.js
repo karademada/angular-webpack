@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 
-const MODULE_NAME = 'assets.module';
+const MODULE_NAME = 'assets';
 
 let assets = ()=>{
     return{
