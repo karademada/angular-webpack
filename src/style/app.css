@@ -100,10 +100,94 @@ aside > div.title{
     padding: 20px;
 }
 
+
+/**
+subheader
+**/
+
+span.text-link {
+    padding-left: 12px;
+    text-decoration: underline;
+}
+
+div span.separator-sub {
+    horiz-align: center;
+    display: inline-block;
+    border-right: solid 1px #d2c7b5;
+    height: 70%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+md-switch {
+    position: relative;
+    left: 30px;
+}
+
+span.date {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+span.currency {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+md-datepicker {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+md-toolbar > div.md-toolbar-tools > form {
+    font-size: 1.5em;
+}
+
+md-toolbar > div.md-toolbar-tools > form {
+    font-size: 1.5em;
+}
+
+
+md-datepicker {
+    margin: 0;
+}
+
+.datepicker .md-datepicker-input-container {
+    background-color: #006600;
+    padding-bottom: 0;
+
+}
+
+.subheader > md-icon {
+    background-color: #006600;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-bottom: 0;
+    text-align: left;
+
+}
+
+div > md-subheader > img, md-subheader span {
+    text-align: right;
+    background-color: #006600;
+}
+
 /*
 footer
 */
-footer {
-    text-align: center;
-    font-size: 0.8em;
+
+
+footer{
+    height: 30%;
+}
+
+footer > div > span{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+footer > md-divider{
+    margin: auto;
+    width: 70%;
 }
