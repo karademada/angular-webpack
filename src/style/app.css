@@ -99,7 +99,56 @@ aside > div.title{
     width:auto;
     padding: 20px;
 }
+ /** breadcrumb **/
+.bgl-breadcrumb{
+    height:45px;
+    font-size: .8em;
+    bottom: 20px;
+    position: relative;
+}
 
+.bgl-breadcrumb > md-icon{
+    font-size: .8em;
+    color: #c2c2c1;
+}
+
+.breadcrumbs{
+    display: inline-block;
+    padding: 0;
+}
+.breadcrumbs > li {
+    display: inline-block;
+    padding: 10px;
+    color: #c2c2c1;
+}
+
+.charting{}
+
+.donut{
+    position: relative;
+    top: 67px;
+    left: 180px;
+}
+.legende{
+    position: relative;
+    z-index: 100;
+    top: 26px;
+    right: 300px;
+    
+}
+
+.assets-filters{
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px;
+    width: 20%;
+    color: #957b48;
+}
+.assets-filters h3{
+    border-bottom: solid 1px #957b48;
+    width: auto;
+    line-height: 10px;
+}
 
 /**
 subheader

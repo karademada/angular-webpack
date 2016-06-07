@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import 'angular-material';
+import 'angular-breadcrumb';
 
 import header from '../components/header/header.module.js';
 import sidepanel from '../components/sidepanel/sidepanel.module.js';
@@ -56,24 +57,19 @@ class AppCtrl {
          })*/
     }
 }
-;
+
 
 class NameService {
     constructor($q) {
         this._$q = $q;
     }
 
-;
-
     getName() {
         return this._$q.when('christophe lazantsy');
     }
 }
-;
-
 
 const MODULE_NAME = 'app';
-
 angular.module(MODULE_NAME,
     [
         'ngMaterial',
@@ -81,7 +77,8 @@ angular.module(MODULE_NAME,
         'header',
         'sidepanel.module',
         'container.module',
-        'assets.module'
+        'assets.module',
+        'ncy-angular-breadcrumb'
     ])
     .config(($stateProvider, $urlRouterProvider, $mdIconProvider)=> {
         $urlRouterProvider.otherwise('/');
@@ -90,12 +87,19 @@ angular.module(MODULE_NAME,
             .state('login', {
                 url: '/',
                 controller: 'AppCtrl',
-                template: require('./app.html')
+                template: require('./app.html'),
+                ncyBreadcrumb:{
+                    label:'Home Page/'
+                }
             })
             .state('add-assets', {
                 url: '/add-assets',
                 controller: 'AssetsCtrl',
-                template: require('./../add-assets/assets.html')
+                template: require('./../add-assets/assets.html'),
+                ncyBreadcrumb:{
+                    label:'Add Assets/',
+                    parent:'login'
+                }
             })
         /*.state('add-assets-no-financial', {
          url: '/assets-no-financial',

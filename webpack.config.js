@@ -197,6 +197,9 @@ module.exports = function makeWebpackConfig() {
         )
     }
 
+
+    // try to make nodes modules works
+
     /**
      * Dev server configuration
      * Reference: http://webpack.github.io/docs/configuration.html#devserver
