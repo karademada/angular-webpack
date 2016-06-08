@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="app" lang="en" ng-hide="app.hideAfterLoad">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular App</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <base href="/">
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none !important;
+        }
+
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+
+    </style>
+<link href="/app.84d26a759ca630e84d30.css" rel="stylesheet"></head>
+<body>
+<div ng-cloak>
+    <header></header>
+    <main layout="row" flex>
+        <sidepanel flex="15" style="background-color: #40403e"></sidepanel>
+        <div style="background-color: #f3eeea" flex="100">
+            <subheader></subheader>
+            <img src="assets/img/sub-menu-back.png" alt="submenu background" style="width: 100%"/>
+
+            <div class="bgl-breadcrumb">
+                <md-icon md-svg-icon="./assets/img/ic_home_black_24px.svg" style="color: #009926"></md-icon>
+                <div class="breadcrumbs" ncy-breadcrumb></div>
+            </div>
+            <section>
+                <container></container>
+            </section>
+        </div>
+    </main>
+    <footer layout="row" style="background-color: #fff" flex>
+        <div>
+            <span>VISION</span>
+            <span>DETAILED VIEW</span>
+            <span>MANAGE ASSETS</span>
+        </div>
+        <md-divider></md-divider>
+    </footer>
+</div>
+<script type="text/javascript" src="/app.84d26a759ca630e84d30.js"></script></body>
+</html>
