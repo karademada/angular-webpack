@@ -13,6 +13,7 @@ let subheader = ()=> {
 }
 
 class SubHeaderCtrl {
+    /*@ngInject*/
     constructor() {
         console.log('subheaderCtrl');
     }

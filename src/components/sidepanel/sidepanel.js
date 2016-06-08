@@ -11,7 +11,7 @@ let sidepanel = ()=>{
 }
 
 class SidePanelCtrl{
-
+    /*@ngInject*/
     constructor($mdSidenav){
         this.mdSidenav = $mdSidenav;
         console.log('SidePanelCtrl');

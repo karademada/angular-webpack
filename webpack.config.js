@@ -6,6 +6,8 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
+var WarArchiverPlugin = require("webpack-war-archiver-plugin");
 
 /**
  * Env
@@ -166,6 +168,9 @@ module.exports = function makeWebpackConfig() {
                 template: './src/public/index.html',
                 inject: 'body'
             }),
+            new ngAnnotatePlugin({
+                add:true,
+            }),
 
             // Reference: https://github.com/webpack/extract-text-webpack-plugin
             // Extract css files
@@ -189,11 +194,21 @@ module.exports = function makeWebpackConfig() {
             // Minify all javascript, switch loaders to minimizing mode
             new webpack.optimize.UglifyJsPlugin(),
 
+            new ngAnnotatePlugin({
+                add:true,
+            }),
+
             // Copy assets from the public folder
             // Reference: https://github.com/kevlened/copy-webpack-plugin
             new CopyWebpackPlugin([{
                 from: __dirname + '/src/public'
-            }])
+            }]),
+            new WarArchiverPlugin({
+                fileName: "my-eagle-vision.war",
+                rootFolder: "my-eagle-vision"
+            })
+
+
         )
     }
 

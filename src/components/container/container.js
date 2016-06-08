@@ -12,6 +12,7 @@ let container = ()=>{
 };
 
 class ContainerCtrl{
+    /*@ngInject*/
     constructor(){
         console.log('ContainerCtrl');
     }

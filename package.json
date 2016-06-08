@@ -4,7 +4,7 @@
   "description": "A workflow for Angular made with Webpack",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
-    "dist":"webpack-dev-server --content-base dist/ --inline --progress --watch",
+    "dist": "webpack-dev-server --content-base dist/ --inline --progress --watch",
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
     "test": "karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
@@ -22,7 +22,9 @@
   "homepage": "https://github.com/Foxandxss/angular-webpack-workflow",
   "dependencies": {
     "angular": "^1.5.0",
-    "angular-breadcrumb": "^0.4.1"
+    "angular-breadcrumb": "^0.4.1",
+    "ng-annotate-webpack-plugin": "^0.1.3",
+    "webpack-war-archiver-plugin": "0.0.1"
   },
   "devDependencies": {
     "angular-animate": "^1.5.6",

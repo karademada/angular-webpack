@@ -19,6 +19,7 @@ class AssetsCtrl{
 
 
 class Assets{
+    /*@ngInject*/
     constructor(){
         console.log('assets');
     }

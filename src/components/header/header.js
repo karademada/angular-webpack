@@ -13,6 +13,7 @@ let header = ()=> {
 }
 
 class HeaderCtrl {
+    /*@ngInject*/
     constructor() {
         console.log('headerCtrl');
     }
