@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 
-const MODULE_NAME = 'assets.module';
+const MODULE_NAME = 'assetsNoFinancial';
 
 let assets = ()=>{
     return{
@@ -11,7 +11,7 @@ let assets = ()=>{
     }
 };
 
-class AssetsCtrl{
+class AssetsNoFinancialCtrl{
     constructor(){
         console.log('AssetsCtrl');
     }
@@ -26,7 +26,7 @@ class Assets{
 
 angular.module(MODULE_NAME, [])
     .directive('assets',assets)
-    .controller('AssetsCtrl',AssetsCtrl);
+    .controller('AssetsNoFinancialCtrl',AssetsNoFinancialCtrl);
 
 export default MODULE_NAME;
 

@@ -122,7 +122,10 @@ aside > div.title{
     color: #c2c2c1;
 }
 
-.charting{}
+.charting{
+    width: 100%;
+    height: 40rem;
+}
 
 .donut{
     position: relative;
@@ -145,9 +148,14 @@ aside > div.title{
     color: #957b48;
 }
 .assets-filters h3{
+    display: inline;
     border-bottom: solid 1px #957b48;
     width: auto;
     line-height: 10px;
+}
+
+.assets-filters span{
+   background-color: #004444;
 }
 
 /**
@@ -228,6 +236,13 @@ div > md-subheader > img, md-subheader span {
     margin: 20px;
     color: #957b48;
 }
+
+.situation h3{
+    position:relative;
+    border-bottom: solid 1px #957b48;
+    line-height: 10px;
+}
+
 
 /*
 footer

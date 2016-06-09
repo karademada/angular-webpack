@@ -9,6 +9,7 @@ import container from '../components/container/container.js';
 import subheader from '../components/subheader/subheader';
 
 import assets from './../add-assets/add-assets.js';
+import assetsNoFinancial from './../add-assets-no-financial/add-assets-no-financial.js';
 
 import '../style/app.css';
 
@@ -27,13 +28,13 @@ class AppCtrl {
         this.currency = '';
 
         NameService.getName().then((data)=> {
-         console.log('data : ', data);
-         })
+            console.log('data : ', data);
+        })
     }
 
 }
 
-AppCtrl.$inject  = ['NameService'];
+AppCtrl.$inject = ['NameService'];
 
 
 class NameService {
@@ -56,7 +57,8 @@ angular.module(MODULE_NAME,
         'container',
         'assets',
         'subheader',
-        'ncy-angular-breadcrumb'
+        'ncy-angular-breadcrumb',
+        'assetsNoFinancial'
     ])
     .config(($stateProvider, $urlRouterProvider, $mdIconProvider)=> {
         $urlRouterProvider.otherwise('/');
@@ -66,24 +68,28 @@ angular.module(MODULE_NAME,
                 url: '/',
                 controller: 'AppCtrl',
                 template: require('./app.html'),
-                ncyBreadcrumb:{
-                    label:'Home Page/'
+                ncyBreadcrumb: {
+                    label: 'Home Page  /'
                 }
             })
             .state('add-assets', {
                 url: '/add-assets',
                 controller: 'AssetsCtrl',
                 template: require('./../add-assets/assets.html'),
-                ncyBreadcrumb:{
-                    label:'Add Assets/',
-                    parent:'login'
+                ncyBreadcrumb: {
+                    label: 'Add Assets  /',
+                    parent: 'login'
                 }
             })
-        /*.state('add-assets-no-financial', {
-         url: '/assets-no-financial',
-         controller: 'AssetsNoFinancialCtrl',
-         template: require('./../add-assets-no-financial.html')
-         })*/
+            .state('add-assets-no-financial', {
+                url: '/assets-no-financial',
+                controller: 'AssetsNoFinancialCtrl',
+                template: require('../add-assets-no-financial/add-assets-no-financial.html'),
+                ncyBreadcrumb: {
+                    label: 'Add Assets no financial  /',
+                    parent: 'login'
+                }
+            })
 
     })
     .controller('AppCtrl', AppCtrl)
