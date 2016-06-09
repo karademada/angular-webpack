@@ -1,6 +1,5 @@
 import angular from 'angular';
 import 'angular-material';
-import '../../../node_modules/angular-material/angular-material.css';
 
 const MODULE_NAME = 'header';
 
@@ -13,7 +12,6 @@ let header = ()=> {
 }
 
 class HeaderCtrl {
-    /*@ngInject*/
     constructor() {
         console.log('headerCtrl');
     }
@@ -31,18 +29,6 @@ function Config($mdThemingProvider) {
     $mdThemingProvider.theme('default')
         .primaryPalette('bglGrey');
 }
-
-
-function ConfigRouter($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise('/login');
-
-    $stateProvider
-        .state('/login',{
-            url:'login',
-            templateUrl:'login.html'
-        })
-}
-
 
 
 angular.module(MODULE_NAME, ['ngMaterial'])

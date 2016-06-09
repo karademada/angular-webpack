@@ -22,42 +22,18 @@ let app = () => {
 };
 
 class AppCtrl {
-    /*@ngInject*/
     constructor(NameService) {
         this.hideAfterLoad = false;
-        this.myName = '';
+        this.currency = '';
 
-        this.currencies = [
-            {
-                "id":"0",
-                "country":'USA'
-            },
-            {
-                "id":"1",
-                "country":'FRANCE'
-            },
-            {
-                "id":"2",
-                "country":'CHINA'
-            },
-            {
-                "id":"3",
-                "country":'RUSSIA'
-            }
-
-        ];
-
-        function changePercent(data){
-            console.log('data : ',data);
-        }
-
-        console.log('appCtrl');
-        console.log('currencies : ',this.currencies);
-        /*NameService.getName().then((data)=> {
+        NameService.getName().then((data)=> {
          console.log('data : ', data);
-         })*/
+         })
     }
+
 }
+
+AppCtrl.$inject  = ['NameService'];
 
 
 class NameService {

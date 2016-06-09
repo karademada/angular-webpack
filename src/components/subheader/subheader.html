@@ -1,5 +1,5 @@
 <md-toolbar>
-    <div class="md-toolbar-tools" style="background-color: #e9dfca" flex>
+    <div class="md-toolbar-tools" style="background-color: #e9dfca" layout-align="space-between" flex>
         <span>Don't forget to </span><span class="text-link">update your assets</span>
         <span></span>
         <span class="separator-sub"></span>
@@ -16,8 +16,8 @@
 
         <form name="currencyForm" novalidate>
             <md-input-container class="currency">
-                <md-select ng-model="app.currencies" placeholder="Select Country">
-                    <md-option ng-repeat="state in app.currencies" value="{{state.id}}">
+                <md-select ng-model="app.currency" placeholder="EURO">
+                    <md-option ng-repeat="state in subheader.currencies" value="{{state.id}}">
                         {{state.country}}
                     </md-option>
                 </md-select>
@@ -26,11 +26,9 @@
 
         <span class="separator-sub"></span>
         <md-switch layout-padding class="md-primary" ng-model="data.cb" aria-label="change currency"
-                   ng-change="app.changePercent(data)">Percentage
+                   ng-change="subheader.changePercent(data)">Percentage
         </md-switch>
-
         <span class="separator-sub"></span>
         <span class="text-link">Print</span>
-
     </div>
 </md-toolbar>

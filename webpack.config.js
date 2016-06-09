@@ -17,6 +17,8 @@ var ENV = process.env.npm_lifecycle_event;
 var isTest = ENV === 'test' || ENV === 'test-watch';
 var isProd = ENV === 'build';
 
+console.log(ENV,isTest,isProd);
+
 module.exports = function makeWebpackConfig() {
     /**
      * Config
@@ -47,7 +49,7 @@ module.exports = function makeWebpackConfig() {
 
         // Output path from the view of the page
         // Uses webpack-dev-server in development
-        publicPath: isProd ? '/' : 'http://localhost:8080/',
+        publicPath: isProd ? '/toto' : 'http://localhost:8080/',
 
         // Filename for entry points
         // Only adds hash in build mode
@@ -159,6 +161,7 @@ module.exports = function makeWebpackConfig() {
      */
     config.plugins = [];
 
+
     // Skip rendering index.html in test mode
     if (!isTest) {
         // Reference: https://github.com/ampedandwired/html-webpack-plugin
@@ -181,6 +184,7 @@ module.exports = function makeWebpackConfig() {
 
     // Add build specific plugins
     if (isProd) {
+        console.log('------------isProd----------------------');
         config.plugins.push(
             // Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
             // Only emit files when there are no errors

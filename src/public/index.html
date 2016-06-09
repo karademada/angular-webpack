@@ -21,7 +21,7 @@
     </style>
 </head>
 <body>
-<div ng-cloak>
+<p ng-cloak>
     <header></header>
     <main layout="row" flex>
         <sidepanel flex="15" style="background-color: #40403e"></sidepanel>
@@ -38,13 +38,21 @@
             </section>
         </div>
     </main>
-    <footer layout="row" style="background-color: #fff" flex>
-        <div>
+    <footer layout-fill>
+        <div layout="row" layout-align="center center" layout-padding>
             <span>VISION</span>
             <span>DETAILED VIEW</span>
             <span>MANAGE ASSETS</span>
         </div>
-        <md-divider></md-divider>
+        <md-divider layout-padding></md-divider>
+        <div class="cgv" layout="row" layout-align="center center" layout-padding>
+            <span>Plan du site</span>
+            <span class="separator"></span>
+            <span>Mentions légales</span>
+            <span class="separator"></span>
+            <span class="reset">Politique Cookies</span>
+        </div>
+        <p layout="row" layout-align="center center">@ 2016 by bglbnpparibas</p>
     </footer>
 </div>
 </body>

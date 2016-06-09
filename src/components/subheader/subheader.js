@@ -10,12 +10,36 @@ let subheader = ()=> {
         controller: 'SubHeaderCtrl',
         controllerAs: 'subheader'
     }
-}
+};
 
 class SubHeaderCtrl {
     /*@ngInject*/
     constructor() {
         console.log('subheaderCtrl');
+        this.currencies = [
+            {
+                "id":"0",
+                "country":'EURO'
+            },
+            {
+                "id":"1",
+                "country":'DOLLAR'
+            },
+            {
+                "id":"2",
+                "country":'YEN'
+            },
+            {
+                "id":"3",
+                "country":'ROUBLES'
+            }
+
+        ];
+
+    }
+
+    changePercent(data){
+        console.log('data : ',data);
     }
 }
 
