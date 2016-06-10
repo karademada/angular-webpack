@@ -83,7 +83,7 @@ a{
 
 }
 
-li:hover{
+.aside-menu li:hover{
     color: #957b48;
     border-right: solid 2px #957b48;
 }
