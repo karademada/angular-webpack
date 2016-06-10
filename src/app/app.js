@@ -85,7 +85,7 @@ angular.module(MODULE_NAME,
                 }
             })
             .state('add-assets-no-financial', {
-                url: '/assets-no-financial',
+               url: '/add-assets-no-financial',
                 controller: 'AssetsNoFinancialCtrl',
                 template: require('../add-assets-no-financial/add-assets-no-financial.html'),
                 ncyBreadcrumb: {
