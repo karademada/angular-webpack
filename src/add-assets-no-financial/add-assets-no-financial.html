@@ -11,13 +11,117 @@
             opacity: 0.5;
             color: white;
         }
+
+        .tile-asset {
+            background: none;
+            border: 2px solid #CDAE6E;
+            border-radius: 5px;
+            width: 150px;
+            height: 150px;
+        }
+
+            .tile-asset:active {
+                border: 2px solid #957b47;
+            }
+
+            .tile-asset div {
+                height: 100px;
+            }
+
+            .tile-asset span {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 12px;
+                display: block;
+            }
+
+            .tile-asset img {
+                max-width: 60px;
+                height: auto;
+                vertical-align: middle;
+            }
+
+        button:focus {
+            outline: 0;
+        }
     </style>
     <div style="background-color:#fefcfd;" flex="90" flex-offset="5" layout="column" layout-align="center start">
-        <div layout="row" layout-xs="column" layout-align="start center" layout-align-xs="center start">
+        <div layout="row" layout-xs="column" layout-align="start center" layout-align-xs="center start" layout-margin>
             <md-button class="btn-brown">Category</md-button><md-button class="btn-brown-no">Information</md-button>
         </div>
-        <md-content layout-padding>
-
-        </md-content>
+        <div layout="row" layout-wrap layout-margin layout-align="start center">
+            <button class="tile-asset">
+                <div layout layout-align="center center">
+                    <img src="./assets/img/01_real_estate.png" />
+                </div>
+                <span>Real Estate</span>
+            </button>
+            <button class="tile-asset">
+                <div layout layout-align="center center">
+                    <img src="./assets/img/02_Land.png" />
+                </div>
+                <span>Land</span>
+            </button>
+            <button class="tile-asset">
+                <div layout layout-align="center center">
+                    <img src="./assets/img/03_Vehicule.png" />
+                </div>
+                <span>Vehicule</span>
+            </button>
+            <button class="tile-asset">
+                <div layout layout-align="center center">
+                    <img src="./assets/img/04_Boat.png" />
+                </div>
+                <span>Boat</span>
+            </button>
+            <button class="tile-asset">
+                <div layout layout-align="center center">
+                    <img src="./assets/img/05_Plan.png" />
+                </div>
+                <span>Plan</span>
+            </button>
+            <button class="tile-asset">
+                <div layout layout-align="center center">
+                    <img src="./assets/img/06_Art.png" />
+                </div>
+                <span>Art</span>
+            </button>
+            <button class="tile-asset">
+                <div layout layout-align="center center">
+                    <img src="./assets/img/07_Jewel.png" />
+                </div>
+                <span>Jewel</span>
+            </button>
+            <button class="tile-asset">
+                <div layout layout-align="center center">
+                    <img src="./assets/img/08_Furniture.png" />
+                </div>
+                <span>Furniture</span>
+            </button>
+            <button class="tile-asset">
+                <div layout layout-align="center center">
+                    <img src="./assets/img/09_wine.png" />
+                </div>
+                <span>Wine</span>
+            </button>
+            <button class="tile-asset">
+                <div layout layout-align="center center">
+                    <img src="./assets/img/10_animal.png" />
+                </div>
+                <span>Animal</span>
+            </button>
+            <button class="tile-asset">
+                <div layout layout-align="center center">
+                    <img src="./assets/img/11_commodities.png" />
+                </div>
+                <span>Commodities</span>
+            </button>
+            <button class="tile-asset">
+                <div layout layout-align="center center">
+                    <img src="./assets/img/12_other.png" />
+                </div>
+                <span>Other</span>
+            </button>
+        </div>
     </div>
 </div>
