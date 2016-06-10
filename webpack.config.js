@@ -17,7 +17,7 @@ var ENV = process.env.npm_lifecycle_event;
 var isTest = ENV === 'test' || ENV === 'test-watch';
 var isProd = ENV === 'build';
 
-console.log(ENV,isTest,isProd);
+console.log('env : '+ENV,"isTest : "+isTest,"isProd : "+isProd);
 
 module.exports = function makeWebpackConfig() {
     /**
@@ -49,7 +49,7 @@ module.exports = function makeWebpackConfig() {
 
         // Output path from the view of the page
         // Uses webpack-dev-server in development
-        publicPath: isProd ? '/toto' : 'http://localhost:8080/',
+        publicPath: isProd ? '/' : 'http://localhost:8080/',
 
         // Filename for entry points
         // Only adds hash in build mode
@@ -104,7 +104,7 @@ module.exports = function makeWebpackConfig() {
             //
             // Reference: https://github.com/webpack/style-loader
             // Use style-loader in development.
-            loader: isTest ? 'null' : ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
+            loader: isTest ? 'null' : ExtractTextPlugin.extract('style', 'css?sourceMap!postcss-loader')
         }, {
             // SASS
             test: /\.scss$/,

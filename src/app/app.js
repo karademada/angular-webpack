@@ -11,6 +11,8 @@ import subheader from '../components/subheader/subheader';
 import assets from './../add-assets/add-assets.js';
 import assetsNoFinancial from './../add-assets-no-financial/add-assets-no-financial.js';
 
+import hoverBgImage from '../components/hover-bg-image/hover-bg-image.js';
+
 import '../style/app.css';
 
 
@@ -58,7 +60,8 @@ angular.module(MODULE_NAME,
         'assets',
         'subheader',
         'ncy-angular-breadcrumb',
-        'assetsNoFinancial'
+        'assetsNoFinancial',
+        'hoverBgImage'
     ])
     .config(($stateProvider, $urlRouterProvider, $mdIconProvider)=> {
         $urlRouterProvider.otherwise('/');

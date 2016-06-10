@@ -56,23 +56,44 @@ a{
     color: #c2c2c1;
 }
 
-.vision{
-    background-image: url('../public/assets/img/vision.png');
+span.toto{
+    background-image: url("../public/assets/img/vision.png");
     background-repeat: no-repeat;
-    background-position: 190px;
+    background-attachment: initial;
+    background-position: center;
+
+}
+/*
+
+.vision a img, .detail a img, .manage a img{
+    position: relative;
+    top: 10px;
 }
 
+li.vision{
+    background-image: url("../public/assets/img/vision.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
 
-.detail{
-    background-image: url('../public/assets/img/detail.png');
-    background-repeat: no-repeat;
-    background-position: 190px;
+li:hover{
+    color: #957b48;
+    border-right: solid 2px #957b48;
 }
-.manage{
-    background-image: url('../public/assets/img/manage.png');
-    background-repeat: no-repeat;
-    background-position: 190px;
+
+a:hover{
+    color: #957b48;
 }
+
+a #vision:hover{
+    position: relative;
+    top: 10px;
+    background-image: url('../public/assets/img/vision-rollover.png');
+}
+*/
+
+
 
 /* aside-menu */
 .aside-menu{
@@ -155,7 +176,6 @@ aside > div.title{
 }
 
 .assets-filters span{
-   background-color: #004444;
 }
 
 /**
