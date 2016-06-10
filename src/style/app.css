@@ -56,25 +56,31 @@ a{
     color: #c2c2c1;
 }
 
-span.toto{
-    background-image: url("../public/assets/img/vision.png");
-    background-repeat: no-repeat;
-    background-attachment: initial;
-    background-position: center;
-
-}
-/*
-
-.vision a img, .detail a img, .manage a img{
-    position: relative;
-    top: 10px;
+.aside-menu li{
+    box-sizing: content-box;
+    color: #c2c2c1;
 }
 
-li.vision{
-    background-image: url("../public/assets/img/vision.png");
+.aside-menu li.vision{
+    background-image: url('../public/assets/img/vision.png');
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    background-attachment: inherit;
+    background-position: right center;
+
+}
+.aside-menu li.detail{
+    background-image: url('../public/assets/img/detail.png');
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-position: right center;
+
+}
+.aside-menu li.manage{
+    background-image: url('../public/assets/img/manage.png');
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-position: right center;
+
 }
 
 li:hover{
@@ -85,13 +91,6 @@ li:hover{
 a:hover{
     color: #957b48;
 }
-
-a #vision:hover{
-    position: relative;
-    top: 10px;
-    background-image: url('../public/assets/img/vision-rollover.png');
-}
-*/
 
 
 

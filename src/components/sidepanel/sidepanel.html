@@ -6,20 +6,22 @@
         <img layout-padding src="assets/img/menu.png"/>
     </div>
     <nav>
+
+        <!-- TODO make dynamic with object and loop setting -->
         <ul>
-            <li hover-bg-image="../public/assets/img/vision.png">
+            <li class="vision"
+                bg-image="assets/img/vision.png"
+                hover-bg-image="assets/img/vision-rollover.png">
                 <span>Vision</span>
             </li>
-            <li class="detail">
-                <a href="#">
-                    <span>Detailled view</span>
-                    <img src="assets/img/detail.png">
-                </a>
-            <li class="manage">
-                <a href="#">
-                    <span>Manage assets</span>
-                    <img src="assets/img/manage.png">
-                </a>
+            <li class="detail"
+                bg-image="assets/img/detail.png"
+                hover-bg-image="assets/img/detail_rollover.png">
+                <span>Detailled View</span>
+            <li class="manage"
+                bg-image="assets/img/manage.png"
+                hover-bg-image="assets/img/manage_rollover.png">
+                <span>Manage assets</span>
             </li>
         </ul>
     </nav>
