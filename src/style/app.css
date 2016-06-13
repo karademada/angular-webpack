@@ -5,14 +5,14 @@
     src: url('../public/assets/fonts/BNPP Sans.ttf');
 }
 
-body *, .md-content *, .md-toolbar *{
+body *, .md-content *, .md-toolbar * {
     font-family: 'BNPP Sans', sans-serif;
     font-size: 1em;
 }
 
 md-toolbar *, md-toolbar *:before, md-toolbar *:after {
     color: #40403e;
-    font-size: .8em;
+    font-size: .6em;
 }
 
 /*
@@ -49,33 +49,39 @@ header span.separator {
     padding-left: 5px;
 }
 
-
-a{
+a {
     text-decoration: none;
     width: 100%;
     color: #c2c2c1;
 }
 
-.aside-menu li{
+.aside-menu {
+    background-color: #40403e;
+    height: 2rem;
+}
+
+.aside-menu li {
     box-sizing: content-box;
     color: #c2c2c1;
 }
 
-.aside-menu li.vision{
+.aside-menu li.vision {
     background-image: url('../public/assets/img/vision.png');
     background-repeat: no-repeat;
     background-attachment: inherit;
     background-position: right center;
 
 }
-.aside-menu li.detail{
+
+.aside-menu li.detail {
     background-image: url('../public/assets/img/detail.png');
     background-repeat: no-repeat;
     background-attachment: inherit;
     background-position: right center;
 
 }
-.aside-menu li.manage{
+
+.aside-menu li.manage {
     background-image: url('../public/assets/img/manage.png');
     background-repeat: no-repeat;
     background-attachment: inherit;
@@ -83,28 +89,26 @@ a{
 
 }
 
-.aside-menu li:hover{
+.aside-menu li:hover {
     color: #957b48;
     border-right: solid 2px #957b48;
 }
 
-a:hover{
+a:hover {
     color: #957b48;
 }
 
-
-
 /* aside-menu */
-.aside-menu{
+.aside-menu {
     background-color: #40403e;
     text-align: right;
 }
 
-aside > div.title{
+aside > div.title {
     border-bottom: solid 1px #636261;
 }
 
-.aside-menu > nav >ul {
+.aside-menu > nav > ul {
     padding: 0;
     margin: 0;
     position: relative;
@@ -112,77 +116,87 @@ aside > div.title{
     overflow: visible;
 
 }
-.aside-menu > nav > ul >li {
+
+.aside-menu > nav > ul > li {
     list-style: none;
     border-bottom: solid 1px #636261;
     text-align: center;
-    width:auto;
+    width: auto;
     padding: 20px;
 }
- /** breadcrumb **/
-.bgl-breadcrumb{
-    height:45px;
+
+/** breadcrumb **/
+.bgl-breadcrumb {
+    height: 45px;
     font-size: .8em;
     bottom: 20px;
     position: relative;
 }
 
-.bgl-breadcrumb > md-icon{
+.bgl-breadcrumb > md-icon {
     font-size: .8em;
     color: #c2c2c1;
 }
 
-.breadcrumbs{
+.breadcrumbs {
     display: inline-block;
     padding: 0;
 }
+
 .breadcrumbs > li {
     display: inline-block;
     padding: 10px;
     color: #c2c2c1;
 }
 
-.charting{
+.charting {
     width: 100%;
     height: 40rem;
 }
 
-.donut{
+.donut {
     position: relative;
     top: 67px;
     left: 180px;
 }
-.legende{
+
+.legende {
     position: relative;
     z-index: 100;
     top: 26px;
     right: 300px;
-    
+
 }
 
-.assets-filters{
+.assets-filters {
     background-color: #fff;
     border-radius: 10px;
     margin: 20px;
     width: 20%;
     color: #957b48;
 }
-.assets-filters h3{
+
+.assets-filters h3 {
     display: inline;
     border-bottom: solid 1px #957b48;
     width: auto;
     line-height: 10px;
 }
 
-.assets-filters span{
+.assets-filters span {
 }
 
 /**
 subheader
 **/
 
+subheader md-toolbar {
+    min-height: 33px;
+    height: 30px;
+}
+
 span.text-link {
-    padding-left: 12px;
+    padding-left: 5px;
     text-decoration: underline;
 }
 
@@ -190,16 +204,55 @@ div span.separator-sub {
     horiz-align: center;
     display: inline-block;
     border-right: solid 1px #d2c7b5;
-    height: 70%;
+    padding-left: 50px;
+    height: 20px;
+}
+
+span.date {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-md-switch {
-    position: relative;
-    left: 30px;
+md-datepicker {
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 30px;
 }
 
+md-switch {
+    position: relative;
+}
+
+span.currency {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+md-toolbar > div.md-toolbar-tools > form {
+    font-size: 1.5em;
+}
+
+md-toolbar > div.md-toolbar-tools > form {
+    font-size: 1.5em;
+}
+
+form md-datepicker {
+
+    position: relative;
+    left: -16px;
+
+}
+
+form md-datepicker .md-datepicker-input-container {
+
+    margin-left: 0;
+}
+
+form md-datepicker .md-datepicker-button.md-icon-button {
+    margin-right: 0;
+}
+
+/*
 span.date {
     padding-left: 15px;
     padding-right: 15px;
@@ -247,55 +300,91 @@ md-datepicker {
 div > md-subheader > img, md-subheader span {
     text-align: right;
     background-color: #006600;
-}
+} */
 
-.situation{
+.situation {
     background-color: #fff;
     border-radius: 10px;
     margin: 20px;
     color: #957b48;
 }
 
-.situation h3{
-    position:relative;
+.situation h3 {
+    position: relative;
     border-bottom: solid 1px #957b48;
     line-height: 10px;
 }
 
+.situation .resume div {
+    /*background-color: #d2c7b5;*/
+    background-color: #f3eeea;
+}
+
+.situation .resume .assets{
+    padding:0;
+    background-color: #f3eeea;
+}
+.situation .resume .liabilities{
+    padding:0;
+    background-color: #f3eeea;
+}
+.situation .resume .net{
+    padding:0;
+    background-color: #f3eeea;
+}
+
+div.assets md-progress-linear.md-default-theme .md-container, md-progress-linear .md-container {
+    background-color: #6abaad;
+    height: auto;
+}
+
+.situation .resume .assets md-progress-linear {
+    padding: 0;
+    background-color: #6abaad;
+}
+
+.situation .resume .liabilities md-progress-linear {
+    padding: 0;
+    background-color: #a4123f;
+}
+
+.situation .resume .net md-progress-linear {
+    padding: 0;
+    background-color: #40403e;
+}
 
 /*
 footer
 */
 
-footer{
+footer {
     color: #666665;
 }
-
 
 footer > div {
     width: 100%;
 }
 
-footer > div > span{
+footer > div > span {
     margin-right: 10px;
     margin-left: 10px;
 }
 
-footer > md-divider{
+footer > md-divider {
     margin: auto;
     width: 50%;
 }
 
-footer .cgv span{
+footer .cgv span {
     padding: 0;
     margin-right: 0;
 }
 
-footer p, footer span{
-   font-size: 0.7rem;
+footer p, footer span {
+    font-size: 0.7rem;
 }
 
-footer .cgv .separator{
+footer .cgv .separator {
     margin: 0;
     padding-left: 10px;
     border-right: solid 1px #666665;

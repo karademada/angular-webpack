@@ -6,7 +6,6 @@ const MODULE_NAME = 'hoverBgImage';
 class HoverBgImageCtrl {
     constructor() {
         console.log('AssetsCtrl');
-        this.image = 'assets/img/vision.png'
     }
 }
 

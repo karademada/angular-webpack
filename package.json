@@ -57,6 +57,7 @@
     "postcss-loader": "^0.8.2",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
+    "static-site-generator-webpack-plugin": "^2.1.0",
     "style-loader": "^0.13.0",
     "ui-router": "^1.0.0-alpha.3",
     "webpack": "^1.12.13",

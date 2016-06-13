@@ -21,23 +21,36 @@
     </div>
 </div>
 </div>
-<div layout="row" class="situation" layout-padding>
-        <div layout="row" flex>
-            <h3 flex>Situation</h3>
-            <span>26/06/2016</span>
+<div layout="column" class="situation" layout-padding>
+    <div layout="row" flex>
+        <h3 flex>Situation</h3>
+
+        <h3>26/06/2016</h3>
+        <span class="situation-line"></span>
+    </div>
+    <div class="resume" layout="row" layout-align="space-between center">
+        <div class="assets" flex="30" layout-padding>
+            <div layout="row" layout-align="space-between center">
+                <span>Assets</span>
+                <span>15000000 €</span>
+            </div>
+            <md-progress-linear></md-progress-linear>
         </div>
-        <!--div layout="column" layout-padding>
-            <span>assets</span>
-            <span>15000000 €</span>
+        <div class="liabilities" flex="30" layout-padding>
+            <div layout="row" layout-align="space-between center">
+                <span>assets</span>
+                <span>15000000 €</span>
+            </div>
+            <md-progress-linear></md-progress-linear>
         </div>
-        <div layout="column" layout-padding>
-            <span>assets</span>
-            <span>15000000 €</span>
+        <div class="net" flex="30" layout-padding>
+            <div layout="row" layout-align="space-between center">
+                <span>Net wealth</span>
+                <span>15000000 €</span>
+            </div>
+            <md-progress-linear></md-progress-linear>
         </div>
-        <div layout="column" layout-padding>
-            <span>assets</span>
-            <span>15000000 €</span>
-        </div-->
+    </div>
 </div>
 <div>
     <nav>

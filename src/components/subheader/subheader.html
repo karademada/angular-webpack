@@ -1,19 +1,13 @@
 <md-toolbar>
-    <div class="md-toolbar-tools" style="background-color: #e9dfca" layout-align="space-between"layout-padding flex>
-        <span>Don't forget to </span><span class="text-link">update your assets</span>
-        <span></span>
+    <div class="md-toolbar-tools" flex>
+        <span flex="initial">Don't forget to</span>
+        <span class="text-link">update your assets</span>
         <span class="separator-sub"></span>
-        <span></span>
         <span class="date"> View at </span>
-        <span></span>
         <md-datepicker ng-model="myDate" md-placeholder="Enter date"
                        md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
-        <span></span>
         <span class="separator-sub"></span>
-        <span></span>
         <span class="currency">Currency</span>
-        <span></span>
-
         <form name="currencyForm" novalidate>
             <md-input-container class="currency">
                 <md-select ng-model="app.currency" placeholder="EURO">
