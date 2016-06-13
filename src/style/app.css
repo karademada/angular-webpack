@@ -2,10 +2,11 @@
 
 @font-face {
     font-family: 'BNPP Sans', sans-serif;
+    font-weight: normal;
     src: url('../public/assets/fonts/BNPP Sans.ttf');
 }
 
-body *, .md-content *, .md-toolbar * {
+body *, .md-content *{
     font-family: 'BNPP Sans', sans-serif;
     font-size: 1em;
 }
@@ -190,9 +191,9 @@ aside > div.title {
 subheader
 **/
 
-subheader md-toolbar {
+md-toolbar.subheader{
+    background-color: #e9dfca;
     min-height: 33px;
-    height: 30px;
 }
 
 span.text-link {
@@ -201,7 +202,6 @@ span.text-link {
 }
 
 div span.separator-sub {
-    horiz-align: center;
     display: inline-block;
     border-right: solid 1px #d2c7b5;
     padding-left: 50px;
@@ -221,22 +221,34 @@ md-datepicker {
 
 md-switch {
     position: relative;
+    left: 20px;
 }
 
 span.currency {
-    padding-left: 15px;
+    padding-left: 20px;
     padding-right: 15px;
 }
 
+md-input-container md-select *, md-switch *{
+    font-size: .9rem;
+}
+
+/*
 md-toolbar > div.md-toolbar-tools > form {
     font-size: 1.5em;
 }
 
 md-toolbar > div.md-toolbar-tools > form {
     font-size: 1.5em;
+} */
+md-datepicker.myDatePicker{
+    padding: 0;
+    marging:0;
+    height: 2.7rem;
 }
 
-form md-datepicker {
+
+/*form md-datepicker {
 
     position: relative;
     left: -16px;
@@ -250,18 +262,14 @@ form md-datepicker .md-datepicker-input-container {
 
 form md-datepicker .md-datepicker-button.md-icon-button {
     margin-right: 0;
-}
+} */
 
-/*
+
 span.date {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-span.currency {
-    padding-left: 15px;
-    padding-right: 15px;
-}
 
 md-datepicker {
     padding-left: 5px;
@@ -300,7 +308,11 @@ md-datepicker {
 div > md-subheader > img, md-subheader span {
     text-align: right;
     background-color: #006600;
-} */
+}*/
+
+div .md-toolbar *, div .md-toolbar * {
+    background-color: #000088;
+}
 
 .situation {
     background-color: #fff;
@@ -320,16 +332,18 @@ div > md-subheader > img, md-subheader span {
     background-color: #f3eeea;
 }
 
-.situation .resume .assets{
-    padding:0;
+.situation .resume .assets {
+    padding: 0;
     background-color: #f3eeea;
 }
-.situation .resume .liabilities{
-    padding:0;
+
+.situation .resume .liabilities {
+    padding: 0;
     background-color: #f3eeea;
 }
-.situation .resume .net{
-    padding:0;
+
+.situation .resume .net {
+    padding: 0;
     background-color: #f3eeea;
 }
 
