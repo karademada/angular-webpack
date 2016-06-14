@@ -18,10 +18,15 @@
             border-radius: 5px;
             width: 150px;
             height: 150px;
+            padding: 10px;
         }
 
             .tile-asset:active {
                 border: 2px solid #957b47;
+            }
+
+            .tile-asset:hover {
+                opacity: 0.5;
             }
 
             .tile-asset div {
@@ -33,17 +38,29 @@
                 font-weight: bold;
                 font-size: 12px;
                 display: block;
+                color: black;
+                text-align: center;
             }
 
-            .tile-asset img {
-                max-width: 60px;
-                height: auto;
-                vertical-align: middle;
-            }
+        .text-asset {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 12px;
+            display: block;
+            color: black;
+            text-align: center;
+        }
+
+        .tile-asset img {
+            max-width: 60px;
+            height: auto;
+            vertical-align: middle;
+        }
 
         .layout-no-financial {
             margin: 0px auto 30px auto;
             max-width: 880px;
+            width: 100%;
         }
 
 
@@ -89,83 +106,8 @@
 
     <div style="background-color:#fefcfd" class="layout-no-financial" layout="column" layout-align="center start">
         <div layout="row" layout-align="start center" layout-margin>
-            <span class="step">Category</span><span ng-class="{'step-disabled':true}" class="step next-step">Information</span>
+            <span class="step">Category</span><span ng-class="{'step-disabled':assets.isCategory()}" class="step next-step">Information</span>
         </div>
-        <div layout="row" layout-wrap layout-margin layout-align="start center">
-            <button class="tile-asset">
-                <div layout layout-align="center center">
-                    <img src="./assets/img/01_real_estate.png" />
-                </div>
-                <span>Real Estate</span>
-            </button>
-            <button class="tile-asset">
-                <div layout layout-align="center center">
-                    <img src="./assets/img/02_Land.png" />
-                </div>
-                <span>Land</span>
-            </button>
-            <button class="tile-asset">
-                <div layout layout-align="center center">
-                    <img src="./assets/img/03_Vehicule.png" />
-                </div>
-                <span>Vehicule</span>
-            </button>
-            <button class="tile-asset">
-                <div layout layout-align="center center">
-                    <img src="./assets/img/04_Boat.png" />
-                </div>
-                <span>Boat</span>
-            </button>
-            <button class="tile-asset">
-                <div layout layout-align="center center">
-                    <img src="./assets/img/05_Plan.png" />
-                </div>
-                <span>Plan</span>
-            </button>
-            <button class="tile-asset">
-                <div layout layout-align="center center">
-                    <img src="./assets/img/06_Art.png" />
-                </div>
-                <span>Art</span>
-            </button>
-            <button class="tile-asset">
-                <div layout layout-align="center center">
-                    <img src="./assets/img/07_Jewel.png" />
-                </div>
-                <span>Jewel</span>
-            </button>
-            <button class="tile-asset">
-                <div layout layout-align="center center">
-                    <img src="./assets/img/08_Furniture.png" />
-                </div>
-                <span>Furniture</span>
-            </button>
-            <button class="tile-asset">
-                <div layout layout-align="center center">
-                    <img src="./assets/img/09_wine.png" />
-                </div>
-                <span>Wine</span>
-            </button>
-            <button class="tile-asset">
-                <div layout layout-align="center center">
-                    <img src="./assets/img/10_animal.png" />
-                </div>
-                <span>Animal</span>
-            </button>
-            <button class="tile-asset">
-                <div layout layout-align="center center">
-                    <img src="./assets/img/11_commodities.png" />
-                </div>
-                <span>Commodities</span>
-            </button>
-            <button class="tile-asset">
-                <div layout layout-align="center center">
-                    <img src="./assets/img/12_other.png" />
-                </div>
-                <span>Other</span>
-            </button>
-
-        </div>
-        <edit-assets></edit-assets>
+        <ui-view style="width:100%;"></ui-view>
     </div>
 </div>

@@ -20,7 +20,7 @@ class EditAssetsNoFinancialCtrl{
 
 class EditAssets{
     constructor(){
-        console.log('assets');
+        console.log('EditAssets');
     }
 }
 

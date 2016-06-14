@@ -10,6 +10,8 @@ import subheader from '../components/subheader/subheader';
 
 import assets from './../add-assets/add-assets.js';
 import assetsNoFinancial from './../add-assets-no-financial/add-assets-no-financial.js';
+import editAssetsNoFinancial from './../add-assets-no-financial/edit-assets-no-financial.js';
+import categoryAssetsNoFinancial from './../add-assets-no-financial/category-assets-no-financial.js';
 
 import hoverBgImage from '../components/hover-bg-image/hover-bg-image.js';
 
@@ -61,7 +63,9 @@ angular.module(MODULE_NAME,
         'subheader',
         'ncy-angular-breadcrumb',
         'assetsNoFinancial',
-        'hoverBgImage'
+        'hoverBgImage',
+        'editAssetsNoFinancial',
+        'categoryAssetsNoFinancial'
     ])
     .config(($stateProvider, $urlRouterProvider, $mdIconProvider)=> {
         $urlRouterProvider.otherwise('/');
@@ -85,13 +89,27 @@ angular.module(MODULE_NAME,
                 }
             })
             .state('add-assets-no-financial', {
-               url: '/add-assets-no-financial',
+                url: '/add-assets-no-financial',
                 controller: 'AssetsNoFinancialCtrl',
+                controllerAs:'assets',
+                abstract: true,
                 template: require('../add-assets-no-financial/add-assets-no-financial.html'),
                 ncyBreadcrumb: {
                     label: 'Add Assets no financial  /',
                     parent: 'login'
                 }
+            })
+            .state('add-assets-no-financial.category', {
+                url: '/category',
+                controller: 'CategoryAssetsNoFinancialCtrl',
+                controllerAs:'categoryAssets',
+                template: require('../add-assets-no-financial/category-assets-no-financial.html')
+            })
+            .state('add-assets-no-financial.edit', {
+                url: '/information/:id',
+                controller: 'EditAssetsNoFinancialCtrl',
+                controllerAs:'editAssets',
+                template: require('../add-assets-no-financial/edit-assets-no-financial.html')
             })
 
     })

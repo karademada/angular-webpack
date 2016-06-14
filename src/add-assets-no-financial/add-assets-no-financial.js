@@ -6,14 +6,19 @@ const MODULE_NAME = 'assetsNoFinancial';
 let assets = ()=>{
     return{
         template:require('./add-assets-no-financial.html'),
-        controller:'AssetsCtrl',
+        controller:'AssetsNoFinancialCtrl',
         controllerAs:'assets'
     }
 };
 
 class AssetsNoFinancialCtrl{
-    constructor(){
+    constructor($state,$scope){
+        this.state=$state;       
         console.log('AssetsCtrl');
+    }
+
+    isCategory() {
+        return this.state && this.state.$current && (this.state.$current.name==="add-assets-no-financial.category");
     }
 }
 
