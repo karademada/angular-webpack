@@ -1,13 +1,58 @@
-<!doctype html>
-<html ng-app="app" lang="en">
+﻿<!doctype html>
+<html ng-app="app" lang="en" ng-hide="app.hideAfterLoad">
 <head>
-  <meta charset="UTF-8">
-  <title>Angular App</title>
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <meta charset="UTF-8">
+    <title>Angular App</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <base href="/">
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none !important;
+        }
 
-  <base href="/">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
-  <app></app>
+    <div ng-cloak>
+        <header></header>
+        <subheader></subheader>
+        <main layout="row" flex>
+            <sidepanel flex="15" style="background-color: #40403e"></sidepanel>
+            <div style="background-color: #f3eeea" flex="100">
+                <img src="assets/img/sub-menu-back.png" alt="submenu background" style="width: 100%" />
+
+                <div class="bgl-breadcrumb">
+                    <md-icon md-svg-icon="./assets/img/ic_home_black_24px.svg" style="color: #009926"></md-icon>
+                    <div class="breadcrumbs" ncy-breadcrumb></div>
+                </div>
+                <section>
+                    <container></container>
+                </section>
+            </div>
+        </main>
+        <footer layout-fill>
+            <div layout="row" layout-align="center center" layout-padding>
+                <span>VISION</span>
+                <span>DETAILED VIEW</span>
+                <span>MANAGE ASSETS</span>
+            </div>
+            <md-divider layout-padding></md-divider>
+            <div class="cgv" layout="row" layout-align="center center" layout-padding>
+                <span>Plan du site</span>
+                <span class="separator"></span>
+                <span>Mentions légales</span>
+                <span class="separator"></span>
+                <span class="reset">Politique Cookies</span>
+            </div>
+            <p layout="row" layout-align="center center">@ 2016 by bglbnpparibas</p>
+        </footer>
+    </div>
 </body>
 </html>

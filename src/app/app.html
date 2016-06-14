@@ -1,9 +1,62 @@
-<main>
-  <h1 class="title">Hello from Angular !</h1>
+<div class="charting" layout="row">
+    <div flex layout-padding>
+        <div style="background-color: white;width: 400px;height:400px;display: inline"></div>
+    <div class="assets-filters" layout-padding>
+        <div layout="column">
+            <h3>ASSETS FILTERS</h3>
+            <md-checkbox>BNP</md-checkbox>
+            <md-checkbox>CIC</md-checkbox>
+            <md-checkbox>HSBC</md-checkbox>
+            <md-checkbox>UBS</md-checkbox>
+            <md-checkbox>BGL</md-checkbox>
+        </div>
 
-  <!-- Images (and assets) are parsed and loaded from within the public directory -->
-  <img src="/img/logo.png">
-</main>
-<footer>
-  <a ng-href="{{app.url}}">Webpack Angular Starter</a>
-</footer>
+        <div layout="column">
+            <h3>ASSETS FILTERS</h3>
+            <md-checkbox>PERSONNAL ASSETS</md-checkbox>
+            <md-checkbox>PROFESSIONNAL ASSETS</md-checkbox>
+        </div>
+    </div>
+</div>
+</div>
+<div layout="column" class="situation" layout-padding>
+    <div layout="row" flex>
+        <h3 flex>Situation</h3>
+
+        <h3>26/06/2016</h3>
+        <span class="situation-line"></span>
+    </div>
+    <div class="resume" layout="row" layout-align="space-between center">
+        <div class="assets" flex="30" layout-padding>
+            <div layout="row" layout-align="space-between center">
+                <span>Assets</span>
+                <span>15000000 €</span>
+            </div>
+            <md-progress-linear></md-progress-linear>
+        </div>
+        <div class="liabilities" flex="30" layout-padding>
+            <div layout="row" layout-align="space-between center">
+                <span>assets</span>
+                <span>15000000 €</span>
+            </div>
+            <md-progress-linear></md-progress-linear>
+        </div>
+        <div class="net" flex="30" layout-padding>
+            <div layout="row" layout-align="space-between center">
+                <span>Net wealth</span>
+                <span>15000000 €</span>
+            </div>                                                               angualr
+            <md-progress-linear></md-progress-linear>
+        </div>
+    </div>
+</div>
+<div layout="column">
+    <h2 class="md-display-1" layout="row" layout-align="center center">OTHER GLOBAL VIEWS</h2>
+    <nav class="others">
+        <ul layout="row" layout-align="center center">
+            <li flex="none" layout-padding><a href="#">BY ASSET TYPE</a></li>
+            <li flex="none" layout-padding><a href="#">BY CURRENCY</a></li>
+            <li flex="none" layout-padding><a href="#">BY GEOGRAPHY</a></li>
+        </ul>
+    </nav>
+</div>

@@ -1,22 +1,426 @@
 /* styles in src/style directory are applied to the whole page */
-body {
-  background: #0147A7;
-  color: #fff;
+
+@font-face {
+    font-family: 'BNPP Sans', sans-serif;
+    font-weight: normal;
+    src: url('../public/assets/fonts/BNPP Sans.ttf');
+}
+
+body *, .md-content *{
+    font-family: 'BNPP Sans', sans-serif;
+    font-size: 1em;
+}
+
+md-toolbar *, md-toolbar *:before, md-toolbar *:after {
+    color: #40403e;
+    font-size: .6em;
+}
+
+/*
+    header
+*/
+
+header span {
+    padding: 0 5px 0 5px;
+}
+
+header span.bank-separator {
+    padding: 0;
+}
+
+header span.bank-label {
+    font-weight: bold;
+}
+
+header span.logo {
+    font-family: 'BNPP Sans', sans-serif;
+    max-width: 152px;
+    max-height: 42px;
+}
+
+header span.text-link {
+    padding-left: 12px;
+    text-decoration: underline;
+}
+
+header span.separator {
+    display: inline-block;
+    border-right: solid 1px #efefef;
+    height: 64px;
+    padding-left: 5px;
 }
 
 a {
-  color: #03A9F4;
+    text-decoration: none;
+    width: 100%;
+    color: #c2c2c1;
 }
 
-main {
-  padding: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  margin-top: 50px;
-  display: block;
+.aside-menu {
+    background-color: #40403e;
+    height: 2rem;
 }
+
+.aside-menu li {
+    box-sizing: content-box;
+    color: #c2c2c1;
+}
+
+.aside-menu li.vision {
+    background-image: url('../public/assets/img/vision.png');
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-position: right center;
+
+}
+
+.aside-menu li.detail {
+    background-image: url('../public/assets/img/detail.png');
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-position: right center;
+
+}
+
+.aside-menu li.manage {
+    background-image: url('../public/assets/img/manage.png');
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-position: right center;
+
+}
+
+.aside-menu li:hover {
+    color: #957b48;
+    border-right: solid 2px #957b48;
+}
+
+a:hover {
+    color: #957b48;
+}
+
+/* aside-menu */
+.aside-menu {
+    background-color: #40403e;
+    text-align: right;
+}
+
+aside > div.title {
+    border-bottom: solid 1px #636261;
+}
+
+.aside-menu > nav > ul {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
+    overflow: visible;
+
+}
+
+.aside-menu > nav > ul > li {
+    list-style: none;
+    border-bottom: solid 1px #636261;
+    text-align: center;
+    width: auto;
+    padding: 20px;
+}
+
+/** breadcrumb **/
+.bgl-breadcrumb {
+    height: 45px;
+    font-size: .8em;
+    bottom: 20px;
+    position: relative;
+}
+
+.bgl-breadcrumb > md-icon {
+    font-size: .8em;
+    color: #c2c2c1;
+}
+
+.breadcrumbs {
+    display: inline-block;
+    padding: 0;
+}
+
+.breadcrumbs > li {
+    display: inline-block;
+    padding: 10px;
+    color: #c2c2c1;
+}
+
+.charting {
+    width: 100%;
+    height: 40rem;
+}
+
+.donut {
+    position: relative;
+    top: 67px;
+    left: 180px;
+}
+
+.legende {
+    position: relative;
+    z-index: 100;
+    top: 26px;
+    right: 300px;
+
+}
+
+.assets-filters {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px;
+    width: 20%;
+    color: #957b48;
+}
+
+.assets-filters h3 {
+    display: inline;
+    border-bottom: solid 1px #957b48;
+    width: auto;
+    line-height: 10px;
+}
+
+.assets-filters span {
+}
+
+/**
+subheader
+**/
+
+md-toolbar.subheader{
+    background-color: #e9dfca;
+    min-height: 33px;
+}
+
+span.text-link {
+    padding-left: 5px;
+    text-decoration: underline;
+}
+
+div span.separator-sub {
+    display: inline-block;
+    border-right: solid 1px #d2c7b5;
+    padding-left: 50px;
+    height: 20px;
+}
+
+span.date {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+md-datepicker {
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 30px;
+}
+
+md-switch {
+    position: relative;
+    left: 20px;
+}
+
+span.currency {
+    padding-left: 20px;
+    padding-right: 15px;
+}
+
+md-input-container md-select *, md-switch *{
+    font-size: .9rem;
+}
+
+
+.others li {
+    display: inline-block;
+    list-style: none;
+    background-color: #fff;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+}
+
+.others li a{
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: url("../public/assets/img/by_type.svg");
+    background-size: 100px 100px;
+    fill: #c2c2c1;
+}
+
+/*
+md-toolbar > div.md-toolbar-tools > form {
+    font-size: 1.5em;
+}
+
+md-toolbar > div.md-toolbar-tools > form {
+    font-size: 1.5em;
+} */
+md-datepicker.myDatePicker{
+    padding: 0;
+    marging:0;
+    height: 2.7rem;
+}
+
+
+/*form md-datepicker {
+
+    position: relative;
+    left: -16px;
+
+}
+
+form md-datepicker .md-datepicker-input-container {
+
+    margin-left: 0;
+}
+
+form md-datepicker .md-datepicker-button.md-icon-button {
+    margin-right: 0;
+} */
+
+
+span.date {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+md-datepicker {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+md-toolbar > div.md-toolbar-tools > form {
+    font-size: 1.5em;
+}
+
+md-toolbar > div.md-toolbar-tools > form {
+    font-size: 1.5em;
+}
+
+
+md-datepicker {
+    margin: 0;
+}
+
+.datepicker .md-datepicker-input-container {
+    background-color: #006600;
+    padding-bottom: 0;
+
+}
+
+.subheader > md-icon {
+    background-color: #006600;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-bottom: 0;
+    text-align: left;
+
+}
+
+div > md-subheader > img, md-subheader span {
+    text-align: right;
+    background-color: #006600;
+}*/
+
+div .md-toolbar *, div .md-toolbar * {
+    background-color: #000088;
+}
+
+.situation {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px;
+    color: #957b48;
+}
+
+.situation h3 {
+    position: relative;
+    border-bottom: solid 1px #957b48;
+    line-height: 10px;
+}
+
+.situation .resume div {
+    /*background-color: #d2c7b5;*/
+    background-color: #f3eeea;
+}
+
+.situation .resume .assets {
+    padding: 0;
+    background-color: #f3eeea;
+}
+
+.situation .resume .liabilities {
+    padding: 0;
+    background-color: #f3eeea;
+}
+
+.situation .resume .net {
+    padding: 0;
+    background-color: #f3eeea;
+}
+
+div.assets md-progress-linear.md-default-theme .md-container, md-progress-linear .md-container {
+    background-color: #6abaad;
+    height: auto;
+}
+
+.situation .resume .assets md-progress-linear {
+    padding: 0;
+    background-color: #6abaad;
+}
+
+.situation .resume .liabilities md-progress-linear {
+    padding: 0;
+    background-color: #a4123f;
+}
+
+.situation .resume .net md-progress-linear {
+    padding: 0;
+    background-color: #40403e;
+}
+
+/*
+footer
+*/
 
 footer {
-  text-align: center;
-  font-size: 0.8em;
+    color: #666665;
 }
+
+footer > div {
+    width: 100%;
+}
+
+footer > div > span {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+footer > md-divider {
+    margin: auto;
+    width: 50%;
+}
+
+footer .cgv span {
+    padding: 0;
+    margin-right: 0;
+}
+
+footer p, footer span {
+    font-size: 0.7rem;
+}
+
+footer .cgv .separator {
+    margin: 0;
+    padding-left: 10px;
+    border-right: solid 1px #666665;
+    height: 15px;
+}
+
