@@ -1,4 +1,3 @@
-
 import uiRouter from 'angular-ui-router';
 import 'angular-material';
 import 'angular-breadcrumb';

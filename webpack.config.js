@@ -8,6 +8,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 var WarArchiverPlugin = require("webpack-war-archiver-plugin");
+var path = require('path');
 
 /**
  * Env
@@ -34,7 +35,8 @@ module.exports = function makeWebpackConfig() {
      * Karma will set this when it's a test build
      */
     config.entry = isTest ? {} : {
-        app: './src/app/app.js'
+        app: './src/app/app.js',
+        lib:'./src/lib/angular.js'
     };
 
     /**
