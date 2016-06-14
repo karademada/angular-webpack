@@ -1,4 +1,4 @@
-<div style="background-color:#f3eeea" layout="row" layout-padding>
+<div style="background-color:#f3eeea" layout="row" layout-padding layout-align="center center">
     <style>
         .btn-brown {
             background-color: #52463c;
@@ -41,13 +41,55 @@
                 vertical-align: middle;
             }
 
+        .layout-no-financial {
+            margin: 0px auto 30px auto;
+            max-width: 880px;
+        }
+
+
+        @media screen and (max-width: 1280px) {
+
+            .layout-no-financial {
+                max-width: 700px !important;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .layout-no-financial {
+                max-width: 530px !important;
+            }
+        }
+
+
         button:focus {
             outline: 0;
         }
+
+        .step {
+            background-image: url('./assets/img/FlecheEtape.png');
+            color: white;
+            width: 247px;
+            height: 34px;
+            padding-left: 15px;
+            line-height: 34px;
+        }
+
+        .next-step {
+            padding-left: 30px;
+            margin-left: -15px;
+            background-image: url('./assets/img/FlecheEtape2.png');
+        }
+
+
+        .step-disabled {
+            opacity: 0.5;
+        }
     </style>
-    <div style="background-color:#fefcfd;" flex="90" flex-offset="5" layout="column" layout-align="center start">
-        <div layout="row" layout-xs="column" layout-align="start center" layout-align-xs="center start" layout-margin>
-            <md-button class="btn-brown">Category</md-button><md-button class="btn-brown-no">Information</md-button>
+
+    <div style="background-color:#fefcfd" class="layout-no-financial" layout="column" layout-align="center start">
+        <div layout="row" layout-align="start center" layout-margin>
+            <span class="step">Category</span><span ng-class="{'step-disabled':true}" class="step next-step">Information</span>
         </div>
         <div layout="row" layout-wrap layout-margin layout-align="start center">
             <button class="tile-asset">
@@ -122,6 +164,8 @@
                 </div>
                 <span>Other</span>
             </button>
+
         </div>
+        <edit-assets></edit-assets>
     </div>
 </div>
