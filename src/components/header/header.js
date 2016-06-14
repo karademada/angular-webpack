@@ -1,4 +1,4 @@
-import angular from 'angular';
+
 import 'angular-material';
 
 const MODULE_NAME = 'header';

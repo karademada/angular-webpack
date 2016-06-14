@@ -1,5 +1,3 @@
-import angular from 'angular';
-
 
 const MODULE_NAME = 'assetsNoFinancial';
 

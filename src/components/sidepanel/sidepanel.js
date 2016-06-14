@@ -1,4 +1,3 @@
-import angular from 'angular';
 
 const MODULE_NAME = 'sidepanel';
 
