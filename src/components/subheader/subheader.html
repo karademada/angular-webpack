@@ -1,10 +1,10 @@
-<md-toolbar>
-    <div class="md-toolbar-tools" flex>
-        <span flex="initial">Don't forget to</span>
-        <span class="text-link">update your assets</span>
+<md-toolbar class="subheader">
+    <div class="md-toolbar-tools" layout="row" layout-xs="column" flex>
+        <span flex="none">Don't forget to</span>
+        <span class="text-link" fex="none">update your assets !</span>
         <span class="separator-sub"></span>
         <span class="date"> View at </span>
-        <md-datepicker ng-model="myDate" md-placeholder="Enter date"
+        <md-datepicker class="myDatePicker" ng-model="myDate" md-placeholder="Enter date"
                        md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
         <span class="separator-sub"></span>
         <span class="currency">Currency</span>
@@ -20,8 +20,9 @@
 
         <span class="separator-sub"></span>
         <md-switch layout-padding class="md-primary" ng-model="data.cb" aria-label="change currency"
-                   ng-change="subheader.changePercent(data)">Percentage
+                   ng-change="subheader.changePercent(data)"> %
         </md-switch>
+        <span flex></span>
         <span class="separator-sub"></span>
         <span class="text-link">Print</span>
     </div>
