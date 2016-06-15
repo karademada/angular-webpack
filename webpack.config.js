@@ -36,7 +36,8 @@ module.exports = function makeWebpackConfig() {
      */
     config.entry = isTest ? {} : {
         app: './src/app/app.js',
-        lib:'./src/lib/angular.js'
+        lib:'./src/lib/angular.min.js'
+
     };
 
     /**
