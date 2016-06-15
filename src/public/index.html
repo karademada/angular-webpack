@@ -6,7 +6,7 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <base href="/">
+    <base href="myeaglevision">
     <style>
         /* This helps the ng-show/ng-hide animations start at the right place. */
         /* Since Angular has this but needs to load, this gives us the class early. */
@@ -25,8 +25,8 @@
         <subheader></subheader>
         <main layout="row" flex>
             <sidepanel flex="15" style="background-color: #40403e"></sidepanel>
-            <div style="background-color: #f3eeea" flex="100">
-                <img src="assets/img/sub-menu-back.png" alt="submenu background" style="width: 100%" />
+            <div style="background-color: #f3eeea" flex>
+                <img src="assets/img/sub-menu-back.png" alt="submenu background" style="width: 100%" ng-click="app.clickMenu()"/>
 
                 <div class="bgl-breadcrumb">
                     <md-icon md-svg-icon="./assets/img/ic_home_black_24px.svg" style="color: #009926"></md-icon>
