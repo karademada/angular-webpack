@@ -1,27 +1,32 @@
 <!--div>
             <md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
         </div-->
+<style>
+    .manage .manage-icon {
+        background-image: url('assets/img/manage.png');
+    }
+</style>
 <aside class="aside-menu" flex style="background-color: #40403e">
-    <div class="title">
-        <img layout-padding src="assets/img/menu.png"/>
+    <div class="title" ng-click="littleMenu= !littleMenu">
+        <img layout-padding src="assets/img/menu.png" />
     </div>
     <nav>
 
         <!-- TODO make dynamic with object and loop setting -->
         <ul>
-            <li class="vision"
-                bg-image="assets/img/vision.png"
-                hover-bg-image="assets/img/vision-rollover.png">
-                <span>Vision</span>
+            <li class="vision">
+                <a ui-sref="login">
+                    <span>Vision</span>
+                </a>
             </li>
-            <li class="detail"
-                bg-image="assets/img/detail.png"
-                hover-bg-image="assets/img/detail_rollover.png">
-                <span>Detailled View</span>
-            <li class="manage"
-                bg-image="assets/img/manage.png"
-                hover-bg-image="assets/img/manage_rollover.png">
-                <span>Manage assets</span>
+            <li class="detail">
+                <a ui-sref="login">
+                    <span>Detailled View</span>
+                </a>
+            <li class="manage">
+                <a ui-sref="manage-assets.home">
+                    <span>Manage assets</span>
+                </a>
             </li>
         </ul>
     </nav>

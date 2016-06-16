@@ -23,10 +23,10 @@
     <div ng-cloak>
         <header></header>
         <subheader></subheader>
-        <main layout="row" flex>
+        <main layout="row" flex ng-class="{'little-menu':littleMenu}">
             <sidepanel flex="15" style="background-color: #40403e"></sidepanel>
             <div style="background-color: #f3eeea" flex>
-                <img src="assets/img/sub-menu-back.png" alt="submenu background" style="width: 100%" ng-click="app.clickMenu()"/>
+                <img src="assets/img/sub-menu-back.png" alt="submenu background" style="width: 100%;vertical-align:bottom" ng-click="app.clickMenu()" />
 
                 <div class="bgl-breadcrumb">
                     <md-icon md-svg-icon="./assets/img/ic_home_black_24px.svg" style="color: #009926"></md-icon>
