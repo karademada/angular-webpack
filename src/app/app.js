@@ -164,7 +164,7 @@ angular.module(MODULE_NAME,
                 }
             })
             .state('add-assets-no-financial', {
-                url: '/add-assets-no-financial',
+                url: '/assets',
                 controller: 'AssetsNoFinancialCtrl',
                 controllerAs: 'assets',
                 abstract: true,
@@ -175,13 +175,13 @@ angular.module(MODULE_NAME,
                 }
             })
             .state('add-assets-no-financial.category', {
-                url: '/category',
+                url: '',
                 controller: 'CategoryAssetsNoFinancialCtrl',
                 controllerAs: 'categoryAssets',
                 template: require('../add-assets-no-financial/category-assets-no-financial.html')
             })
             .state('add-assets-no-financial.edit', {
-                url: '/information/:id',
+                url: '/:id',
                 controller: 'EditAssetsNoFinancialCtrl',
                 controllerAs: 'editAssets',
                 template: require('../add-assets-no-financial/edit-assets-no-financial.html')

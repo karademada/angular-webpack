@@ -12,6 +12,22 @@
             color: white;
         }
 
+        .btn-gold {
+            background: #cdae6e; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(left, #957a4a, #cdae6e); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(right, #957a4a, #cdae6e); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(right, #957a4a, #cdae6e); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(to right, #957a4a, #cdae6e); /* Standard syntax */
+            color: white;
+            text-transform: uppercase;
+            font-family: 'BNPP Sans';
+            border: none;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            padding: 10px 20px;
+        }
+
         .tile-asset {
             background: none;
             border: 2px solid #CDAE6E;
@@ -53,6 +69,7 @@
 
         .tile-asset img {
             max-width: 60px;
+            max-height: 60px;
             height: auto;
             vertical-align: middle;
         }
@@ -90,6 +107,7 @@
             height: 34px;
             padding-left: 15px;
             line-height: 34px;
+            font-family: 'BNPP Sans';
         }
 
         .next-step {
@@ -101,6 +119,56 @@
 
         .step-disabled {
             opacity: 0.5;
+        }
+
+        md-input-container .md-errors-spacer {
+            min-height: 0;
+        }
+
+        md-select, input {
+            border: 1px solid lightgrey !important;
+            margin-top: 10px !important;
+            font-family: 'BNPP Sans';
+            padding-left: 10px !important;
+        }
+
+        md-select {
+            text-transform: uppercase;
+        }
+
+        .text-gold {
+            font-family: 'BNPP Sans';
+            text-transform: uppercase;
+            color: #CDAE6E;
+            padding-left: 10px;
+        }
+
+        .fixed-calendar {
+            width: 340px;
+            height: 340px;
+            display: block;
+        }
+
+            .fixed-calendar .md-calendar-scroll-mask {
+                width: 340px !important;
+            }
+
+            .fixed-calendar .md-virtual-repeat-scroller {
+                width: 340px !important;
+                height: 308px;
+            }
+
+        #quantity-slider .md-thumb:after {
+            background-color: #CDAE6E !important;
+            border-color: #CDAE6E !important;
+        }
+
+        #quantity-slider .md-focus-thumb, #quantity-slider .md-focus-ring {
+            background-color: #CDAE6E;
+        }
+
+        #quantity-slider .md-track.md-track-fill {
+            background-color: #CDAE6E !important;
         }
     </style>
 

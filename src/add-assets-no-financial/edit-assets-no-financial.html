@@ -1,7 +1,68 @@
-<div layout="column" layout-margin layout-align="center center">
+<div class="" layout="column" layout-margin layout-align="center center">
     <div layout="row" layout-margin layout-align="center center">
         <img height="60" src="./assets/img/01_real_estate.png" />
         <span class="text-asset">Real Estate</span>
     </div>
     <hr width="100%" color="#CDAE6E" />
-</div>
+    <div layout="column" style="width:100%" layout-align="center start">
+        <div layout="column" layout-align="center start">
+            <md-input-container>
+                <span class="text-gold">Type</span>
+                <md-select ng-model="type" ng-init="type = editAssets.types[0]">
+                    <md-option ng-value="opt" ng-repeat="opt in editAssets.types">{{ opt }}</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container>
+                <span class="text-gold">Name</span>
+                <input ng-model="name" type="text" />
+            </md-input-container>
+            <md-input-container>
+                <span class="text-gold">Location</span>
+                <md-select ng-model="country" ng-init="country = editAssets.countries[0]">
+                    <md-option ng-value="opt" ng-repeat="opt in editAssets.countries">{{ opt }}</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <hr width="100%" color="lightgrey" />
+        <div layout="row" layout-wrap>
+            <div flex="45">
+                <md-input-container>
+                    <span class="text-gold">Last Valuation</span>
+                    <input ng-model="name" type="text" />
+                </md-input-container>
+                <md-slider-container>
+                    <span class="text-gold">Quantity</span>
+                    <md-slider flex min="0" max="255" ng-model="color.red" aria-label="Quantity" id="quantity-slider">
+                    </md-slider>
+                    <md-input-container style="margin-top:0px">
+                        <input flex type="number" ng-model="color.red" aria-label="Quantity" aria-controls="quantity-slider">
+                    </md-input-container>
+                </md-slider-container>
+                <md-input-container>
+                    <span class="text-gold">Price</span>
+                    <input ng-model="name" type="text" />
+                </md-input-container>
+            </div>
+            <div flex layout layout-align="center center">
+                <div style="height:90%;width:2px;background-color:#f1e8d7;"></div>
+            </div>
+            <div flex="45">
+                <md-input-container>
+                    <span class="text-gold">Date of the last estimate</span>
+                    <md-calendar md-min-date="'2010-05-05'" class="fixed-calendar" ng-model="myDate"></md-calendar>
+                </md-input-container>
+            </div>
+        </div>
+        <hr width="100%" color="lightgrey" />
+        <div>
+            <md-input-container>
+                <span class="text-gold">Add / Select a Label</span>
+                <input ng-model="name" type="text" />
+            </md-input-container>
+        </div>
+
+        <div style="width:100%" layout="row" layout-align="end end" layout-margin>
+            <button class="btn-gold">Validate and add new</button><button class="btn-gold">Validate</button>
+        </div>
+
+    </div>
