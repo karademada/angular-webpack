@@ -12,6 +12,9 @@ let editAssets = ()=>{
 class EditAssetsNoFinancialCtrl{
     constructor(){
         console.log('EditAssetsCtrl');
+        var editAsset=new EditAssets();
+        this.countries=editAsset.Country;
+        this.types=editAsset.Type;
     }
 }
 
@@ -19,6 +22,16 @@ class EditAssetsNoFinancialCtrl{
 class EditAssets{
     constructor(){
         console.log('EditAssets');
+    }
+
+    get Country()
+    {
+        return ["France","Belgique","Luxembourg"];
+    }
+
+    get Type()
+    {
+        return ["Individual Home","Castle","Building"];
     }
 }
 

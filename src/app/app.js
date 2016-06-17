@@ -11,6 +11,7 @@ import container from '../components/container/container.js';
 import subheader from '../components/subheader/subheader';
 
 import assets from './../add-assets/add-assets.js';
+import manageAssets from './../manage-assets/manage-assets.js';
 import assetsNoFinancial from './../add-assets-no-financial/add-assets-no-financial.js';
 import editAssetsNoFinancial from './../add-assets-no-financial/edit-assets-no-financial.js';
 import categoryAssetsNoFinancial from './../add-assets-no-financial/category-assets-no-financial.js';
@@ -141,6 +142,7 @@ angular.module(MODULE_NAME,
         'hoverBgImage',
         'editAssetsNoFinancial',
         'categoryAssetsNoFinancial',
+        'manageAssets'
     ])
     .config(($stateProvider, $urlRouterProvider, $mdIconProvider)=> {
         $urlRouterProvider.otherwise('/');
@@ -151,9 +153,26 @@ angular.module(MODULE_NAME,
                 controller: 'AppCtrl as app',
                 template: require('./app.html'),
                 ncyBreadcrumb: {
-                    label: 'Home Page  /'
+                    label: 'Home Page'
                 }
             })
+            .state('manage-assets', {
+                url: '/manage-assets',
+                abstract: true,
+                template: '<ui-view></ui-view>',
+                ncyBreadcrumb: {
+                    label: 'Manage assets'
+                }
+            })
+             .state('manage-assets.home', {
+                 url: '',
+                 controller: 'ManageAssetsCtrl',
+                 controllerAs: 'assets',
+                 template: require('./../manage-assets/manage-assets.html'),
+                 ncyBreadcrumb: {
+                     label: 'Manage assets'
+                 }
+             })
             .state('add-assets', {
                 url: '/add-assets',
                 controller: 'AssetsCtrl',
@@ -164,27 +183,32 @@ angular.module(MODULE_NAME,
                 }
             })
             .state('add-assets-no-financial', {
-                url: '/add-assets-no-financial',
+                url: '/assets',
                 controller: 'AssetsNoFinancialCtrl',
                 controllerAs: 'assets',
                 abstract: true,
                 template: require('../add-assets-no-financial/add-assets-no-financial.html'),
-                ncyBreadcrumb: {
-                    label: 'Add Assets no financial  /',
-                    parent: 'login'
-                }
+                
             })
             .state('add-assets-no-financial.category', {
-                url: '/category',
+                url: '',
                 controller: 'CategoryAssetsNoFinancialCtrl',
                 controllerAs: 'categoryAssets',
-                template: require('../add-assets-no-financial/category-assets-no-financial.html')
+                template: require('../add-assets-no-financial/category-assets-no-financial.html'),
+                ncyBreadcrumb: {
+                    label: '/ Add Assets no financial',
+                    parent: 'manage-assets.home'
+                }
             })
             .state('add-assets-no-financial.edit', {
-                url: '/information/:id',
+                url: '/:id',
                 controller: 'EditAssetsNoFinancialCtrl',
                 controllerAs: 'editAssets',
-                template: require('../add-assets-no-financial/edit-assets-no-financial.html')
+                template: require('../add-assets-no-financial/edit-assets-no-financial.html'),
+                ncyBreadcrumb: {
+                    label: '/ Add Assets no financial',
+                    parent: 'manage-assets.home'
+                }
             })
 
     })
