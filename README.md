@@ -75,7 +75,7 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 ### Build files
 
 * single run: `npm run build`
-* build files and watch: `npm run watch`
+* build files and watch: `npm run dist`
 
 ## Testing
 
@@ -87,3 +87,4 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 # License
 
 [MIT](/LICENSE)
+
