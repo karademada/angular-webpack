@@ -14,6 +14,8 @@ var path = require('path');
  * Env
  * Get npm lifecycle event to identify the environment
  */
+
+console.log('env brut : ',process.env.npm_lifecycle_event);
 var ENV = process.env.npm_lifecycle_event;
 var isTest = ENV === 'test' || ENV === 'test-watch';
 var isProd = ENV === 'build';
@@ -187,7 +189,6 @@ module.exports = function makeWebpackConfig() {
 
     // Add build specific plugins
     if (isProd) {
-        console.log('------------isProd----------------------');
         config.plugins.push(
             // Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
             // Only emit files when there are no errors
