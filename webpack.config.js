@@ -15,12 +15,12 @@ var path = require('path');
  * Get npm lifecycle event to identify the environment
  */
 
-console.log('env brut : ',process.env.npm_lifecycle_event);
+console.log('env brut : ', process.env.npm_lifecycle_event);
 var ENV = process.env.npm_lifecycle_event;
 var isTest = ENV === 'test' || ENV === 'test-watch';
 var isProd = ENV === 'build';
 
-console.log('env : '+ENV,"isTest : "+isTest,"isProd : "+isProd);
+console.log('env : ' + ENV, "isTest : " + isTest, "isProd : " + isProd);
 
 module.exports = function makeWebpackConfig() {
     /**
@@ -38,7 +38,7 @@ module.exports = function makeWebpackConfig() {
      */
     config.entry = isTest ? {} : {
         app: './src/app/app.js',
-        lib:'./src/lib/angular.min.js'
+        lib: './src/lib/angular.min.js'
 
     };
 
@@ -85,7 +85,7 @@ module.exports = function makeWebpackConfig() {
      * This handles most of the magic responsible for converting modules
      */
 
-        // Initialize module
+    // Initialize module
     config.module = {
         preLoaders: [],
         loaders: [{
@@ -177,13 +177,13 @@ module.exports = function makeWebpackConfig() {
                 inject: 'body'
             }),
             new ngAnnotatePlugin({
-                add:true,
+                add: true,
             }),
 
             // Reference: https://github.com/webpack/extract-text-webpack-plugin
             // Extract css files
             // Disabled when in test mode or not in build mode
-            new ExtractTextPlugin('[name].[hash].css', {disable: !isProd})
+            new ExtractTextPlugin('[name].[hash].css', { disable: !isProd })
         )
     }
 
@@ -203,7 +203,7 @@ module.exports = function makeWebpackConfig() {
             new webpack.optimize.UglifyJsPlugin(),
 
             new ngAnnotatePlugin({
-                add:true,
+                add: true,
             }),
 
             // Copy assets from the public folder
@@ -221,7 +221,12 @@ module.exports = function makeWebpackConfig() {
     }
 
 
-    // try to make nodes modules works
+    // try to make nodes modules works]
+    config.resolve = {
+        root: [
+          path.resolve('./node_modules')
+        ]
+    };
 
     /**
      * Dev server configuration

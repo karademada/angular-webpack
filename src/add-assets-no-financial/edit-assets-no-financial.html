@@ -1,11 +1,11 @@
-<div class="" layout="column" layout-margin layout-align="center center">
+<div class="" layout-margin layout-align="center center">
     <div layout="row" layout-margin layout-align="center center">
         <img height="60" src="./assets/img/01_real_estate.png" />
         <span class="text-asset">Real Estate</span>
     </div>
     <hr width="100%" color="#CDAE6E" />
     <div layout="column" style="width:100%" layout-align="center start">
-        <div layout="row" layout-wrap layout-align="start start">
+        <div layout="row" layout-wrap layout-align="start start" style="width:100%">
             <md-input-container style="min-width:350px;">
                 <span class="text-gold">Type</span>
                 <md-select ng-model="type" ng-init="type = editAssets.types[0]">
@@ -24,7 +24,7 @@
             </md-input-container>
         </div>
         <hr width="100%" color="lightgrey" />
-        <div layout="row" layout-wrap>
+        <div layout="row" layout-wrap style="width:100%">
             <div flex="100" flex-gt-md="45">
                 <md-input-container style="width:100%">
                     <span class="text-gold">Last Valuation</span>
@@ -32,10 +32,10 @@
                 </md-input-container>
                 <md-slider-container style="width:100%">
                     <span class="text-gold">Quantity</span>
-                    <md-slider flex min="0" max="255" ng-model="color.red" aria-label="Quantity" id="quantity-slider">
+                    <md-slider flex min="0" max="255" ng-model="quantity" aria-label="Quantity" id="quantity-slider">
                     </md-slider>
                     <md-input-container style="margin-top:0px">
-                        <input flex type="number" ng-model="color.red" aria-label="Quantity" aria-controls="quantity-slider">
+                        <input flex type="number" ng-model="quantity" aria-label="Quantity" aria-controls="quantity-slider">
                     </md-input-container>
                 </md-slider-container>
                 <md-input-container style="width:100%">
@@ -67,3 +67,4 @@
         </div>
 
     </div>
+</div>

@@ -16,6 +16,10 @@ md-toolbar *, md-toolbar *:before, md-toolbar *:after {
     font-size: .6em;
 }
 
+.md-toolbar-tools {
+    min-height: 64px;
+}
+
 /*
     header
 */
@@ -265,6 +269,7 @@ md-input-container md-select *, md-switch * {
         background: url("../public/assets/img/by_type.svg");
         background-size: 100px 100px;
         fill: #c2c2c1;
+        background-position: center bottom;
     }
 
 /*
@@ -362,6 +367,11 @@ div > md-subheader > img, md-subheader span {
     .situation .resume div {
         /*background-color: #d2c7b5;*/
         background-color: #f3eeea;
+    }
+
+    .situation .resume > div {
+        height: 60px;
+        margin-bottom: 10px;
     }
 
     .situation .resume .assets {
@@ -515,7 +525,8 @@ footer {
 }
 
 .layout-no-financial {
-    margin: 0px auto 30px auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
     max-width: 880px;
     width: 100%;
     background-color: #fefcfd;

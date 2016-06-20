@@ -4,6 +4,9 @@ import 'angular-breadcrumb';
 import 'd3';
 import 'nvd3';
 import 'angular-nvd3';
+// nécessaire tant qu'il n'y a pas d'index.js dans ui-grid
+import uigrid from 'angular-ui-grid/ui-grid.js';
+import 'angular-ui-grid/ui-grid.css';
 
 import header from '../components/header/header.js';
 import sidepanel from '../components/sidepanel/sidepanel.js';
@@ -142,7 +145,9 @@ angular.module(MODULE_NAME,
         'hoverBgImage',
         'editAssetsNoFinancial',
         'categoryAssetsNoFinancial',
-        'manageAssets'
+        'manageAssets',
+        'ui.grid',
+        'ui.grid.autoResize'
     ])
     .config(($stateProvider, $urlRouterProvider, $mdIconProvider)=> {
         $urlRouterProvider.otherwise('/');

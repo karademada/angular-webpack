@@ -13,6 +13,7 @@ class ManageAssetsCtrl{
     constructor($state){
         this.state=$state;
         console.log('AssetsCtrl');
+        this.myData=new ManageAssets().Datas;
     }
 
     goTo(route)
@@ -26,6 +27,18 @@ class ManageAssetsCtrl{
 class ManageAssets{
     constructor(){
         console.log('assets');
+    }
+
+    get Datas()
+    {
+        return [            
+            {Bank:"BNP", Asset:"Cash Account 007",LastEstimate:"2015-06-30", Valuation:5988789, Consolidate:true, Label:"Personal assets"},
+           {Bank:"BNP", Asset:"Cash Account 007",LastEstimate:"2015-06-30", Valuation:5988789, Consolidate:true, Label:"Personal assets"},
+             {Bank:"BNP", Asset:"Cash Account 007",LastEstimate:"2015-06-30", Valuation:5988789, Consolidate:true, Label:"Personal assets"},
+               {Bank:"BNP", Asset:"Cash Account 007",LastEstimate:"2015-06-30", Valuation:5988789, Consolidate:true, Label:"Personal assets"},
+                     {Bank:"BNP", Asset:"Cash Account 007",LastEstimate:"2015-06-30", Valuation:5988789, Consolidate:true, Label:"Personal assets"},
+        {Bank:"BNP", Asset:"Cash Account 007",LastEstimate:"2015-06-30", Valuation:5988789, Consolidate:true, Label:"Personal assets"},
+        ];
     }
 }
 
