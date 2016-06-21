@@ -22,6 +22,7 @@ import categoryAssetsNoFinancial from './../add-assets-no-financial/category-ass
 import hoverBgImage from '../components/hover-bg-image/hover-bg-image.js';
 
 import '../style/app.css';
+import '../style/grid.css';
 import '../../node_modules/nvd3/build/nv.d3.css';
 
 
