@@ -8,6 +8,9 @@ import 'angular-nvd3';
 import uigrid from 'angular-ui-grid/ui-grid.js';
 import 'angular-ui-grid/ui-grid.css';
 
+import wizard from 'angular-wizard/dist/angular-wizard.min.js';
+import 'angular-wizard/dist/angular-wizard.min.css';
+
 import header from '../components/header/header.js';
 import sidepanel from '../components/sidepanel/sidepanel.js';
 import container from '../components/container/container.js';
@@ -148,7 +151,8 @@ angular.module(MODULE_NAME,
         'categoryAssetsNoFinancial',
         'manageAssets',
         'ui.grid',
-        'ui.grid.autoResize'
+        'ui.grid.autoResize',
+        'mgo-angular-wizard'
     ])
     .config(($stateProvider, $urlRouterProvider, $mdIconProvider)=> {
         $urlRouterProvider.otherwise('/');
@@ -182,10 +186,11 @@ angular.module(MODULE_NAME,
             .state('add-assets', {
                 url: '/add-assets',
                 controller: 'AssetsCtrl',
+                controllerAs: 'assets',
                 template: require('./../add-assets/assets.html'),
                 ncyBreadcrumb: {
-                    label: 'Add Assets  /',
-                    parent: 'login'
+                    label: '/ Add Assets',
+                    parent: 'manage-assets.home'
                 }
             })
             .state('add-assets-no-financial', {

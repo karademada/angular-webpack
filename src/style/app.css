@@ -464,6 +464,22 @@ footer {
     color: white;
 }
 
+.btn-grey, .btn-grey:hover {
+    background: grey;
+    background: -webkit-linear-gradient(left, grey, grey); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, grey, grey); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right,grey, grey); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right,grey, grey); /* Standard syntax */
+    color: white;
+    text-transform: uppercase;
+    font-family: 'BNPP Sans';
+    border: none;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    padding: 0px 20px;
+}
+
 .btn-gold {
     background: #cdae6e; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, #957a4a, #cdae6e); /* For Safari 5.1 to 6.0 */
@@ -479,6 +495,8 @@ footer {
     border-radius: 2px;
     padding: 0px 20px;
 }
+
+
 
 .tile-asset {
     background: none;
@@ -554,7 +572,7 @@ button:focus {
     outline: 0;
 }
 
-.step {
+.first-step {
     background-image: url('../public/assets/img/FlecheEtape.png');
     color: white;
     width: 247px;
@@ -584,7 +602,13 @@ button:focus {
     margin-top: 10px !important;
     font-family: 'BNPP Sans';
     padding-left: 10px !important;
+    background-color: #eeeeee;
+    color: black;
 }
+
+    .assets md-select span, .assets md-input-container label {
+        color: black;
+    }
 
 .assets md-select {
     text-transform: uppercase;

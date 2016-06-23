@@ -1,1 +1,43 @@
-<p>add assets no finance</p>
+<div style="background-color:#f3eeea;width:100%" layout="row" layout-padding layout-align="center center">
+    <div class="assets" style="margin:30px;background-color:white;padding:30px;position:relative" flex>
+        <wizard on-finish="assets.goTo('manage-assets.home')">
+            <wz-step wz-title="Bank">
+                <div layout layout-align="space-around center">
+                    <md-input-container style="min-width:350px;">
+                        <label>Country</label>
+                        <md-select ng-model="country" ng-init="type = assets.countries[0]">
+                            <md-option ng-value="opt" ng-repeat="opt in assets.countries">{{ opt }}</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container style="min-width:350px;">
+                        <label>Bank</label>
+                        <md-select ng-model="bank" ng-init="type = assets.banks[0]">
+                            <md-option ng-value="opt" ng-repeat="opt in assets.banks">{{ opt }}</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-button wz-next class="btn-gold">Next</md-button>
+                </div>
+            </wz-step>
+            <wz-step wz-title="User ID Identification">
+                <div layout layout-align="space-around center">
+                    <md-input-container style="min-width:350px;">
+                        <label>User</label>
+                        <input ng-model="user" type="text" />
+                    </md-input-container>
+                    <md-input-container style="min-width:350px;">
+                        <label>Password</label>
+                        <input ng-model="password" type="text" />
+                    </md-input-container>
+                    <md-button wz-next class="btn-gold">Next</md-button>
+                </div>
+            </wz-step>
+            <wz-step wz-title="Accounts">
+                <div layout="row" layout-margin layout-wrap layout-align="center center">
+                    <div flex="100" ui-grid="{ data: assets.myData }" ui-grid-auto-resize></div>
+                    <md-button wz-next class="btn-grey">Cancel All</md-button>
+                    <md-button wz-next class="btn-gold">Validate</md-button>
+                </div>
+            </wz-step>
+        </wizard>
+    </div>
+</div>

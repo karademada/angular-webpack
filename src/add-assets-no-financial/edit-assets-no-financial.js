@@ -10,11 +10,18 @@ let editAssets = ()=>{
 };
 
 class EditAssetsNoFinancialCtrl{
-    constructor(){
+    constructor($state){
+        this.state=$state;
         console.log('EditAssetsCtrl');
         var editAsset=new EditAssets();
         this.countries=editAsset.Country;
         this.types=editAsset.Type;
+    }
+
+    goTo(route)
+    {
+        console.log(route);
+        this.state.go(route);
     }
 }
 
