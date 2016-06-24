@@ -1,9 +1,22 @@
 <div layout="row" layout-align="center center" layout-wrap layout-margin>
+    <style>
+        md-switch.md-default-theme.md-checked.md-warn .md-bar, md-switch.md-checked.md-warn .md-bar {
+            background-color: #cdae6e;
+        }
+
+        md-switch.md-default-theme.md-checked.md-warn .md-thumb, md-switch.md-checked.md-warn .md-thumb {
+            background-color: white;
+        }
+
+        md-switch.md-default-theme.md-checked.md-warn .md-ink-ripple, md-switch.md-checked.md-warn .md-ink-ripple {
+            color: #cdae6e;
+        }
+    </style>
     <div>
         <md-button class="btn-gold" ng-click="assets.goTo('add-assets');">Add Bank</md-button>
         <md-button class="btn-gold" ng-click="assets.goTo('add-assets-no-financial.category');">Add non financial asset</md-button>
     </div>
     <div flex="90" flex-offset="5" style="background-color:white">
-        <div ui-grid="{ data: assets.myData }" ui-grid-auto-resize></div>
+        <div ui-grid="assets.gridOptions" ui-grid-auto-resize></div>
     </div>
 </div>
