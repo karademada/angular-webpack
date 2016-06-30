@@ -22,7 +22,7 @@ class FlipSwitchCtrl{
         var id=$scope.$id;
         this.id="flipSwitch"+id;  
         this.toto="3";
-        this.myStyle="{color:'"+sw.trueText+"'}";
+        //this.myStyle="{color:'"+sw.trueText+"'}";
         console.log('flipSwitchCtrl');
     }
 
