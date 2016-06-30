@@ -6,6 +6,70 @@
     src: url('../public/assets/fonts/BNPP Sans.ttf');
 }
 
+@font-face {
+    font-family: 'BNPP Sans', sans-serif;
+    font-weight: bold;
+    src: url('../public/assets/fonts/BNPP Sans Bold.ttf');
+}
+
+@font-face {
+    font-family: 'BNPP Sans', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    src: url('../public/assets/fonts/BNPP Sans Bold Italic.ttf');
+}
+
+@font-face {
+    font-family: 'BNPP Sans', sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    src: url('../public/assets/fonts/BNPP Sans Italic.ttf');
+}
+
+@font-face {
+    font-family: 'BNPP Sans', sans-serif;
+    font-weight: lighter;
+    src: url('../public/assets/fonts/BNPP Sans Light.ttf');
+}
+
+@font-face {
+    font-family: 'BNPP Sans', sans-serif;
+    font-weight: lighter;
+    font-style: italic;
+    src: url('../public/assets/fonts/BNPP Sans Light Italic.ttf');
+}
+
+@font-face {
+    font-family: 'BNPP Sans', sans-serif;
+    font-weight: bolder;
+    src: url('../public/assets/fonts/BNPP Sans ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'BNPP Sans', sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    src: url('../public/assets/fonts/BNPP Sans ExtraBold Italic.ttf');
+}
+
+@font-face {
+    font-family: 'BNPP Sans Condensed', sans-serif;
+    font-weight: normal;
+    src: url('../public/assets/fonts/BNPP Sans Cond.ttf');
+}
+
+@font-face {
+    font-family: 'BNPP Sans Expanded', sans-serif;
+    font-weight: normal;
+    src: url('../public/assets/fonts/BNPP Expanded Sans.ttf');
+}
+
+@font-face {
+    font-family: 'BNPP Sans Expanded', sans-serif;
+    font-weight: bold;
+    src: url('../public/assets/fonts/BNPP Expanded Sans Bold.ttf');
+}
+
 body *, .md-content * {
     font-family: 'BNPP Sans', sans-serif;
     font-size: 1em;

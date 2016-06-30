@@ -1,7 +1,7 @@
-<div layout="row" layout-align="center center" layout-wrap layout-margin>
+<div layout="column" layout-align="center center" layout-wrap layout-margin>
     <style>
         md-switch.md-default-theme.md-checked.md-warn .md-bar, md-switch.md-checked.md-warn .md-bar {
-            background-color: #cdae6e;
+            background-color: #4d6c7f;
         }
 
         md-switch.md-default-theme.md-checked.md-warn .md-thumb, md-switch.md-checked.md-warn .md-thumb {
@@ -11,12 +11,142 @@
         md-switch.md-default-theme.md-checked.md-warn .md-ink-ripple, md-switch.md-checked.md-warn .md-ink-ripple {
             color: #cdae6e;
         }
+
+        md-switch.md-default-theme .md-bar, md-switch .md-bar {
+            background-color: #a4123f;
+        }
+
+        #manageGrid tr {
+            border: none;
+        }
+
+        #manageGrid th {
+            background: #594d49;
+            color: white;
+            height: 50px;
+            font-family: 'BNP Sans',sans-serif;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        #manageGrid th, #manageGrid td {
+            border: none;
+            border-right: 1px solid #f3f3f3;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+            #manageGrid th:first-child, #manageGrid td:first-child {
+                border-left: 1px solid #f3f3f3;
+            }
+
+        #manageGrid {
+            border-bottom: 1px solid #f3f3f3;
+        }
+
+            #manageGrid td {
+                color: #40403e;
+                font-family: 'BNP Sans',sans-serif;
+                font-weight: bold;
+                font-size: 1rem;
+            }
+
+                #manageGrid td:first-child {
+                    color: #4d6c7f;
+                }
+
+            /*#manageGrid tr.even {
+            background-color: rgba(77, 108, 127, 0.1);
+            border: none;
+        }
+
+        #manageGrid tr.odd {
+            background: #FFF;
+        }*/
+
+            #manageGrid tr:nth-child(even) {
+                background-color: rgba(77, 108, 127, 0.1);
+                border: none;
+            }
+
+            #manageGrid tr:nth-child(odd) {
+                background: #FFF;
+            }
+
+
+
+            #manageGrid td.consolidate {
+                font-size: 1rem;
+                font-weight: normal;
+            }
+
+            #manageGrid td.label {
+                font-size: 1rem;
+                font-weight: normal;
+            }
+
+            #manageGrid .update, #manageGrid .delete {
+                font-size: 0.8rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+
+            #manageGrid .update {
+                color: #40403e;
+            }
+
+            #manageGrid .delete {
+                color: #40403e;
+                opacity: 0.3;
+            }
+
+        .padLeft {
+            padding-left: 30px !important;
+        }
     </style>
     <div>
         <md-button class="btn-gold" ng-click="assets.goTo('add-assets');">Add Bank</md-button>
         <md-button class="btn-gold" ng-click="assets.goTo('add-assets-no-financial.category');">Add non financial asset</md-button>
     </div>
-    <div flex="90" flex-offset="5" style="background-color:white">
-        <div ui-grid="assets.gridOptions" ui-grid-auto-resize></div>
+    <div flex style="background-color:white;padding:10px;">
+        <div layout layout-padding layout-align="center center" style="overflow:auto">
+            <div>
+                <div></div>
+                <table id="manageGrid" cellspacing="0">
+                    <tr style="text-align:left">
+                        <th>Bank / Category</th>
+                        <th>Asset</th>
+                        <th>Last Estimate</th>
+                        <th>Valuation</th>
+                        <th class="consolidate">Consolidate</th>
+                        <th>Label</th>
+                        <th ng-show="false"></th>
+                    </tr>
+                    <tr ng-repeat="item in assets.datas" ng-if="item.Parent || item.show">
+                        <td ng-class="{'padLeft':!item.Parent}">
+                            <span ng-bind="item.Bank"></span><button style="float:right;border:none;background:none;" ng-if="item.Parent" ng-click="assets.datas[1].show = !assets.datas[1].show">+</button>
+                            <div style="clear:both"></div>
+                        </td>
+                        <td><span ng-bind="item.Asset"></span></td>
+                        <td><span ng-bind="item.LastEstimate | date:'dd/MM/yyyy'"></span></td>
+                        <td><span ng-bind="item.Valuation | currency : '€' : 0"></span></td>
+                        <td class="consolidate">
+                            <!--<md-switch ng-model="item.Consolidate" md-no-ink class="md-warn" style="margin:0px" aria-label="Switch 1">{{ item.Consolidate? "Yes":"No" }}</md-switch>-->
+                            <flip-switch true-text="Yes" false-text="No"></flip-switch>
+                        </td>
+                        <td class="label">
+                            <md-select ng-model="item.Label">
+                                <md-option ng-value="opt" ng-repeat="opt in assets.labels">{{ opt }}</md-option>
+                            </md-select>
+                        </td>
+                        <td>
+                            <a class="update">Update</a><br />
+                            <a class="delete">Delete</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

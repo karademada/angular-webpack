@@ -15,6 +15,7 @@ import header from '../components/header/header.js';
 import sidepanel from '../components/sidepanel/sidepanel.js';
 import container from '../components/container/container.js';
 import subheader from '../components/subheader/subheader';
+import flipSwitch from '../components/controls/flip-switch.js';
 
 import assets from './../add-assets/add-assets.js';
 import manageAssets from './../manage-assets/manage-assets.js';
@@ -152,7 +153,8 @@ angular.module(MODULE_NAME,
         'manageAssets',
         'ui.grid',
         'ui.grid.autoResize',
-        'mgo-angular-wizard'
+        'mgo-angular-wizard',
+        'flipSwitch'
     ])
     .config(($stateProvider, $urlRouterProvider, $mdIconProvider)=> {
         $urlRouterProvider.otherwise('/');
