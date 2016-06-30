@@ -9,7 +9,7 @@ let flipSwitch = ()=>{
         scope: {},
         restrict: 'E',
         bindToController: {
-            ngValue: '=',
+            ngModel: '=',
             trueText: '@',
             falseText: '@'
         },
@@ -21,8 +21,6 @@ class FlipSwitchCtrl{
     constructor($scope){
         var id=$scope.$id;
         this.id="flipSwitch"+id;  
-        this.toto="3";
-        //this.myStyle="{color:'"+sw.trueText+"'}";
         console.log('flipSwitchCtrl');
     }
 

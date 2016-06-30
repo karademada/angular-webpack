@@ -132,8 +132,7 @@
                         <td><span ng-bind="item.LastEstimate | date:'dd/MM/yyyy'"></span></td>
                         <td><span ng-bind="item.Valuation | currency : '€' : 0"></span></td>
                         <td class="consolidate">
-                            <!--<md-switch ng-model="item.Consolidate" md-no-ink class="md-warn" style="margin:0px" aria-label="Switch 1">{{ item.Consolidate? "Yes":"No" }}</md-switch>-->
-                            <flip-switch true-text="Yes" false-text="No"></flip-switch>
+                            <flip-switch true-text="Yes" ng-model="item.Consolidate" false-text="No"></flip-switch>
                         </td>
                         <td class="label">
                             <md-select ng-model="item.Label">

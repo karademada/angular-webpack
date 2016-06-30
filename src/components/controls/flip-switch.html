@@ -50,7 +50,7 @@
             }
 
             .onoffswitch-inner:after {
-                content: "{{sw.trueText}}";
+                content: "{{sw.falseText}}";
                 padding-right: 11px;
                 background-color: #A4123F;
                 color: #FFFFFF;
@@ -79,7 +79,7 @@
             right: 0px;
         }
     </style>
-    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="{{sw.id}}" checked>
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="{{sw.id}}" ng-model="sw.ngModel" checked>
     <label class="onoffswitch-label" for="{{sw.id}}">
         <span class="onoffswitch-inner"></span>
         <span class="onoffswitch-switch"></span>
