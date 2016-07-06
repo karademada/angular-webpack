@@ -19,7 +19,7 @@ This workflow serves as a starting point for building Angular 1.x applications u
 
 ### Quick start
 
-> Clone/Download the repo then edit `app.js` inside [`/src/app/app.js`](/src/app/app.js)
+> Clone/Download the repo then edit `app.component.js` inside [`/src/app/app.component.js`](/src/app/app.component.js)
 
 ```bash
 # clone our repo
