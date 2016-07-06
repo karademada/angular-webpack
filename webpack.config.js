@@ -7,7 +7,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
-var WarArchiverPlugin = require("webpack-war-archiver-plugin");
 var path = require('path');
 
 /**
@@ -210,11 +209,7 @@ module.exports = function makeWebpackConfig() {
             // Reference: https://github.com/kevlened/copy-webpack-plugin
             new CopyWebpackPlugin([{
                 from: __dirname + '/src/public'
-            }]),
-            new WarArchiverPlugin({
-                fileName: "my-eagle-vision.war",
-                rootFolder: "my-eagle-vision"
-            })
+            }])
 
 
         )
