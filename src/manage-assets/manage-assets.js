@@ -10,21 +10,50 @@ let manageAssets = ()=>{
 
 class ManageAssetsCtrl{
     /*@ngInject*/
-    constructor($state,$scope){
-      
+    constructor($state,$scope,$jinqJs){
+        this.load=true;
         this.state=$state;
+
+        this.filter={};
        
         console.log('AssetsCtrl');
         this.manageAssets=new ManageAssets();
         this.labels=this.manageAssets.Labels;
         this.datas=this.manageAssets.Datas;
-        console.log(this.manageAssets.Labels);
+        this.copyData=angular.extend([],this.datas);
+        this.jinq=$jinqJs;
+
+        this.banks=$jinqJs.from(this.copyData).distinct('Bank')
+                  .select('Bank');
+        this.load=false;
     }
 
     goTo(route)
     {
         console.log(route);
         this.state.go(route);
+    }
+
+    setFilter()
+    {
+        
+        var filter=this.filter;
+        console.log("setFilter");
+        if (this.filter.category) {
+            var filter=this.filter.category;
+            console.log(this.copyData);
+            console.log(this.datas);
+            this.copyData= new jinqJs().from(this.datas).select();
+            //.where( function(row, index){ 
+               
+            //    console.log(row);
+            //    var result=row.Bank===filter; 
+            //    console.log(result);
+            //    return result})
+            //.select();
+            console.log(this.copyData);
+           
+        }
     }
 }
 
