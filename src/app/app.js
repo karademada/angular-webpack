@@ -4,7 +4,7 @@ import 'angular-breadcrumb';
 import 'd3';
 import 'nvd3';
 import 'angular-nvd3';
-// nécessaire tant qu'il n'y a pas d'index.js dans ui-grid
+// nï¿½cessaire tant qu'il n'y a pas d'index.js dans ui-grid
 import uigrid from 'angular-ui-grid/ui-grid.js';
 import 'angular-ui-grid/ui-grid.css';
 
