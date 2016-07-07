@@ -1,7 +1,7 @@
 const AppComponent = {
     template:`
-    <header>
-    </header>
+    <header></header>
+    <subheader></subheader>
     <div>
         <div ui-view></div>
     </div>

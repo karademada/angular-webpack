@@ -24,6 +24,8 @@ const root = angular
     })
     .component('app',AppComponent);
 
+console.log('ok boy salam alaikoum');
+
 export default root;
 
 

@@ -1,4 +1,7 @@
+import HeaderController from './header.controller';
+
 const HeaderComponent = {
+    controller:HeaderController,
     template:`
         <md-content layout="row" ng-cloak>
             <md-toolbar>
