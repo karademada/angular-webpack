@@ -1,0 +1,113 @@
+{
+  "globalWealth": [
+    {
+      "id": "DRT ",
+      "label": "DRT",
+      "valuation": 0,
+      "financial": true,
+      "assetDomain": "Mon label défaut",
+      "assetDomainId": 1
+    },
+    {
+      "id": "OLO ",
+      "label": "OLO",
+      "valuation": 55454529.6,
+      "financial": true,
+      "assetDomain": "Mon label défaut",
+      "assetDomainId": 1
+    },
+    {
+      "id": "**** ",
+      "label": "****",
+      "valuation": 0,
+      "financial": true,
+      "assetDomain": "Mon label défaut",
+      "assetDomainId": 1
+    },
+    {
+      "id": "OBL ",
+      "label": "OBL",
+      "valuation": 167636093.87,
+      "financial": true,
+      "assetDomain": "Mon label défaut",
+      "assetDomainId": 1
+    },
+    {
+      "id": "VEH ",
+      "label": "Voiture",
+      "valuation": 7890,
+      "financial": false,
+      "assetDomain": null,
+      "assetDomainId": 0
+    },
+    {
+      "id": "ACT ",
+      "label": "ACT",
+      "valuation": 10126195.71,
+      "financial": true,
+      "assetDomain": "Mon label défaut",
+      "assetDomainId": 1
+    },
+    {
+      "id": "PS ",
+      "label": "PS",
+      "valuation": 1691533.9,
+      "financial": true,
+      "assetDomain": "Mon label défaut",
+      "assetDomainId": 1
+    },
+    {
+      "id": "SCF ",
+      "label": "SCF",
+      "valuation": 296887.47,
+      "financial": true,
+      "assetDomain": "Mon label défaut",
+      "assetDomainId": 1
+    },
+    {
+      "id": "ELN ",
+      "label": "ELN",
+      "valuation": 682606.14,
+      "financial": true,
+      "assetDomain": "Mon label défaut",
+      "assetDomainId": 1
+    },
+    {
+      "id": "OBL ",
+      "label": "OBL",
+      "valuation": 1012050,
+      "financial": true,
+      "assetDomain": "MyWealth",
+      "assetDomainId": 31
+    },
+    {
+      "id": "SCV ",
+      "label": "SCV",
+      "valuation": 9622576.33,
+      "financial": true,
+      "assetDomain": "Mon label défaut",
+      "assetDomainId": 1
+    },
+    {
+      "id": "OR ",
+      "label": "OR",
+      "valuation": 35834.62,
+      "financial": true,
+      "assetDomain": "Mon label défaut",
+      "assetDomainId": 1
+    },
+    {
+      "id": "PRT ",
+      "label": "PRT",
+      "valuation": 18497147.52,
+      "financial": true,
+      "assetDomain": "Mon label défaut",
+      "assetDomainId": 1
+    }
+  ],
+  "liabilities": []
+}
+
+
+
+

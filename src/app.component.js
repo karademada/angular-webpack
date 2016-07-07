@@ -1,7 +1,6 @@
 const AppComponent = {
     template:`
     <header>
-        Hello world
     </header>
     <div>
         <div ui-view></div>
@@ -10,4 +9,6 @@ const AppComponent = {
         Copyright MyApp 2016.
     </footer>
   `
-}
+};
+
+export default AppComponent;
