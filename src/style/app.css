@@ -54,6 +54,10 @@ a {
     color: #c2c2c1;
 }
 
+/*
+    sidepanel
+*/
+
 .aside-menu {
     background-color: #40403e;
     height: 2rem;
@@ -96,6 +100,25 @@ a {
 a:hover {
     color: #957b48;
 }
+
+.manage .manage-icon {
+    background-image: url('../assets/img/manage.png');
+}
+
+.category-nav span{
+    position: relative;
+    bottom: 150px;
+    color: #FFF;
+    font-size: .8rem;
+}
+
+.state-label{
+    bottom: 120px;
+    position: relative;
+    color: #FFF;
+    font-size: 1.5rem;
+}
+
 
 /* aside-menu */
 .aside-menu {
