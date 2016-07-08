@@ -154,11 +154,11 @@
 
                     <div layout layout-align="start center">
                         <span>Filter By</span>
-                        <md-select style="margin:0 10px" ng-model="asset.filter.category">
-                            <md-option ng-value="'null'" ng-selected="'true'">All</md-option>
-                            <md-option ng-value="opt" ng-repeat="opt in assets.labels">{{ opt }}</md-option>
+                        <md-select style="margin:0 10px" ng-model="assets.filter.category" ng-change="assets.setFilter()">
+                            <md-option ng-value="null" ng-selected="'true'">All</md-option>
+                            <md-option ng-value="opt.Bank" ng-repeat="opt in assets.banks">{{ opt.Bank }}</md-option>
                         </md-select>
-                        <md-select ng-model="asset.filter.label">
+                        <md-select ng-model="assets.filter.label">
                             <md-option ng-value="'null'" ng-selected="'true'">All labels</md-option>
                             <md-option ng-value="opt" ng-repeat="opt in assets.labels">{{ opt }}</md-option>
                         </md-select>
@@ -166,13 +166,13 @@
 
                     <div layout layout-align="start center">
                         <span>Sort By</span>
-                        <md-select ng-model="asset.filter.name">
+                        <md-select ng-model="assets.filter.name">
                             <md-option ng-value="'null'" ng-selected="'true'">Name</md-option>
                             <md-option ng-value="opt" ng-repeat="opt in assets.labels">{{ opt }}</md-option>
                         </md-select>
                     </div>
                     <div layout layout-align="start center" class="add-label">
-                        <input ng-model="asset.addLabel" type="text" placeholder="+ Add Label" />
+                        <input ng-model="assets.addLabel" type="text" placeholder="+ Add Label" />
 
                         <button class="btn btn-blue">+</button>
                     </div>
@@ -187,7 +187,7 @@
                         <th>Label</th>
                         <th ng-show="false"></th>
                     </tr>
-                    <tr ng-repeat="item in assets.datas" ng-if="item.Parent || item.show">
+                    <tr ng-repeat="item in assets.copyData" ng-if="item.Parent || item.show">
                         <td ng-class="{'padLeft':!item.Parent}">
                             <span ng-bind="item.Bank"></span><button style="float:right;border:none;background:none;" ng-if="item.Parent" ng-click="assets.datas[1].show = !assets.datas[1].show">+</button>
                             <div style="clear:both"></div>
