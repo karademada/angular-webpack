@@ -1,7 +1,7 @@
 import SidepanelController from './sidepanel.controller';
 const SidepanelComponent = {
     template:`
-        <aside class="aside-menu" flex style="background-color: #40403e">
+        <aside class="aside-menu" flex>
         <div class="title" ng-click="littleMenu= !littleMenu">
             <img layout-padding src="assets/img/menu.png" />
         </div>
@@ -10,16 +10,16 @@ const SidepanelComponent = {
             <!-- TODO make dynamic with object and loop setting -->
             <ul>
                 <li class="vision">
-                    <a ui-sref="login">
+                    <a>
                         <span>Vision</span>
                     </a>
                 </li>
                 <li class="detail">
-                    <a ui-sref="login">
+                    <a>
                         <span>Detailled View</span>
                     </a>
                 <li class="manage">
-                    <a ui-sref="manage-assets.home">
+                    <a>
                         <span>Manage assets</span>
                     </a>
                 </li>

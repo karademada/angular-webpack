@@ -7,8 +7,8 @@ const AppComponent = {
     <header></header>
     <subheader></subheader>
     <main layout="row" flex ng-class="{'little-menu':littleMenu}">
-        <sidepanel flex="15" style="background-color: #40403e"></sidepanel>
-            <div style="background-color: #f3eeea" flex>
+        <sidepanel flex="15"></sidepanel>
+            <div flex>
                 <img src="assets/img/sub-menu-back.png" height="150" alt="submenu background" style="width: 100%;vertical-align:bottom" ng-click="app.clickMenu()" />
                 <span class="category-nav" layout="row" layout-padding>
                     <span flex>< BY GEOGRAPHY</span>

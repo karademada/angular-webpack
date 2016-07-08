@@ -58,21 +58,34 @@ a {
     sidepanel
 */
 
+sidepanel{
+    background-color: #746661;
+}
+
 .aside-menu {
-    background-color: #40403e;
+    background-color: #746661;
     height: 2rem;
+    text-align: right;
+
 }
 
 .aside-menu li {
     box-sizing: content-box;
     color: #c2c2c1;
+    background-position-x:135px;
 }
 
 .aside-menu li.vision {
+    left: 50px;
     background-image: url('../assets/img/vision.png');
     background-repeat: no-repeat;
     background-attachment: inherit;
     background-position: right center;
+
+}
+
+.aside-menu li.vision:hover {
+    background-image: url('../assets/img/vision-rollover.png');
 
 }
 
@@ -84,6 +97,10 @@ a {
 
 }
 
+.aside-menu li.detail:hover {
+    background-image: url('../assets/img/detail_rollover.png');
+}
+
 .aside-menu li.manage {
     background-image: url('../assets/img/manage.png');
     background-repeat: no-repeat;
@@ -92,14 +109,12 @@ a {
 
 }
 
-.aside-menu li:hover {
-    color: #957b48;
+.aside-menu li.manage:hover {
+    box-sizing:content-box;
     border-right: solid 2px #957b48;
+    background-image: url('../assets/img/manage_rollover.png');
 }
 
-a:hover {
-    color: #957b48;
-}
 
 .manage .manage-icon {
     background-image: url('../assets/img/manage.png');
@@ -117,13 +132,6 @@ a:hover {
     position: relative;
     color: #FFF;
     font-size: 1.5rem;
-}
-
-
-/* aside-menu */
-.aside-menu {
-    background-color: #40403e;
-    text-align: right;
 }
 
 aside > div.title {
