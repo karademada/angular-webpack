@@ -8,7 +8,7 @@
     "server": "webpack-dev-server --history-api-fallback --inline --progress --display-error-details",
     "test": "karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
-    "start": "npm run server"
+    "start": "json-server --watch db.json & npm run server"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "node-sass": "^3.8.0",
     "path": "^0.12.7",
     "sass-loader": "^4.0.0",
+    "weak-map": "^1.0.5",
     "webpack-war-archiver-plugin": "0.0.1"
   },
   "devDependencies": {

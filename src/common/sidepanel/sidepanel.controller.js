@@ -1,3 +1,4 @@
+
 class SidepanelController{
     constructor(){
         console.log('toto');

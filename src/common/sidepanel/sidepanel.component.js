@@ -1,3 +1,4 @@
+import SidepanelController from './sidepanel.controller';
 const SidepanelComponent = {
     template:`
         <aside class="aside-menu" flex style="background-color: #40403e">

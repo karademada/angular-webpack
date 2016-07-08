@@ -1,4 +1,8 @@
+import AppController from './app.controller';
+
 const AppComponent = {
+    controller:AppController,
+    controllerAs:'app',
     template:`
     <header></header>
     <subheader></subheader>
@@ -43,3 +47,4 @@ const AppComponent = {
 };
 
 export default AppComponent;
+
