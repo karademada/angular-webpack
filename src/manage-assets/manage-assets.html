@@ -193,9 +193,8 @@ background: #FFF;
             </md-select>
           </div>
           <div layout layout-align="start center" class="add-label">
-            <input ng-model="assets.addLabel" type="text" placeholder="+ Add Label" />
-
-            <button class="btn btn-blue" ng-click="showText('add label')">+</button>
+            <input ng-model="assets.newLabel" type="text" placeholder="+ Add Label" />
+            <button class="btn btn-blue" ng-click="assets.addLabel()">+</button>
           </div>
         </div>
         <table id="manageGrid" cellspacing="0">

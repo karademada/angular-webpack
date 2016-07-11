@@ -9,58 +9,62 @@ let manageAssets = () => {
 
 class ManageAssetsCtrl {
   /*@ngInject*/
-  constructor($state, $scope, $http, $jinqJs, $mdToast) {
+  constructor($state, $scope, $jinqJs, $mdToast, manageAssetsService) {
+    this.service = manageAssetsService;
     this.load = true;
-    this.state = $state;
-    this.toastService = $mdToast;
+    this.$state = $state;
+    this.$mdToast = $mdToast;
+    this.$jinqJs = $jinqJs;
 
     this.banks = {};
-    this.filter = {category:null, label:null};
+    this.filter = { category: null, label: null };
     this.result = {};
     this.datas = [];
     this.sortBy = ["Name", "Last Estimate", "Valuation", "Label"];
 
     console.log('AssetsCtrl');
-    this.manageAssets = new ManageAssets();
 
-    this.getManageAssets($http, $jinqJs);
-    this.getLabels($http, $mdToast);
+    this.getManageAssets();
+    this.getLabels();
     this.load = false;
 
   }
 
 
-  showText(text) {
-    this.toastService.showSimple(text);
+  addLabel() {
+    if (this.newLabel) {
+      try {
+        this.service.addLabel(this.newLabel).then(
+          function (success) {
+            this.$mdToast.showSimple("Label Added");
+          }.bind(this),
+          function (error) {
+            console.log(error);
+          });
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    else {
+      this.$mdToast.showSimple("Set a Label");
+    }
   }
 
   goTo(route) {
     console.log(route);
-    this.state.go(route);
+    this.$state.go(route);
   }
 
-  getManageAssets($http, $jinqJs) {
-    console.log("getManageAssets");
-    var apiUrl = "http://staa474l.bgl.lu:10639/myeaglevision-pe/api/manage_assets/list";
-
-    var config = {
-      headers: {
-        Security_Token: "Security_Token",
-        language: "fr"
-      }
-    };
-
-    var data = { currency: "eur" };
-
+  getManageAssets() {
     try {
-      $http.post(apiUrl, data, config).then(
+      this.service.getManageAssets().then(
         function (success) {
           if (success && success.data && success.data.responseData) {
             this.result = success.data.responseData;
             this.datas = success.data.responseData.assets;
             console.log(this.result);
 
-            this.banks = $jinqJs.from(this.result.assets).distinct("name").select();
+            this.banks = this.$jinqJs.from(this.result.assets).distinct("name").select();
 
             console.log(this.banks);
           }
@@ -71,26 +75,12 @@ class ManageAssetsCtrl {
         });
     } catch (e) {
       console.log(e);
-    } finally {
-
     }
-
   }
 
-  getLabels($http) {
-    console.log("getManageAssets");
-    var apiUrl = "http://staa474l.bgl.lu:10639/myeaglevision-pe/api/domain_asset/list";
-
-    var config = {
-      headers: {
-        Security_Token: "Security_Token"
-      }
-    };
-
-    var data = {};
-
+  getLabels() {
     try {
-      $http.post(apiUrl, data, config).then(
+      this.service.getLabels().then(
         function (success) {
           if (success && success.data && success.data.responseData) {
             this.labels = success.data.responseData.labels;
@@ -109,7 +99,6 @@ class ManageAssetsCtrl {
   }
 
   setFilter() {
-
     var filter = this.filter;
     console.log("setFilter");
     if (this.filter.category) {
@@ -118,8 +107,6 @@ class ManageAssetsCtrl {
         return value.name === filter;
       }
       );
-      console.log(this.copyData);
-
     }
     else {
       this.datas = this.result.assets;
@@ -136,39 +123,75 @@ class ManageAssetsCtrl {
   }
 }
 
-
 class ManageAssets {
   constructor() {
     console.log('assets');
   }
-
-  get ConsolidateTemplate() {
-    return '<md-switch ng-model="MODEL_COL_FIELD" md-no-ink  class="md-warn" style="margin:0px" aria-label="Switch 1">{{ MODEL_COL_FIELD? "Yes":"No" }}</md-switch>';
-  }
-
-  get LabelTemplate() {
-    return '<md-select ng-model="MODEL_COL_FIELD" aria-label="Label" > <md-option ng-value="opt" ng-repeat="opt in assets.labels">{{ opt }}</md-option> </md-select>';
-  }
-
-  get Datas() {
-    return [
-      { Bank: "BNP", Asset: "3 Accounts", LastEstimate: "2015-08-12", Valuation: 3186000, Consolidate: true, Label: "Personal asset", Parent: true },
-      { Bank: "BNP", Asset: "Cash Account 007", LastEstimate: "2015-08-12", Valuation: 2130000, Consolidate: true, Label: "Personal asset", Parent: false },
-      { Bank: "BNP", Asset: "Cash Account 006", LastEstimate: "2015-08-12", Valuation: 598000, Consolidate: true, Label: "Personal asset", Parent: false },
-      { Bank: "BNP", Asset: "Cash Account 005", LastEstimate: "2015-08-12", Valuation: 458000, Consolidate: true, Label: "Professional Asset", Parent: false },
-      { Bank: "CIC", Asset: "Cash Account 1", LastEstimate: "2016-03-01", Valuation: 1245999, Consolidate: false, Label: "Personal asset", Parent: true },
-      { Bank: "CA", Asset: "Account 34534464", LastEstimate: "2015-12-12", Valuation: 28736767, Consolidate: true, Label: "My Wealth", Parent: true },
-      { Bank: "Banque Populaire", Asset: "99898 5656 7676 66767", LastEstimate: "2016-05-23", Valuation: 350000, Consolidate: false, Label: "Professional Asset", Parent: true }
-    ];
-  }
-
-  get Labels() {
-    return ["My Wealth", "Personal asset", "Professional Asset"];
-  }
 }
+
+class ManageAssetsService {
+  constructor($http) {
+    this.urlApi = "http://staa474l.bgl.lu:10639/myeaglevision-pe";
+    this.token = "dsqdfqfdq";
+    this.lang = "fr";
+    this.currency = "eur";
+    this.$http = $http;
+    console.log(this.$http);
+  }
+
+  addLabel(label) {
+    var apiUrl = this.urlApi + "/api/domain_asset/create";
+
+    var config = {
+      headers: {
+        Security_Token: this.token,
+      }
+    };
+
+    var data = {
+      label: label
+    };
+
+    return this.$http.post(apiUrl, data, config);
+  }
+
+  getLabels() {
+    var apiUrl = this.urlApi + "/api/domain_asset/list";
+
+    var config = {
+      headers: {
+        Security_Token: this.token
+      }
+    };
+
+    var data = {};
+
+    return this.$http.post(apiUrl, data, config);
+  }
+
+  getManageAssets($http, $jinqJs) {
+    var apiUrl = this.urlApi + "/api/manage_assets/list";
+
+    var config = {
+      headers: {
+        Security_Token: this.token,
+        language: this.lang
+      }
+    };
+
+    var data = {
+      currency: this.currency
+    };
+
+    return this.$http.post(apiUrl, data, config);
+  }
+
+}
+
 
 angular.module(MODULE_NAME, [])
   .directive('manageAssets', manageAssets)
+  .service('manageAssetsService', ManageAssetsService)
   .controller('ManageAssetsCtrl', ManageAssetsCtrl);
 
 export default MODULE_NAME;
