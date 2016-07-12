@@ -48,7 +48,6 @@
     
     #manageGrid {
       border-bottom: 1px solid #f3f3f3;
-      min-width: 1000px;
     }
     
     #manageGrid td {
@@ -58,9 +57,9 @@
       font-size: 1rem;
       height: 60px;
     }
-
-    #manageGrid td md-select{
-      margin:auto;
+    
+    #manageGrid td md-select {
+      margin: auto;
     }
     
     #manageGrid td:first-child {
@@ -99,11 +98,24 @@ background: #FFF;
       font-size: 1rem;
       font-weight: normal;
       text-align: center;
+      width: 80px;
     }
     
     #manageGrid td.label {
       font-size: 1rem;
       font-weight: normal;
+      width: 150px;
+    }
+    
+    #manageGrid td.account {
+      width: 200px;
+      overflow: hidden;
+      word-wrap: none;
+      text-overflow: ellipsis;
+    }
+    
+    #manageGrid td.bank {
+      width: 250px;
     }
     
     #manageGrid .update,
@@ -170,16 +182,15 @@ background: #FFF;
   </div>
   <div flex layout layout-padding style="background-color:white;">
     <div layout layout-align="center center" style="overflow:auto">
-      <div>
+      <div>       
         <div class="filter-asset" layout layout-align="space-between center">
-
           <div layout layout-align="start center">
             <span>Filter By</span>
-            <md-select style="margin:0 10px" ng-model="assets.filter.category" ng-change="assets.setFilter()">
+            <md-select style="margin:0 10px" ng-model="assets.filter.category" ng-change="assets.setFilter()" aria-label="category">
               <md-option ng-value="null" ng-selected="true">All Bank / Category</md-option>
               <md-option ng-value="opt.name" ng-repeat="opt in assets.banks">{{ opt.name }}</md-option>
             </md-select>
-            <md-select ng-model="assets.filter.label" ng-change="assets.setFilter()">
+            <md-select ng-model="assets.filter.label" ng-change="assets.setFilter()" aria-label="label">
               <md-option ng-value="null" ng-selected="true">All labels</md-option>
               <md-option ng-value="opt.label" ng-repeat="opt in assets.labels">{{ opt.label }}</md-option>
             </md-select>
@@ -187,7 +198,7 @@ background: #FFF;
 
           <div layout layout-align="start center">
             <span>Sort By</span>
-            <md-select ng-model="assets.filter.sortBy" ng-change="assets.setFilter()">
+            <md-select ng-model="assets.filter.sortBy" ng-change="assets.setFilter()" aria-label="sort by">
               <md-option ng-value="null" ng-selected="true">Name</md-option>
               <md-option ng-value="opt" ng-repeat="opt in assets.sortBy">{{ opt }}</md-option>
             </md-select>
@@ -209,37 +220,37 @@ background: #FFF;
           </tr>
           <tbody ng-repeat="item in assets.datas">
             <tr>
-              <td>
+              <td class="bank">
                 <span ng-bind="item.name"></span>
                 <button style="float:right;border:none;background:none;" ng-click="item.subAssets.show = !item.subAssets.show">
                 <span ng-show="!item.subAssets.show">+</span><span ng-show="item.subAssets.show ">-</span>
               </button>
                 <div style="clear:both"></div>
               </td>
-              <td><span ng-bind="item.asset"></span></td>
+              <td class="account"><span ng-bind="item.asset"></span></td>
               <td><span ng-bind="item.lastEstimateDate | date:'dd/MM/yyyy'"></span></td>
               <td><span ng-bind="item.valuation | currency : '€' : 0"></span></td>
-              <td class="consolidate">                
+              <td class="consolidate">
                 <span>N/A</span>
               </td>
-              <td class="label">N/A</td>
+              <td class="label"><span ng-bind="item.label"></span></td>
               <td>
                 <a ng-if="item.financial" class="update">Update</a><br />
                 <!--<a class="delete">Delete</a>-->
               </td>
             </tr>
-            <tr ng-repeat="subitem in item.subAssets" ng-if="item.subAssets.show">
-              <td class="padLeft">
+            <tr ng-repeat="subitem in item.subAssets" ng-show="item.subAssets.show">
+              <td class="bank padLeft">
                 <span ng-bind="subitem.name"></span>
               </td>
-              <td><span ng-bind="subitem.asset"></span></td>
+              <td class="account"><span ng-bind="subitem.asset"></span></td>
               <td><span ng-bind="subitem.lastEstimateDate | date:'dd/MM/yyyy'"></span></td>
               <td><span ng-bind="subitem.valuation | currency : '€' : 0"></span></td>
               <td class="consolidate">
                 <flip-switch true-text="Yes" ng-model="subitem.consolidate" false-text="No"></flip-switch>
               </td>
               <td class="label">
-                <md-select ng-model="subitem.label">
+                <md-select ng-model="subitem.label" aria-label="label">
                   <md-option ng-value="opt.label" ng-repeat="opt in assets.labels">{{ opt.label }}</md-option>
                 </md-select>
               </td>

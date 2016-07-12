@@ -11,7 +11,7 @@ class ManageAssetsCtrl {
   /*@ngInject*/
   constructor($state, $scope, $jinqJs, $mdToast, manageAssetsService) {
     this.service = manageAssetsService;
-    this.load = true;
+    this.loading = false;
     this.$state = $state;
     this.$mdToast = $mdToast;
     this.$jinqJs = $jinqJs;
@@ -26,22 +26,26 @@ class ManageAssetsCtrl {
 
     this.getManageAssets();
     this.getLabels();
-    this.load = false;
-
   }
 
 
   addLabel() {
     if (this.newLabel) {
       try {
+        this.loading = true;
         this.service.addLabel(this.newLabel).then(
           function (success) {
+            this.newLabel = null;
+            this.getLabels();
             this.$mdToast.showSimple("Label Added");
+           // this.loading = false;
           }.bind(this),
           function (error) {
+            this.loading = false;
             console.log(error);
           });
       } catch (e) {
+        this.loading = false;
         console.log(e);
       }
     }
@@ -148,9 +152,7 @@ class ManageAssetsService {
       }
     };
 
-    var data = {
-      label: label
-    };
+    var data = { label: label };
 
     return this.$http.post(apiUrl, data, config);
   }

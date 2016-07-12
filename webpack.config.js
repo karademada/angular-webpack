@@ -97,40 +97,40 @@ module.exports = function makeWebpackConfig() {
             loader: 'babel',
             exclude: /node_modules/
         }, {
-            // CSS LOADER
-            // Reference: https://github.com/webpack/css-loader
-            // Allow loading css through js
-            //
-            // Reference: https://github.com/postcss/postcss-loader
-            // Postprocess your css with PostCSS plugins
-            test: /\.css$/,
-            // Reference: https://github.com/webpack/extract-text-webpack-plugin
-            // Extract css files in production builds
-            //
-            // Reference: https://github.com/webpack/style-loader
-            // Use style-loader in development.
-            loader: isTest ? 'null' : ExtractTextPlugin.extract('style', 'css?sourceMap!postcss-loader')
-        }, {
-            // SASS
-            test: /\.scss$/,
-            loader: ExtractTextPlugin.extract("style", "css!sass")
-        },
-        {
-            // ASSET LOADER
-            // Reference: https://github.com/webpack/file-loader
-            // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
-            // Rename the file using the asset hash
-            // Pass along the updated reference to your code
-            // You can add here any file extension you want to get copied to your output
-            test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-            loader: 'file'
-        }, {
-            // HTML LOADER
-            // Reference: https://github.com/webpack/raw-loader
-            // Allow loading html through js
-            test: /\.html$/,
-            loader: 'raw'
-        }]
+                // CSS LOADER
+                // Reference: https://github.com/webpack/css-loader
+                // Allow loading css through js
+                //
+                // Reference: https://github.com/postcss/postcss-loader
+                // Postprocess your css with PostCSS plugins
+                test: /\.css$/,
+                // Reference: https://github.com/webpack/extract-text-webpack-plugin
+                // Extract css files in production builds
+                //
+                // Reference: https://github.com/webpack/style-loader
+                // Use style-loader in development.
+                loader: isTest ? 'null' : ExtractTextPlugin.extract('style', 'css?sourceMap!postcss-loader')
+            }, {
+                // SASS
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract("style", "css!sass")
+            },
+            {
+                // ASSET LOADER
+                // Reference: https://github.com/webpack/file-loader
+                // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
+                // Rename the file using the asset hash
+                // Pass along the updated reference to your code
+                // You can add here any file extension you want to get copied to your output
+                test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+                loader: 'file'
+            }, {
+                // HTML LOADER
+                // Reference: https://github.com/webpack/raw-loader
+                // Allow loading html through js
+                test: /\.html$/,
+                loader: 'raw'
+            }]
     };
 
     // ISPARTA LOADER
@@ -224,8 +224,11 @@ module.exports = function makeWebpackConfig() {
     // try to make nodes modules works]
     config.resolve = {
         root: [
-          path.resolve('./node_modules')
-        ]
+            path.resolve('./node_modules')
+        ],
+        alias: {
+            jquery: "jquery/src/jquery"
+        }
     };
 
     /**
@@ -239,4 +242,4 @@ module.exports = function makeWebpackConfig() {
     };
 
     return config;
-}();
+} ();
