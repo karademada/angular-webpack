@@ -1,6 +1,6 @@
 import uiRouter from 'angular-ui-router';
 import AppComponent from './app.component.js';
-import Components from './component';
+//import Components from './component';
 import Common from './common';
 
 import 'angular-breadcrumb';
@@ -11,7 +11,6 @@ import './style/app.css';
 
 const root = angular
     .module('app', [
-        Components,
         Common,
         uiRouter,
         'ngMaterial',
