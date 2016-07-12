@@ -12,7 +12,7 @@ class AssetsController {
     $onChanges(){
         console.log('on change');
 
-        this.assetsService.getDonuts().then(response => this.assetsDatas = response);
+        this.assetsService.getAssets().then(response => this.assetsDatas = response);
     }
 
     clickMenu(){

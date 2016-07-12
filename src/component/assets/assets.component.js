@@ -1,12 +1,12 @@
-//import GlobalViewController from './global-view.controller';
+import Controller from './assets.controller';
 
-const AssestsComponent = {
+const AssetsComponent = {
     bindings:{
         donutData:'<'
     },
     template: `
-    <p ng-click='$ctrl.clickMenu()'>toto</p>
+    <p ng-click='$ctrl.clickMenu()'>assets</p>
     `
 };
 
-export default AssestsComponent;
+export default AssetsComponent;

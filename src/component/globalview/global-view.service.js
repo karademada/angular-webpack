@@ -10,10 +10,12 @@ class GlobalViewService
     }
 
     getDonuts(){
-        return this.$http.get('http://localhost:3000/globalWealth').then(result => result.data );
+        return this.$http.get('http://localhost:3000/globalWealth').then(function(response){
+            return response.data;
+        })
     }
 }
 
 GlobalViewService.$inject = ['$http'];
 
-export default GlobalViewService
+export default GlobalViewService;

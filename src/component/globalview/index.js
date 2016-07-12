@@ -23,8 +23,10 @@ const globalview = angular
             .state('home', {
                 url: '/',
                 template: '<globalview></globalview>',
-                resolver:{
-                    donutDatas: GlobalViewService.getDonuts().then(response => this.donutsDatas = response)
+                resolve:{
+                    donutsDatas: function (globalViewService){
+                        return globalViewService.getDonuts()
+                    }
                 },
                 ncyBreadcrumb: {
                     label: 'Home Page'

@@ -6,7 +6,7 @@ const GlobalViewComponent = {
     },
     controller:GlobalViewController,
     template: `
-    <p ng-click='$ctrl.clickMenu()'>toto</p>
+    <p ng-click='$ctrl.clickMenu()'>global</p>
     `
 };
 

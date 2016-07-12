@@ -3,7 +3,7 @@ import assets from './assets';
 
 const components = angular
     .module('app.components', [
-        globalview ,
+        globalview,
         assets
     ])
     .name;
