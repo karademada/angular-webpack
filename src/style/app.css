@@ -120,20 +120,6 @@ sidepanel{
     background-image: url('../assets/img/manage.png');
 }
 
-.category-nav span{
-    position: relative;
-    bottom: 150px;
-    color: #FFF;
-    font-size: .8rem;
-}
-
-.state-label{
-    bottom: 120px;
-    position: relative;
-    color: #FFF;
-    font-size: 1.5rem;
-}
-
 aside > div.title {
     border-bottom: solid 1px #636261;
 }
@@ -159,7 +145,6 @@ aside > div.title {
 .bgl-breadcrumb {
     height: 45px;
     font-size: .8em;
-    bottom: 20px;
     position: relative;
 }
 
@@ -367,7 +352,7 @@ md-datepicker {
 div > md-subheader > img, md-subheader span {
     text-align: right;
     background-color: #006600;
-}*/
+}
 
 div .md-toolbar *, div .md-toolbar * {
     background-color: #000088;
@@ -424,6 +409,32 @@ div.assets md-progress-linear.md-default-theme .md-container, md-progress-linear
 .situation .resume .net md-progress-linear {
     padding: 0;
     background-color: #40403e;
+}
+
+
+/**
+   submenu
+**/
+
+.submenu{
+    width: 100%;
+    max-width: 100%;
+    height:150px;
+    background-color: #003bb3;
+    background: url('../assets/img/sub-menu-back.png') no-repeat;
+    background-size: cover;
+    color: #FFF;
+}
+
+
+.submenu .category-nav span{
+    position: relative;
+    font-size: .8rem;
+}
+
+.submenu .state-label{
+    position: relative;
+    font-size: 1.5rem;
 }
 
 /*

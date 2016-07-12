@@ -2,18 +2,18 @@ const INIT = new WeakMap();
 const SERVICE = new WeakMap();
 const HTTP = new WeakMap();
 
-class DonutService
+class AssetsService
 {
     constructor($http)
     {
         this.$http = $http;
     }
 
-    getDonuts(){
+    getAssets(){
         return this.$http.get('http://localhost:3000/globalWealth').then(result => result.data );
     }
 }
 
-DonutService.$inject = ['$http'];
+AssetsService.$inject = ['$http'];
 
-export default DonutService;
+export default AssetsService;
