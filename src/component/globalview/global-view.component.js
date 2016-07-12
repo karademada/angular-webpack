@@ -1,12 +1,8 @@
-import GlobalViewController from './global-view.controller';
+//import GlobalViewController from './global-view.controller';
 
 const GlobalViewComponent = {
-    bindings:{
-        donutData:'<'
-    },
-    controller:GlobalViewController,
     template: `
-    <p ng-click='$ctrl.clickMenu()'>global</p>
+    <p>global</p>
     `
 };
 

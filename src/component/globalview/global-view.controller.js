@@ -2,10 +2,8 @@ import globalViewService from './global-view.service.js';
 
 class GlobalViewController {
     constructor(globalViewService) {
-        this.globalviewService = globalViewService;
-        //this.donutsDatas = donutsDatas;
-        //console.log('donutsDatas');
-        //console.log(donutsDatas);
+        this.globalViewService = globalViewService;
+        this.donutsDatas = [];
         console.log(this.donutsDatas);
     }
     $onInit(){
