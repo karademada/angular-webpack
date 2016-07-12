@@ -38,7 +38,7 @@ class ManageAssetsCtrl {
             this.newLabel = null;
             this.getLabels();
             this.$mdToast.showSimple("Label Added");
-           // this.loading = false;
+            this.loading = false;
           }.bind(this),
           function (error) {
             this.loading = false;
@@ -55,7 +55,6 @@ class ManageAssetsCtrl {
   }
 
   goTo(route) {
-    console.log(route);
     this.$state.go(route);
   }
 
@@ -66,11 +65,7 @@ class ManageAssetsCtrl {
           if (success && success.data && success.data.responseData) {
             this.result = success.data.responseData;
             this.datas = success.data.responseData.assets;
-            console.log(this.result);
-
             this.banks = this.$jinqJs.from(this.result.assets).distinct("name").select();
-
-            console.log(this.banks);
           }
 
         }.bind(this),
@@ -88,7 +83,6 @@ class ManageAssetsCtrl {
         function (success) {
           if (success && success.data && success.data.responseData) {
             this.labels = success.data.responseData.labels;
-            console.log(this.labels);
           }
 
         }.bind(this),
@@ -104,13 +98,17 @@ class ManageAssetsCtrl {
 
   setFilter() {
     var filter = this.filter;
-    console.log("setFilter");
     if (this.filter.category) {
       var filter = this.filter.category;
-      this.datas = this.result.assets.filter(function (value) {
-        return value.name === filter;
-      }
-      );
+      this.datas = this.$jinqJs.from(this.datas).where(function (row, index) {
+        var subItemFiltered = this.$jinqJs.from(row.subAssets, 'label').in(filter).select();
+        return subItemFiltered && subItemFiltered.length > 0;
+      })
+        .select();
+      // this.datas = this.result.assets.filter(function (value) {
+      //   return value.name === filter;
+      // }
+      // );
     }
     else {
       this.datas = this.result.assets;
@@ -140,7 +138,6 @@ class ManageAssetsService {
     this.lang = "fr";
     this.currency = "eur";
     this.$http = $http;
-    console.log(this.$http);
   }
 
   addLabel(label) {

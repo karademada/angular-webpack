@@ -1,11 +1,11 @@
 ﻿const MODULE_NAME = 'flipSwitch';
 
-let flipSwitch = ()=>{
-    return{
-        template:require('./flip-switch.html'),
-        controller:'flipSwitchCtrl',
-        controllerAs:'sw',
-        transclude:true,
+let flipSwitch = () => {
+    return {
+        template: require('./flip-switch.html'),
+        controller: 'flipSwitchCtrl',
+        controllerAs: 'sw',
+        transclude: true,
         scope: {},
         restrict: 'E',
         bindToController: {
@@ -16,27 +16,18 @@ let flipSwitch = ()=>{
     }
 };
 
-class FlipSwitchCtrl{
+class FlipSwitchCtrl {
     /*@ngInject*/
-    constructor($scope){
-        var id=$scope.$id;
-        this.id="flipSwitch"+id;  
-        console.log('flipSwitchCtrl');
-    }
-
-}
-
-
-class FlipSwitch{
-    constructor(){
-        console.log('flipSwitch');
+    constructor($scope) {
+        var id = $scope.$id;
+        this.id = "flipSwitch" + id;
     }
 
 }
 
 angular.module(MODULE_NAME, [])
-    .directive('flipSwitch',flipSwitch)
-    .controller('flipSwitchCtrl',FlipSwitchCtrl);
+    .directive('flipSwitch', flipSwitch)
+    .controller('flipSwitchCtrl', FlipSwitchCtrl);
 
 export default MODULE_NAME;
 
