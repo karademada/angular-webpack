@@ -81,7 +81,7 @@
             right: 0px;
         }
     </style>
-    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="{{sw.id}}" ng-model="sw.ngModel" checked>
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="{{sw.id}}"  ng-model="sw.ngModel" ng-change="sw.change()" checked>
     <label class="onoffswitch-label" for="{{sw.id}}">
         <span class="onoffswitch-inner"></span>
         <span class="onoffswitch-switch"></span>

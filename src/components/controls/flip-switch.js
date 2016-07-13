@@ -10,6 +10,7 @@ let flipSwitch = () => {
         restrict: 'E',
         bindToController: {
             ngModel: '=',
+            ngChange: '&',
             trueText: '@',
             falseText: '@'
         },
@@ -18,9 +19,23 @@ let flipSwitch = () => {
 
 class FlipSwitchCtrl {
     /*@ngInject*/
-    constructor($scope) {
+    constructor($scope, $timeout) {
         var id = $scope.$id;
         this.id = "flipSwitch" + id;
+        // console.log(this.ngModel);
+        this.$timeout = $timeout;
+        this.$scope = $scope;
+        // $scope.$watch('ngModel', function(newValue, oldValue)  {
+        //     console.log("new : ", newValue, " old : ", oldValue);
+        //     console.log(this.ngModel);
+
+        // });
+    }
+
+    change() {
+       // this.$timeout(this.$scope.$apply(function () {
+            this.ngChange();
+       // }));
     }
 
 }

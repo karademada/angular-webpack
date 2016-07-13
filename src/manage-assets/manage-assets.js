@@ -8,19 +8,27 @@ let manageAssets = () => {
 };
 
 class ManageAssetsCtrl {
+
+
+
   /*@ngInject*/
-  constructor($state, $scope, $jinqJs, $mdToast, manageAssetsService) {
+  constructor($state, $scope, $mdToast, manageAssetsService) {
     this.service = manageAssetsService;
     this.loading = false;
     this.$state = $state;
     this.$mdToast = $mdToast;
-    this.$jinqJs = $jinqJs;
 
-    this.banks = {};
-    this.filter = { category: null, label: null };
+    this.banks = [{ text: "Bank", value: 1 },
+      { text: "Category", value: 2 }];
+    this.filter = { category: null, label: null, sortBy: 1 };
     this.result = {};
     this.datas = [];
-    this.sortBy = ["Name", "Last Estimate", "Valuation", "Label"];
+    this.sortBy = [{ text: "Name", value: 1 },
+      { text: "Last Estimate", value: 2 },
+      /*{ text: "Date Updated", value: 3 },
+      { text: "Creation Date", value: 4 },*/
+      { text: "Increasing Value", value: 5 },
+      { text: "Decreasing Value", value: 6 }];
 
     console.log('AssetsCtrl');
 
@@ -30,6 +38,7 @@ class ManageAssetsCtrl {
 
 
   addLabel() {
+    // ajout d'un nouveau label en bdd
     if (this.newLabel) {
       try {
         this.loading = true;
@@ -55,17 +64,20 @@ class ManageAssetsCtrl {
   }
 
   goTo(route) {
+    // navigation
     this.$state.go(route);
   }
 
   getManageAssets() {
+    // récupération des données du tableau
     try {
       this.service.getManageAssets().then(
         function (success) {
           if (success && success.data && success.data.responseData) {
             this.result = success.data.responseData;
             this.datas = success.data.responseData.assets;
-            this.banks = this.$jinqJs.from(this.result.assets).distinct("name").select();
+            // pour appliquer le tri et les filtres courant
+            this.setFilter();
           }
 
         }.bind(this),
@@ -78,6 +90,7 @@ class ManageAssetsCtrl {
   }
 
   getLabels() {
+    // récupération de la liste des labels
     try {
       this.service.getLabels().then(
         function (success) {
@@ -99,29 +112,82 @@ class ManageAssetsCtrl {
   setFilter() {
     var filter = this.filter;
     if (this.filter.category) {
+      // filtre par bank/category
       var filter = this.filter.category;
-      this.datas = this.$jinqJs.from(this.datas).where(function (row, index) {
-        var subItemFiltered = this.$jinqJs.from(row.subAssets, 'label').in(filter).select();
-        return subItemFiltered && subItemFiltered.length > 0;
-      })
-        .select();
-      // this.datas = this.result.assets.filter(function (value) {
-      //   return value.name === filter;
-      // }
-      // );
+      this.datas = this.result.assets.filter(function (value) {
+        return (filter == 1) ? value.financial : !value.financial;
+      });
     }
     else {
       this.datas = this.result.assets;
     }
 
     if (this.filter.label) {
+      // filtre par label
       var filter = this.filter.label;
       this.datas = this.datas.filter(function (value) {
-        return value.label === filter;
+        if (!value.subAssets) {
+          return false;
+        }
+        var subItemFiltered = value.subAssets.filter(function (val) {
+          return val.label === filter;
+        })
+        return subItemFiltered && subItemFiltered.length > 0;
       }
       );
     }
 
+    if (this.filter.sortBy) {
+      // tri
+      var filter = this.filter.sortBy;
+
+      this.datas = this.datas.sort(function (a, b) {
+        switch (filter) {
+          case 1: // tri par nom
+            return a.name.localeCompare(b.name);
+          case 2:
+            // tri par last estimate décroissante
+            return this.compare(a.lastEstimateDate, b.lastEstimateDate, false);
+          case 5:
+            // tri par valorisation croissante
+            return this.compare(a.valuation, b.valuation, true);
+          case 6:
+            // tri par valorisation décroissante
+            return this.compare(a.valuation, b.valuation, false);
+          default:
+            // tri par nom
+            return a.name.localeCompare(b.name);
+        }
+      }.bind(this));
+    }
+  }
+
+  compare(a, b, increase) {
+    // permet de trier 2 valeurs suivant le sens voulu
+    if (a > b) {
+      return (increase) ? 1 : -1;
+    }
+    if (a < b) {
+      return (increase) ? -1 : 1;
+    }
+    // a must be equal to b
+    return 0;
+  }
+
+  updateConsolidate(item) {
+    // mis à jour de la valeur de consolidation
+    try {
+      console.log(item);
+      console.log(item.consolidate);
+      this.service.updateConsolidate(item.assetId, item.consolidate).then(
+        function (success) {
+        }.bind(this),
+        function (error) {
+          console.log(error);
+        });
+    } catch (e) {
+      console.log(e);
+    }
   }
 }
 
@@ -168,7 +234,7 @@ class ManageAssetsService {
     return this.$http.post(apiUrl, data, config);
   }
 
-  getManageAssets($http, $jinqJs) {
+  getManageAssets() {
     var apiUrl = this.urlApi + "/api/manage_assets/list";
 
     var config = {
@@ -181,6 +247,20 @@ class ManageAssetsService {
     var data = {
       currency: this.currency
     };
+
+    return this.$http.post(apiUrl, data, config);
+  }
+
+  updateConsolidate(id, value) {
+    var apiUrl = this.urlApi + "/api/manage_assets/update/consolidate/" + id + "/" + value;
+
+    var config = {
+      headers: {
+        Security_Token: this.token
+      }
+    };
+
+    var data = {};
 
     return this.$http.post(apiUrl, data, config);
   }
