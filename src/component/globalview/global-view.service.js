@@ -4,7 +4,7 @@ const HTTP = new WeakMap();
 
 class GlobalViewService
 {
-    constructor($http)
+    constructor($http,$q)
     {
         this.$http = $http;
     }

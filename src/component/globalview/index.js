@@ -15,6 +15,7 @@ const globalview = angular
         uiRouter
     ])
     .component('globalview', GlobalViewComponent)
+    .service('globalViewService',globalViewService)
     .config(($stateProvider, $urlRouterProvider) => {
 
 

@@ -1,8 +1,10 @@
-//import GlobalViewController from './global-view.controller';
+import GlobalViewController from './global-view.controller';
 
 const GlobalViewComponent = {
+    controller:GlobalViewController,
     template: `
-    <p>global</p>
+    <p ng-click='$ctrl.clickMenu()'>global</p>
+    <pre>{{ $ctrl.donutsDatas }}</pre>
     `
 };
 
