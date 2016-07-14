@@ -184,6 +184,7 @@ class ManageAssetsCtrl {
     try {
       this.service.updateConsolidate(id, value).then(
         function (success) {
+          this.$mdToast.showSimple("Consolidate saved");
         }.bind(this),
         function (error) {
           console.log(error);
@@ -200,6 +201,7 @@ class ManageAssetsCtrl {
       console.log(value);
       this.service.updateLabel(id, value).then(
         function (success) {
+          this.$mdToast.showSimple("Label saved");
         }.bind(this),
         function (error) {
           console.log(error);
