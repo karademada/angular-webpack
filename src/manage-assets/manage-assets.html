@@ -262,7 +262,7 @@ background: #FFF;
               <td><span ng-bind="subitem.lastEstimateDate | date:'dd/MM/yyyy'"></span></td>
               <td><span ng-bind="subitem.valuation | currency : '€' : 0"></span></td>
               <td class="consolidate">
-                <flip-switch true-text="Yes" ng-model="subitem.consolidate" false-text="No" ng-change="assets.updateConsolidate(subitem)"></flip-switch>
+                <flip-switch true-text="Yes" ng-model="subitem.consolidate" false-text="No" item-id="{{subitem.assetId}}"></flip-switch>
               </td>
               <td class="label">
                 <md-select ng-model="subitem.label" aria-label="label">

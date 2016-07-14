@@ -10,7 +10,7 @@ let flipSwitch = () => {
         restrict: 'E',
         bindToController: {
             ngModel: '=',
-            ngChange: '&',
+            itemId: "@",
             trueText: '@',
             falseText: '@'
         },
@@ -33,9 +33,7 @@ class FlipSwitchCtrl {
     }
 
     change() {
-       // this.$timeout(this.$scope.$apply(function () {
-            this.ngChange();
-       // }));
+        this.$scope.$emit("switchChange", { id: this.itemId, value: this.ngModel });
     }
 
 }

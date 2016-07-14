@@ -13,6 +13,11 @@ class ManageAssetsCtrl {
 
   /*@ngInject*/
   constructor($state, $scope, $mdToast, manageAssetsService) {
+
+    $scope.$on("switchChange", function (event, value) {
+      this.updateConsolidate(value.id, value.value);
+    }.bind(this));
+
     this.service = manageAssetsService;
     this.loading = false;
     this.$state = $state;
@@ -174,12 +179,10 @@ class ManageAssetsCtrl {
     return 0;
   }
 
-  updateConsolidate(item) {
+  updateConsolidate(id, value) {
     // mis à jour de la valeur de consolidation
     try {
-      console.log(item);
-      console.log(item.consolidate);
-      this.service.updateConsolidate(item.assetId, item.consolidate).then(
+      this.service.updateConsolidate(id, value).then(
         function (success) {
         }.bind(this),
         function (error) {
@@ -189,6 +192,23 @@ class ManageAssetsCtrl {
       console.log(e);
     }
   }
+
+  updateLabel(id, value) {
+    // mis à jour du label
+    try {
+      console.log(id);
+      console.log(value);
+      this.service.updateLabel(id, value).then(
+        function (success) {
+        }.bind(this),
+        function (error) {
+          console.log(error);
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
 }
 
 class ManageAssets {
@@ -253,6 +273,20 @@ class ManageAssetsService {
 
   updateConsolidate(id, value) {
     var apiUrl = this.urlApi + "/api/manage_assets/update/consolidate/" + id + "/" + value;
+
+    var config = {
+      headers: {
+        Security_Token: this.token
+      }
+    };
+
+    var data = {};
+
+    return this.$http.post(apiUrl, data, config);
+  }
+
+  updateLabel(id, value) {
+    var apiUrl = this.urlApi + "/api/manage_assets/updatelabel/" + id + "/" + value;
 
     var config = {
       headers: {
