@@ -5,7 +5,7 @@ const sidepanel = angular
 
     ])
     .component('sidepanel',SidePanelComponent)
-    .controller('SidePanelCtrl',SidePanelController)
+    .controller('SidePanelController',SidePanelController)
     .name;
 
 export default sidepanel;

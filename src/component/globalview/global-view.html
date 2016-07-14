@@ -1,0 +1,64 @@
+<div layout="column" layout-margin>
+    <div class="charting" layout="row" layout-wrap layout-align="center">
+        <div flex="100" flex-gt-md="75" layout layout-padding layout-align="center start">
+            <nvd3 options="$ctrl.options" data="$ctrl.donutsDatas"></nvd3>
+        </div>
+        <div class="assets-filters" layout="column" layout-align="start start" layout-margin layout-padding flex="100" flex-gt-md="20">
+            <div layout-gt-md="column" layout-wrap layout="row">
+                <h3 flex-md="none" flex="100">ASSETS FILTERS</h3>
+                <md-checkbox>BNP</md-checkbox>
+                <md-checkbox>CIC</md-checkbox>
+                <md-checkbox>HSBC</md-checkbox>
+                <md-checkbox>UBS</md-checkbox>
+                <md-checkbox>BGL</md-checkbox>
+            </div>
+
+            <div layout-gt-md="column" layout-wrap layout="row">
+                <h3 flex-md="none" flex="100">ASSETS FILTERS</h3>
+                <md-checkbox>PERSONNAL ASSETS</md-checkbox>
+                <md-checkbox>PROFESSIONNAL ASSETS</md-checkbox>
+            </div>
+        </div>
+    </div>
+
+    <div layout="column" class="situation" layout-padding>
+        <div layout="row" layout-wrap layout-align="space-between center">
+            <span>Situation</span>
+            <span>26/06/2016</span>
+            <hr flex="100" color="lightgrey" />
+        </div>
+        <div class="resume" layout="row" layout-wrap layout-align="space-between center">
+            <div class="assets" flex-gt-md="30" flex="100" layout="column" layout-align="end space-between" layout-padding>
+                <div layout="row" layout-align="space-between center">
+                    <span>Assets</span>
+                    <span>15000000 €</span>
+                </div>
+                <md-progress-linear></md-progress-linear>
+            </div>
+            <div class="liabilities" flex-gt-md="30" flex="100" layout="column" layout-align="end space-between" layout-padding>
+                <div layout="row" layout-align="space-between center">
+                    <span>assets</span>
+                    <span>15000000 €</span>
+                </div>
+                <md-progress-linear></md-progress-linear>
+            </div>
+            <div class="net" flex-gt-md="30" flex="100" layout="column" layout-align="end space-between" layout-padding>
+                <div layout="row" layout-align="space-between center">
+                    <span>Net wealth</span>
+                    <span>15000000 €</span>
+                </div>
+                <md-progress-linear></md-progress-linear>
+            </div>
+        </div>
+    </div>
+    <div layout="column">
+        <h2 class="md-display-1" layout="row" layout-align="center center">OTHER GLOBAL VIEWS</h2>
+        <nav class="others">
+            <ul layout="row" layout-align="center center" layout-padding>
+                <li flex="none"><a href="#"><div>BY<br />ASSET TYPE</div><div><md-icon md-svg-src="./assets/img/by_type.svg"></md-icon></div></a></li>
+                <li flex="none"><a href="#"><div>BY<br />CURRENCY</div><div><md-icon md-svg-src="./assets/img/by_type.svg"></md-icon></div></a></li>
+                <li flex="none"><a href="#"><div>BY <br />GEOGRAPHY</div><div><md-icon md-svg-src="./assets/img/by_type.svg"></md-icon></div></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

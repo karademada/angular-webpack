@@ -23,6 +23,18 @@ const assets = angular
 
         $urlRouterProvider.otherwise('/');
     })
+    .run(function runAssets($log) {
+        $log.info('My Eagle Vision Assets are running')
+    })
     .name;
 
 export default assets;
+
+
+/**
+
+ .run(function runComponents($log) {
+        $log.info('My Eagle Vision Components are running')
+    })
+ */
+

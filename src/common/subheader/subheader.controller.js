@@ -1,6 +1,7 @@
 class SubHeaderController{
     constructor(){
-        console.log('toto');
+        this.littleMenu = false;
+        console.log('this.littleMenu : ',this.littleMenu);
     }
 }
 

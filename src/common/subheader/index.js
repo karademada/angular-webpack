@@ -1,6 +1,6 @@
 import SubHeaderComponent from "./subheader.component";
 import SubHeaderController from "./subheader.controller";
-const header = angular
+const subheader = angular
     .module('subheader',[
 
     ])
@@ -8,4 +8,4 @@ const header = angular
     .controller('subHeaderCtrl',SubHeaderController)
     .name;
 
-export default header;
+export default subheader;

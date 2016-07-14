@@ -103,11 +103,22 @@
       "financial": true,
       "assetDomain": "Mon label défaut",
       "assetDomainId": 1
+    },
+    {
+      "id": "a9882856-a1e7-4151-b769-fd822f802859"
+    },
+    {
+      "id": "e9f4e699-ca04-4a9c-b2bf-8916b573e0ac"
+    },
+    {
+      "id": "0636d3f8-1e7a-4d0a-a04c-52bf2b7cb6be"
+    },
+    {
+      "id": "612e8ba6-459e-4925-8c96-75d3d1d7cdfe"
+    },
+    {
+      "id": "e3ee44a7-8db0-4e4d-8a8b-6afd3aefacb6"
     }
   ],
   "liabilities": []
 }
-
-
-
-

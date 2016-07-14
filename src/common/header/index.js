@@ -4,6 +4,9 @@ const header = angular
     .module('header',[
 
     ])
+    .run(function runHeader($log) {
+        $log.info('My Eagle Vision is running')
+    })
     .component('header',HeaderComponent)
     .controller('headerCtrl',HeaderController)
     .name;

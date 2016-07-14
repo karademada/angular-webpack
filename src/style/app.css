@@ -54,9 +54,26 @@ a {
     color: #c2c2c1;
 }
 
+
+/* Little menu*/
+.little-menu .aside-menu li a span {
+    display: none;
+}
+
+.little-menu .aside-menu li a {
+    background-position: center center;
+    display: inline-block;
+}
+
+.little-menu sidepanel {
+    max-width: 60px !important;
+    width: 60px !important;
+}
+
 /*
     sidepanel
 */
+
 
 sidepanel{
     background-color: #746661;

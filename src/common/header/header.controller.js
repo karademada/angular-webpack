@@ -1,6 +1,6 @@
 class HeaderController{
-    constructor(){
-        console.log('HeaderController');
+    constructor($log){
+       $log.info('HeaderController');
     }
 }
 

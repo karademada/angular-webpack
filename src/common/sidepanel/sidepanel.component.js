@@ -1,8 +1,10 @@
-import SidepanelController from './sidepanel.controller';
+import SidePanelController from './sidepanel.controller';
 const SidepanelComponent = {
+    controller:SidePanelController,
+    controllerAs:'sidepanel',
     template:`
         <aside class="aside-menu" flex>
-        <div class="title" ng-click="littleMenu= !littleMenu">
+        <div class="title" ng-click="sidepanel.closeMenu()">
             <img layout-padding src="assets/img/menu.png" />
         </div>
         <nav>
