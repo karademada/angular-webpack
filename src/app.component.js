@@ -1,7 +1,10 @@
+import AppController from './app.controller';
+
 const AppComponent = {
-    controller:function myAppController($log){
-        $log.info('App component is logged');
+    bindings:{
+        menuClicked:'&'
     },
+    controller:AppController,
     templateUrl:'./app.html'
 };
 
