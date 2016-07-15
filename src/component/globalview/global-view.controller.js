@@ -37,7 +37,6 @@ class GlobalViewController {
                 }
             }
         };
-
     }
 
     $onInit() {
@@ -49,8 +48,6 @@ class GlobalViewController {
         this.globalViewService.getDonuts().then(function (result) {
 
             if (result) {
-                console.log('result : ', result);
-                console.log('datat cleaned ', this.donutDatasCleaned(result))
                 this.donutsDatas = this.donutDatasCleanedTest(result);
             }
         }.bind(this));
@@ -59,12 +56,9 @@ class GlobalViewController {
 
 
     donutDatasCleaned(donutsDatas, $log) {
-        console.log(donutsDatas);
-        console.log(donutsDatas.globalWealth)
         if (donutsDatas && donutsDatas.globalWealth) {
             let donutsDatasTemp = [];
             donutsDatas.globalWealth.some(function (element, index, array) {
-                console.log(element)
                 donutsDatasTemp.push({
                     key: element.label,
                     y: element.valuation

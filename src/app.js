@@ -11,6 +11,8 @@ import 'angular-nvd3';
 import './style/app.css';
 import '../node_modules/nvd3/build/nv.d3.css';
 
+import AppController from './app.controller';
+
 const root = angular
     .module('app', [
         Common,
@@ -35,6 +37,7 @@ const root = angular
         $logProvider.debugEnabled(true);
 
     })
-    .component('app', AppComponent);
+    .component('app', AppComponent)
+    .controller('AppController', AppController);
 
 export default root;

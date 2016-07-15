@@ -1,33 +1,16 @@
+import template from './sidepanel.html';
 import SidePanelController from './sidepanel.controller';
-const SidepanelComponent = {
-    controller:SidePanelController,
-    template:`
-        <aside class="aside-menu" flex>
-        <div class="title" ng-click="$ctrl.closeMenu()">
-            <img layout-padding src="assets/img/menu.png" />
-        </div>
-        <nav>
 
-            <!-- TODO make dynamic with object and loop setting -->
-            <ul>
-                <li class="vision">
-                    <a>
-                        <span>Vision</span>
-                    </a>
-                </li>
-                <li class="detail" >
-                    <a>
-                        <span>Detailled View</span>
-                    </a>
-                <li class="manage">
-                    <a>
-                        <span>Manage assets</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
-    `
+const SidepanelComponent = {
+    bidings:{
+        closeMenu:'='
+    },
+    require:{
+        parent:'^^app'
+    },
+    controller:SidePanelController,
+    controllerAs:'sidepanel',
+    template:template
 };
 
 export default SidepanelComponent;
