@@ -622,10 +622,42 @@ footer .cgv .separator {
 
 .layout-no-financial {
     margin-top: 30px;
+    padding-top:80px; 
     margin-bottom: 30px;
     max-width: 880px;
     width: 100%;
     background-color: #fefcfd;
+    position: relative;
+}
+
+.layout-no-financial .steps-indicator{
+    position: absolute;
+    top:20px;
+    font-family: 'BNPP Sans Expanded', sans-serif;
+}
+
+.layout-no-financial .steps-indicator a{
+        font-family: 'BNPP Sans Expanded', sans-serif;
+        font-weight: normal;
+        text-transform: none;
+        color:black;
+}
+
+.steps-indicator:before{
+    background-color: gray;
+    opacity: 0.5;
+}
+
+.steps-indicator li.current a:before,.steps-indicator li.editing a:before {
+    background-color: #4d6c7f;
+}
+
+.steps-indicator li.done a:before {
+    background-color: #957b47;
+}
+
+.pickadate-next{
+    width: auto;
 }
 
 @media screen and (max-width: 1024px) {

@@ -8,9 +8,7 @@ let manageAssets = () => {
 };
 
 class ManageAssetsCtrl {
-
-
-
+  
   /*@ngInject*/
   constructor($state, $scope, $mdToast, manageAssetsService) {
 

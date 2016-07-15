@@ -1,8 +1,12 @@
 <div style="background-color:#f3eeea" layout="row" layout-padding layout-align="center center">
     <div class="layout-no-financial assets" layout="column" layout-align="center start">
-        <div layout="row" layout-align="start center" layout-margin>
-            <span class="first-step">Category</span><span ng-class="{'step-disabled':assets.isCategory()}" class="first-step next-step">Information</span>
-        </div>
-        <ui-view style="width:100%;"></ui-view>
+        <wizard on-finish="anf.goTo('manage-assets.home')">
+            <wz-step wz-title="Category">
+                <category-assets></category-assets>
+            </wz-step>
+            <wz-step wz-title="Information">
+                <edit-assets category="anf.category" asset="anf.asset"></edit-assets>
+            </wz-step>
+        </wizard>
     </div>
 </div>

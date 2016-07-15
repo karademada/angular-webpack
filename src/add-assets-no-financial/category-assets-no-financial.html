@@ -1,74 +1,8 @@
 <div layout="row" layout-wrap layout-margin layout-align="start center">
-    <a ui-sref="add-assets-no-financial.edit({id:1})" class="tile-asset">
+    <a ng-repeat="item in cat.categories" ng-click="cat.submit(item)" class="tile-asset">
         <div layout layout-align="center center">
-            <img src="./assets/img/01_real_estate.png" />
+            <img ng-src="./assets/img/{{item.code}}.png" />
         </div>
-        <span>Real Estate</span>
-    </a>
-    <a ui-sref="add-assets-no-financial.edit({id:2})" class="tile-asset">
-        <div layout layout-align="center center">
-            <img src="./assets/img/02_Land.png" />
-        </div>
-        <span>Land</span>
-    </a>
-    <a ui-sref="add-assets-no-financial.edit({id:3})" class="tile-asset">
-        <div layout layout-align="center center">
-            <img src="./assets/img/03_Vehicule.png" />
-        </div>
-        <span>Vehicule</span>
-    </a>
-    <a ui-sref="add-assets-no-financial.edit({id:4})" class="tile-asset">
-        <div layout layout-align="center center">
-            <img src="./assets/img/04_Boat.png" />
-        </div>
-        <span>Boat</span>
-    </a>
-    <a ui-sref="add-assets-no-financial.edit({id:5})" class="tile-asset">
-        <div layout layout-align="center center">
-            <img src="./assets/img/05_Plan.png" />
-        </div>
-        <span>Plan</span>
-    </a>
-    <a ui-sref="add-assets-no-financial.edit({id:6})" class="tile-asset">
-        <div layout layout-align="center center">
-            <img src="./assets/img/06_Art.png" />
-        </div>
-        <span>Art</span>
-    </a>
-    <a ui-sref="add-assets-no-financial.edit({id:7})" class="tile-asset">
-        <div layout layout-align="center center">
-            <img src="./assets/img/07_Jewel.png" />
-        </div>
-        <span>Jewel</span>
-    </a>
-    <a ui-sref="add-assets-no-financial.edit({id:8})" class="tile-asset">
-        <div layout layout-align="center center">
-            <img src="./assets/img/08_Furniture.png" />
-        </div>
-        <span>Furniture</span>
-    </a>
-    <a ui-sref="add-assets-no-financial.edit({id:9})" class="tile-asset">
-        <div layout layout-align="center center">
-            <img src="./assets/img/09_wine.png" />
-        </div>
-        <span>Wine</span>
-    </a>
-    <a ui-sref="add-assets-no-financial.edit({id:10})" class="tile-asset">
-        <div layout layout-align="center center">
-            <img src="./assets/img/10_animal.png" />
-        </div>
-        <span>Animal</span>
-    </a>
-    <a ui-sref="add-assets-no-financial.edit({id:11})" class="tile-asset">
-        <div layout layout-align="center center">
-            <img src="./assets/img/11_commodities.png" />
-        </div>
-        <span>Commodities</span>
-    </a>
-    <a ui-sref="add-assets-no-financial.edit({id:12})" class="tile-asset">
-        <div layout layout-align="center center">
-            <img src="./assets/img/12_other.png" />
-        </div>
-        <span>Other</span>
+        <span ng-bind="item.name"></span>
     </a>
 </div>

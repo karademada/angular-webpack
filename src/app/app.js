@@ -7,7 +7,8 @@ import 'angular-nvd3';
 import 'jinq';
 import 'jquery';
 
-// n�cessaire tant qu'il n'y a pas d'index.js dans ui-grid
+
+// nécessaire tant qu'il n'y a pas d'index.js dans ui-grid
 import uigrid from 'angular-ui-grid/ui-grid.js';
 import 'angular-ui-grid/ui-grid.css';
 
@@ -28,6 +29,9 @@ import categoryAssetsNoFinancial from './../add-assets-no-financial/category-ass
 
 import hoverBgImage from '../components/hover-bg-image/hover-bg-image.js';
 
+import pickadate from '../lib/angular-pickadate.js';
+import '../lib/angular-pickadate.css';
+
 import '../style/app.css';
 import '../style/grid.css';
 import '../../node_modules/nvd3/build/nv.d3.css';
@@ -47,38 +51,38 @@ class AppCtrl {
         this.options = {
             chart: {
                 type: 'pieChart',
-                width:450,
+                width: 450,
                 height: 450,
                 donut: true,
-                x: (d)=> {
+                x: (d) => {
                     return d.key
                 },
-                y: (d)=> {
+                y: (d) => {
                     return d.y
                 },
-                showLabels:true,
-                pie:{
-                    startAngle: (d)=> {
+                showLabels: true,
+                pie: {
+                    startAngle: (d) => {
                         return d.startAngle - Math.PI;
                     },
-                    endAngle: (d)=> {
+                    endAngle: (d) => {
                         return d.endAngle - Math.PI;
                     }
                 },
-                duration:500,
-                legend:{
-                    margin:{
-                        top:5,
-                        right:70,
-                        bottom:5,
-                        left:0
+                duration: 500,
+                legend: {
+                    margin: {
+                        top: 5,
+                        right: 70,
+                        bottom: 5,
+                        left: 0
                     }
                 }
 
             },
         };
 
-        this.data =  [
+        this.data = [
             {
                 key: "One",
                 y: 5
@@ -111,13 +115,13 @@ class AppCtrl {
 
 
 
-        NameService.getName().then((data)=> {
+        NameService.getName().then((data) => {
             console.log('data : ', data);
         });
 
     }
 
-    clickMenu(){
+    clickMenu() {
         console.log('');
     }
 
@@ -158,9 +162,9 @@ angular.module(MODULE_NAME,
         'ui.grid.autoResize',
         'mgo-angular-wizard',
         'flipSwitch',
-        'angular-jinqjs'
+        'pickadate'
     ])
-    .config(($stateProvider, $urlRouterProvider, $mdIconProvider)=> {
+    .config(($stateProvider, $urlRouterProvider, $mdIconProvider) => {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
@@ -180,15 +184,15 @@ angular.module(MODULE_NAME,
                     label: 'Manage assets'
                 }
             })
-             .state('manage-assets.home', {
-                 url: '',
-                 controller: 'ManageAssetsCtrl',
-                 controllerAs: 'assets',
-                 template: require('./../manage-assets/manage-assets.html'),
-                 ncyBreadcrumb: {
-                     label: 'Manage assets'
-                 }
-             })
+            .state('manage-assets.home', {
+                url: '',
+                controller: 'ManageAssetsCtrl',
+                controllerAs: 'assets',
+                template: require('./../manage-assets/manage-assets.html'),
+                ncyBreadcrumb: {
+                    label: 'Manage assets'
+                }
+            })
             .state('add-assets', {
                 url: '/add-assets',
                 controller: 'AssetsCtrl',
@@ -200,12 +204,10 @@ angular.module(MODULE_NAME,
                 }
             })
             .state('add-assets-no-financial', {
-                url: '/assets',
+                url: '/assets-no-financial',
                 controller: 'AssetsNoFinancialCtrl',
-                controllerAs: 'assets',
-                abstract: true,
-                template: require('../add-assets-no-financial/add-assets-no-financial.html'),
-                
+                controllerAs: 'anf',
+                template: require('../add-assets-no-financial/add-assets-no-financial.html')
             })
             .state('add-assets-no-financial.category', {
                 url: '',
