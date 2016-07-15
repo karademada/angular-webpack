@@ -13,18 +13,22 @@ class GlobalViewService
         //url: 'http://staa474l.bgl.lu:10639/myeaglevision-pe/api/global_wealth/by_custodian/2016-07-13/eur',
         //'http://localhost:3000/globalWealth'
 
-        var req = {
+        let req = {
             method: 'POST',
-            url: 'http://staa474l.bgl.lu:10639/myeaglevision-pe/api/global_wealth/by_custodian/2016-07-13/eur',
+            url: 'http://localhost:3000/globalWealth',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
                 'language': 'fr',
                 'Security_Token':'fvsdfvsdfv'
             }
-        }
+        };
 
-        return this.$http(req).then(function(response){
+        let reqTest = {
+            url: 'http://localhost:3000/globalWealth'
+        };
+
+        return this.$http(reqTest   ).then(function(response){
             return response.data;
         })
     }

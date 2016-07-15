@@ -1,3 +1,4 @@
+//import sidePanelService from './sidepanel.service.js';
 
 class SidePanelController{
     constructor(){
@@ -6,10 +7,12 @@ class SidePanelController{
     }
 
     closeMenu(){
-        console.log('closeMenu')
+        console.log('closeMenu');
         this.littleMenu = !this.littleMenu;
         console.log('this.littleMenu : ',this.littleMenu);
     }
 }
+
+SidePanelController.$inject  = [];
 
 export default SidePanelController;

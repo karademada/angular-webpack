@@ -97,7 +97,7 @@ sidepanel{
     background-image: url('../assets/img/vision.png');
     background-repeat: no-repeat;
     background-attachment: inherit;
-    background-position: right center;
+    background-position: center center;
 
 }
 
@@ -110,7 +110,7 @@ sidepanel{
     background-image: url('../assets/img/detail.png');
     background-repeat: no-repeat;
     background-attachment: inherit;
-    background-position: right center;
+    background-position: center center;
 
 }
 
@@ -122,8 +122,7 @@ sidepanel{
     background-image: url('../assets/img/manage.png');
     background-repeat: no-repeat;
     background-attachment: inherit;
-    background-position: right center;
-
+    background-position: center center;
 }
 
 .aside-menu li.manage:hover {

@@ -1,10 +1,9 @@
 import SidePanelController from './sidepanel.controller';
 const SidepanelComponent = {
     controller:SidePanelController,
-    controllerAs:'sidepanel',
     template:`
         <aside class="aside-menu" flex>
-        <div class="title" ng-click="sidepanel.closeMenu()">
+        <div class="title" ng-click="$ctrl.closeMenu()">
             <img layout-padding src="assets/img/menu.png" />
         </div>
         <nav>
@@ -16,7 +15,7 @@ const SidepanelComponent = {
                         <span>Vision</span>
                     </a>
                 </li>
-                <li class="detail">
+                <li class="detail" >
                     <a>
                         <span>Detailled View</span>
                     </a>

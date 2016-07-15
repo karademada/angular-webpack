@@ -29,46 +29,14 @@ class GlobalViewController {
                 duration: 500,
                 legend: {
                     margin: {
-                        top: 5,
-                        right: 140,
-                        bottom: 5,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
                         left: 0
                     }
                 }
             }
         };
-
-        this.data = [
-            {
-                key: "One",
-                y: 5
-            },
-            {
-                key: "Two",
-                y: 2
-            },
-            {
-                key: "Three",
-                y: 9
-            },
-            {
-                key: "Four",
-                y: 7
-            },
-            {
-                key: "Five",
-                y: 4
-            },
-            {
-                key: "Six",
-                y: 3
-            },
-            {
-                key: "Seven",
-                y: .5
-            }
-        ];
-
 
     }
 
@@ -83,10 +51,12 @@ class GlobalViewController {
             if (result) {
                 console.log('result : ', result);
                 console.log('datat cleaned ', this.donutDatasCleaned(result))
-                this.donutsDatas = this.donutDatasCleaned(result);
+                this.donutsDatas = this.donutDatasCleanedTest(result);
             }
         }.bind(this));
     }
+
+
 
     donutDatasCleaned(donutsDatas, $log) {
         console.log(donutsDatas);
@@ -104,6 +74,23 @@ class GlobalViewController {
             return donutsDatasTemp;
         }
     }
+
+    donutDatasCleanedTest(donutsDatas, $log) {
+        console.log(donutsDatas);
+
+        if (donutsDatas) {
+            let donutsDatasTemp = [];
+            donutsDatas.some(function (element) {
+                donutsDatasTemp.push({
+                    key: element.label,
+                    y: element.valuation
+                })
+            })
+
+            return donutsDatasTemp;
+        }
+    }
+
 
     clickMenu() {
         console.log(this.donutsDatas);
