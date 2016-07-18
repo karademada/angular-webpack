@@ -6,16 +6,16 @@
 
         <!-- TODO make dynamic with object and loop setting -->
         <ul>
-            <li class="vision">
+            <li ng-class="sidepanel.sidePanelService.isClosed ? 'vision vision-closed' :'vision vision-open'">
                 <a>
                     <span>Vision</span>
                 </a>
             </li>
-            <li class="detail">
+            <li ng-class="sidepanel.sidePanelService.isClosed ? 'detail detail-closed' :'detail detail-open'">
                 <a>
                     <span>Detailled View</span>
                 </a>
-            <li class="manage">
+            <li ng-class="sidepanel.sidePanelService.isClosed ? 'manage manage-closed' :'manage manage-open'">
                 <a>
                     <span>Manage assets</span>
                 </a>
