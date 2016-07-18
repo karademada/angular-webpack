@@ -45,12 +45,12 @@ class GlobalViewController {
 
     $onChanges() {
         console.log('on change');
-        this.globalViewService.getDonuts().then(function (result) {
+        /*this.globalViewService.getDonuts().then(function (result) {
 
             if (result) {
                 this.donutsDatas = this.donutDatasCleaned(result);
             }
-        }.bind(this));
+        }.bind(this));*/
     }
 
     donutDatasCleaned(donutsDatas, $log) {
@@ -69,6 +69,12 @@ class GlobalViewController {
 
     clickMenu() {
         console.log(this.donutsDatas);
+        this.globalViewService.getDonuts().then(function (result) {
+
+            if (result) {
+                this.donutsDatas = this.donutDatasCleaned(result);
+            }
+        }.bind(this));
     }
 }
 

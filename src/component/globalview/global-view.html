@@ -1,6 +1,7 @@
 <div layout="column" layout-margin>
     <div class="charting" layout="row" layout-wrap layout-align="center">
         <div flex="100" flex-gt-md="75" layout layout-padding layout-align="center start">
+           <md-button ng-click="$ctrl.clickMenu()">call api</md-button>
             <nvd3 options="$ctrl.options" data="$ctrl.donutsDatas"></nvd3>
         </div>
         <div class="assets-filters" layout="column" layout-align="start start" layout-margin layout-padding flex="100" flex-gt-md="20">
