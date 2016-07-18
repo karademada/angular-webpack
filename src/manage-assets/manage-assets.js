@@ -8,7 +8,7 @@ let manageAssets = () => {
 };
 
 class ManageAssetsCtrl {
-  
+
   /*@ngInject*/
   constructor($state, $scope, $mdToast, manageAssetsService) {
 
@@ -114,15 +114,14 @@ class ManageAssetsCtrl {
 
   setFilter() {
     var filter = this.filter;
+
+    this.datas = angular.copy(this.result.assets);
     if (this.filter.category) {
       // filtre par bank/category
       var filter = this.filter.category;
       this.datas = this.result.assets.filter(function (value) {
         return (filter == 1) ? value.financial : !value.financial;
       });
-    }
-    else {
-      this.datas = this.result.assets;
     }
 
     if (this.filter.label) {
@@ -133,8 +132,9 @@ class ManageAssetsCtrl {
           return false;
         }
         var subItemFiltered = value.subAssets.filter(function (val) {
-          return val.label === filter;
-        })
+          return val.labelId === filter;
+        });
+        value.subAssets = subItemFiltered;
         return subItemFiltered && subItemFiltered.length > 0;
       }
       );
@@ -147,6 +147,9 @@ class ManageAssetsCtrl {
       this.datas = this.datas.sort(function (a, b) {
         switch (filter) {
           case 1: // tri par nom
+            if (!a.name) {
+              return -1;
+            }
             return a.name.localeCompare(b.name);
           case 2:
             // tri par last estimate décroissante
@@ -195,8 +198,6 @@ class ManageAssetsCtrl {
   updateLabel(id, value) {
     // mis à jour du label
     try {
-      console.log(id);
-      console.log(value);
       this.service.updateLabel(id, value).then(
         function (success) {
           this.$mdToast.showSimple("Label saved");

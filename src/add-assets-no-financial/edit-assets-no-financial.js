@@ -34,9 +34,9 @@ class EditAssetsNFCtrl {
         }.bind(this));
     }
 
-    goTo(route) {
+    goTo(route, params) {
         console.log(route);
-        this.$state.go(route);
+        this.$state.go(route, params);
     }
 
     load(category) {
@@ -92,10 +92,11 @@ class EditAssetsNFCtrl {
                 return;
             }
             console.log(this.asset);
+            var reload = { reload: Date.now().toString() };
             if (this.asset.assetId == 0) {
                 this.service.createAsset(this.asset).then(
                     function (success) {
-                        (addNew) ? this.goTo("add-assets-no-financial") : this.goTo("manage-assets.home");
+                        (addNew) ? this.goTo("add-assets-no-financial", reload) : this.goTo("manage-assets.home");
                     }.bind(this),
                     function (error) {
                         console.log(error);
@@ -104,7 +105,7 @@ class EditAssetsNFCtrl {
             else {
                 this.service.updateAsset(this.asset).then(
                     function (success) {
-                        (addNew) ? this.goTo("add-assets-no-financial") : this.goTo("manage-assets.home");
+                        (addNew) ? this.goTo("add-assets-no-financial", reload) : this.goTo("manage-assets.home");
                     }.bind(this),
                     function (error) {
                         console.log(error);
@@ -152,7 +153,7 @@ class EditAssetsNFService {
             }
         };
 
-        var data = { account: asset };
+        var data = asset;
 
         return this.$http.post(apiUrl, data, config);
     }
@@ -166,7 +167,7 @@ class EditAssetsNFService {
             }
         };
 
-        var data = { account: asset };
+        var data = asset;
 
         return this.$http.post(apiUrl, data, config);
     }

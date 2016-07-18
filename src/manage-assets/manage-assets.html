@@ -65,14 +65,6 @@
     #manageGrid td:first-child {
       color: #4d6c7f;
     }
-    /*#manageGrid tr.even {
-background-color: rgba(77, 108, 127, 0.1);
-border: none;
-}
-
-#manageGrid tr.odd {
-background: #FFF;
-}*/
     
     #manageGrid tbody:nth-child(even) > tr:first-child {
       background-color: rgba(77, 108, 127, 0.1) !important;
@@ -198,10 +190,10 @@ background: #FFF;
     <md-button style="width:280px;" class="btn btn-blue" ng-click="assets.goTo('add-assets-no-financial.category');"><i style="float:left">+</i>Add non financial asset</md-button>
   </div>
   <div flex layout layout-padding style="background-color:white;">
-    <div layout layout-align="center center" style="overflow:auto">
-      <div>
-        <div class="filter-asset" layout layout-align="space-between center">
-          <div layout layout-align="start center">
+    <div flex layout layout-align="center center" style="overflow:'auto';">
+      <div flex>
+        <div flex class="filter-asset" layout layout-align="space-between center">
+          <div flex layout layout-align="start center">
             <span>Filter By</span>
             <md-select style="margin:0 10px" ng-model="assets.filter.category" ng-change="assets.setFilter()" aria-label="category">
               <md-option ng-value="null" ng-selected="true">Bank / Category</md-option>
@@ -209,10 +201,10 @@ background: #FFF;
             </md-select>
             <md-select ng-model="assets.filter.label" ng-change="assets.setFilter()" aria-label="label">
               <md-option ng-value="null" ng-selected="true">All labels</md-option>
-              <md-option ng-value="opt.label" ng-repeat="opt in assets.labels">{{ opt.label }}</md-option>
+              <md-option ng-value="opt.id" ng-repeat="opt in assets.labels">{{ opt.label }}</md-option>
             </md-select>
           </div>
-          <div layout layout-align="start center">
+          <div flex layout layout-align="start center">
             <span>Sort By</span>
             <md-select ng-model="assets.filter.sortBy" ng-change="assets.setFilter()" aria-label="sort by">
               <md-option ng-value="opt.value" ng-repeat="opt in assets.sortBy">{{ opt.text }}</md-option>
@@ -250,8 +242,9 @@ background: #FFF;
               </td>
               <td class="label"><span ng-bind="item.label"></span></td>
               <td>
-                <a ng-if="item.financial" class="update">Update</a><br />
+                <!--<a ng-if="item.financial" class="update">Update</a><br />-->
                 <!--<a class="delete">Delete</a>-->
+                &nbsp;
               </td>
             </tr>
             <tr ng-repeat="subitem in item.subAssets" ng-show="item.subAssets.show">
@@ -265,13 +258,14 @@ background: #FFF;
                 <flip-switch true-text="Yes" ng-model="subitem.consolidate" false-text="No" item-id="{{subitem.assetId}}"></flip-switch>
               </td>
               <td class="label">
-                <md-select ng-model="subitem.label" aria-label="label">
-                  <md-option ng-value="opt.label" ng-repeat="opt in assets.labels">{{ opt.label }}</md-option>
+                <md-select ng-model="subitem.labelId" aria-label="label" ng-change="assets.updateLabel(subitem.assetId,subitem.labelId)">
+                  <md-option ng-value="opt.id" ng-repeat="opt in assets.labels">{{ opt.label }}</md-option>
                 </md-select>
               </td>
               <td>
-                <a ng-if="!item.financial" class="update">Update</a><br />
+                <!--<a ng-if="!item.financial" class="update">Update</a><br />-->
                 <!--<a class="delete">Delete</a>-->
+                &nbsp;
               </td>
             </tr>
           </tbody>

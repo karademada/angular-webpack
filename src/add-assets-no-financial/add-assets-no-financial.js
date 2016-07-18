@@ -28,7 +28,7 @@ class AssetsNoFinancialCtrl {
                 "assetId": 0,
                 "categoryCode": category.code,
                 "currency": "eur",
-                "label": "My Wealth",
+                "label": "1",
                 "lastEstimateDate": "2016-07-15",
                 "lastValuationAmount": 0,
                 "location": "FR",

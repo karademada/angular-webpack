@@ -204,10 +204,17 @@ angular.module(MODULE_NAME,
                 }
             })
             .state('add-assets-no-financial', {
-                url: '/assets-no-financial',
+                url: '/assets-no-financial/:reload',
                 controller: 'AssetsNoFinancialCtrl',
                 controllerAs: 'anf',
-                template: require('../add-assets-no-financial/add-assets-no-financial.html')
+                template: require('../add-assets-no-financial/add-assets-no-financial.html'),
+                params: {
+                    reload: { value: "false" }
+                },
+                ncyBreadcrumb: {
+                    label: '/ + Add non financial asset',
+                    parent: 'manage-assets.home'
+                }
             })
             .state('add-assets-no-financial.category', {
                 url: '',
