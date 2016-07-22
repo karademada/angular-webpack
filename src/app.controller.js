@@ -3,13 +3,9 @@ import sidePanelService from './common/sidepanel/sidepanel.service';
 class AppController {
     constructor(sidePanelService) {
         this.sidePanelService = sidePanelService;
-        this.isClosed = false;
     }
 
     $onInit() {
-        console.log('AppController on init : ' + this.donutsDatas);
-        this.isClosed = this.sidePanelService.isClosed = !this.sidePanelService.isClosed;
-        console.log('this.isClosed  : '+this.isClosed);
     }
 
     $onChanges() {
@@ -17,8 +13,7 @@ class AppController {
     }
 
     clickMenu() {
-        this.isClosed = !this.isClosed ;
-        console.log('this.isClosed  : '+this.isClosed);
+        this.sidePanelService.isClosed = ! this.sidePanelService.isClosed;
     }
 }
 

@@ -1,7 +1,6 @@
 <header></header>
 <subheader myDate="yo"></subheader>
-<pre>$ctrl.isClosed</pre>
-<main layout="row" flex ng-class="{'little-menu':$ctrl.isClosed}">
+<main layout="row" flex ng-class="{'little-menu':$ctrl.sidePanelService.isClosed}">
     <sidepanel flex="15"></sidepanel>
     <div flex>
         <div class="submenu" flex>

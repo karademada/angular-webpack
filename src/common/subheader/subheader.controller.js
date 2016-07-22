@@ -1,7 +1,7 @@
 
 class SubHeaderController{
     constructor(){
-        this.littleMenu = false;
+        this.littleMenu = true;
         console.log(this,' this.littleMenu : ',this.littleMenu);
     }
 }

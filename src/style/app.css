@@ -15,6 +15,12 @@ md-toolbar *, md-toolbar *:before, md-toolbar *:after {
 }
 
 /*
+*/
+#loading-bar .bar{
+    background: #c16c18;
+}
+
+/*
     header
 */
 
@@ -89,34 +95,50 @@ sidepanel{
 .aside-menu li {
     box-sizing: content-box;
     color: #c2c2c1;
-    background-position-x:135px;
+    background-position:right center;
+    background-repeat: no-repeat;
 }
 
 .aside-menu li.vision {
-    left: 50px;
     background-image: url('../assets/img/vision.png');
-    background-repeat: no-repeat;
 }
 
 .aside-menu li.vision:hover {
     background-image: url('../assets/img/vision-rollover.png');
+}
 
+.aside-menu li.vision-open {
+    background-position-x: 150px;
+}
+.aside-menu li.vision-closed {
+    background-position:center center;
 }
 
 .aside-menu li.detail {
     background-image: url('../assets/img/detail.png');
     background-repeat: no-repeat;
     background-attachment: inherit;
+    background-position:right center;
 }
 
 .aside-menu li.detail:hover {
     background-image: url('../assets/img/detail_rollover.png');
 }
 
+.aside-menu li.detail-open {
+    text-align: left;
+    background-position-x: 150px;
+}
+
+.aside-menu li.detail-closed {
+    background-position:center center;
+}
+
 .aside-menu li.manage {
     background-image: url('../assets/img/manage.png');
     background-repeat: no-repeat;
     background-attachment: inherit;
+    background-position:right center;
 }
 
 .aside-menu li.manage:hover {
@@ -125,6 +147,13 @@ sidepanel{
     background-image: url('../assets/img/manage_rollover.png');
 }
 
+.aside-menu li.manage-open {
+    text-align: left;
+    background-position-x: 150px;
+}
+.aside-menu li.manage-closed {
+    background-position:center center;
+}
 
 .manage .manage-icon {
     background-image: url('../assets/img/manage.png');
@@ -132,6 +161,10 @@ sidepanel{
 
 aside > div.title {
     border-bottom: solid 1px #636261;
+}
+
+aside > div.title:focus {
+    outline: none;
 }
 
 .aside-menu > nav > ul {
