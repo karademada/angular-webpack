@@ -74,6 +74,7 @@ a {
 .little-menu sidepanel {
     max-width: 60px !important;
     width: 60px !important;
+    transition: all linear 0.5s;
 }
 
 /*
@@ -89,7 +90,7 @@ sidepanel{
     background-color: #746661;
     height: 2rem;
     text-align: right;
-
+    transition: all linear 0.5s;
 }
 
 .aside-menu li {
@@ -517,4 +518,3 @@ footer .cgv .separator {
     border-right: solid 1px #666665;
     height: 15px;
 }
-

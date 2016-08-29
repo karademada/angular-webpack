@@ -24,7 +24,7 @@ const assets = angular
         $urlRouterProvider.otherwise('/');
     })
     .run(function runAssets($log) {
-        $log.info('My Eagle Vision Assets are running')
+        $log.info('My Eagle Vision Assets are running');
     })
     .name;
 

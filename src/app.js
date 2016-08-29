@@ -1,6 +1,8 @@
 import 'babel-polyfill'; //browser polyfill
 
 import uiRouter from 'angular-ui-router';
+import uiRouterResolve from 'angular-ui-router-resolve';
+
 import AppComponent from './app.component.js';
 import Components from './component';
 import Common from './common';
@@ -20,6 +22,7 @@ const root = angular
         Common,
         Components,
         uiRouter,
+        uiRouterResolve,
         'ngMaterial',
         'ncy-angular-breadcrumb',
         'angular-loading-bar',

@@ -5,7 +5,7 @@
 import uiRouter from 'angular-ui-router';
 
 import GlobalViewComponent from './global-view.component';
-import GlobalViewController from './global-view.controller';
+import controller from './global-view.controller';
 import globalViewService from './global-view.service';
 import 'd3';
 import 'nvd3';
@@ -23,10 +23,13 @@ const globalview = angular
         $urlRouterProvider.otherwise('/');
         $stateProvider
             .state('home', {
+                template: '<globalview donutsDatas="$resolve.donutsDatas"></globalview>',
                 url: '/',
-                template: '<globalview></globalview>',
                 ncyBreadcrumb: {
                     label: 'Home Page'
+                },
+                resolve:{
+                    donutsDatas:(globalViewService) => globalViewService.getDonuts()
                 }
             })
     })

@@ -1,13 +1,23 @@
 import globalViewService from './global-view.service.js';
 
 class GlobalViewController {
-    constructor(globalViewService, $log) {
+    constructor(globalViewService, $log, $resolves) {
+
+        console.log('GlobalViewController');
+
+
+
+        //this.myChart = angular.element(document).find('donutChart');
+
+
         this.globalViewService = globalViewService;
-        this.donutsDatas = [];
-        $log.info(this.donutsDatas);
+        this.$resolves = $resolves;
+        this._chart = {};
+
         this.options = {
             chart: {
                 type: 'pieChart',
+                width: 450,
                 height: 450,
                 donut: true,
                 x: function (d) {
@@ -17,6 +27,7 @@ class GlobalViewController {
                     return d.y;
                 },
                 showLabels: true,
+                showLegend: true,
 
                 pie: {
                     startAngle: function (d) {
@@ -28,75 +39,100 @@ class GlobalViewController {
                 },
                 duration: 500,
                 legend: {
+                    dispatch:{
+                        stateChange:function(e){
+                            console.log(e)
+                            console.log(this)
+                            //this.stateChange(e)
+                        },
+                        changeState:function(e){
+                            console.log(e)
+                            console.log(this)
+                        }
+                    },
                     margin: {
-                        top: 0,
-                        right: 0,
-                        bottom: 0,
-                        left: 0
+                        top: 10,
+                        right: 10,
+                        bottom: 10,
+                        left: 10
                     }
-                }
+                },
+                callback: function (chart) {
+                    this.chart = chart; //global var
+                    // do smth
+                    console.log(this.chart)
+                }.bind(this)
             }
         };
     }
 
     $onInit() {
-        console.log('on init : ' + this.donutsDatas);
-    }
-
-    $onChanges() {
-        console.log('on change');
-        /*this.globalViewService.getDonuts().then(function (result) {
-
-            if (result) {
-                this.donutsDatas = this.donutDatasCleanedTest(result);
+        console.log('init this.donutsDatas..............');
+        this.donutsDatas = null;
+        this.datas = [
+            {
+                key: "One",
+                y: 5
+            },
+            {
+                key: "Two",
+                y: 2
+            },
+            {
+                key: "Three",
+                y: 9
+            },
+            {
+                key: "Four",
+                y: 7
+            },
+            {
+                key: "Five",
+                y: 4
+            },
+            {
+                key: "Six",
+                y: 3
+            },
+            {
+                key: "Seven",
+                y: .5
             }
-        }.bind(this));*/
+        ];
+
+        this.donutsDatas = this.$resolves.donutsDatas;
+
+        //this.globalViewService.getDonuts().then((result)=>this.donutsDatas = result)
+
     }
 
+    $onChanges(changes) {
+        console.log('############## globalViewController on change again');
+        console.log(changes);
+        if(changes.donutsDatas)
+            this.donutsDatas = changes.donutsDatas;
 
+        console.log('############## this.donutsDatas..............');
 
-    donutDatasCleaned(donutsDatas, $log) {
-        if (donutsDatas && donutsDatas.globalWealth) {
-            let donutsDatasTemp = [];
-            donutsDatas.globalWealth.some(function (element, index, array) {
-                donutsDatasTemp.push({
-                    key: element.label,
-                    y: element.valuation
-                })
-            })
-
-            return donutsDatasTemp;
-        }
     }
 
-    donutDatasCleanedTest(donutsDatas, $log) {
-        console.log(donutsDatas);
-
-        if (donutsDatas) {
-            let donutsDatasTemp = [];
-            donutsDatas.some(function (element) {
-                donutsDatasTemp.push({
-                    key: element.label,
-                    y: element.valuation
-                })
-            })
-
-            return donutsDatasTemp;
-        }
-    }
-
-
-    clickMenu() {
-        console.log(this.donutsDatas);
-        this.globalViewService.getDonuts().then(function (result) {
-
-            if (result) {
-                this.donutsDatas = this.donutDatasCleaned(result);
+    clickHandler(e){
+        console.log(e)
+        if(this.chart && this.chart.dispatch){
+            console.log('click handler')
+            if(this.chart.dispatch.changeState)
+            {
+                console.log(this.chart.dispatch.changeState(0));
+                this.chart.update();
             }
-        }.bind(this));
+
+        }
+        //this._chart.legend
     }
+
 }
 
-GlobalViewController.$inject = ['globalViewService', '$log'];
+
+GlobalViewController.$inject = ['globalViewService', '$log','$resolves'];
 
 export default GlobalViewController;

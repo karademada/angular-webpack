@@ -8,7 +8,7 @@
     "server": "webpack-dev-server --history-api-fallback --inline --progress --display-error-details",
     "test": "karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
-    "start": "npm run server"
+    "start": "json-server db.json --watch & npm run server"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,8 @@
     "angular-material": "^1.0.9",
     "angular-nvd3": "^1.0.7",
     "angular-ui-grid": "^3.1.1",
+    "angular-ui-router-resolve": "0.0.2",
+    "angular-velocity": "^0.3.1",
     "angular-wizard": "^0.6.1",
     "angularjs-nvd3-directives": "0.0.8",
     "babel-runtime": "^6.9.2",

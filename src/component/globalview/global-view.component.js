@@ -1,9 +1,13 @@
 import template from './global-view.html';
-import GlobalViewController from './global-view.controller';
+import controller from './global-view.controller'
+
 
 const GlobalViewComponent = {
-    controller:GlobalViewController,
-    template:template
+    bindings: {
+        donutsDatas: '<'
+    },
+    template: template,
+    controller
 }
 
 export default GlobalViewComponent;

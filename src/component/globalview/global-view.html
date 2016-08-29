@@ -1,13 +1,13 @@
 <div layout="column" layout-margin>
+    <pre>2 {{ $ctrl.donutsDatas }}</pre>
     <div class="charting" layout="row" layout-wrap layout-align="center">
         <div flex="100" flex-gt-md="75" layout layout-padding layout-align="center start">
-           <md-button ng-click="$ctrl.clickMenu()">call api</md-button>
             <nvd3 options="$ctrl.options" data="$ctrl.donutsDatas"></nvd3>
         </div>
         <div class="assets-filters" layout="column" layout-align="start start" layout-margin layout-padding flex="100" flex-gt-md="20">
             <div layout-gt-md="column" layout-wrap layout="row">
                 <h3 flex-md="none" flex="100">ASSETS FILTERS</h3>
-                <md-checkbox>BNP</md-checkbox>
+                    <md-checkbox ng-click="$ctrl.clickHandler($event)">BNP</md-checkbox>
                 <md-checkbox>CIC</md-checkbox>
                 <md-checkbox>HSBC</md-checkbox>
                 <md-checkbox>UBS</md-checkbox>

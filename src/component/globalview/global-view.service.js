@@ -15,7 +15,7 @@ class GlobalViewService
 
         let req = {
             method: 'POST',
-            url: 'http://localhost:3000/globalWealth',
+            url: 'http://localhost:3000/globalWealth/by_custodian',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
@@ -25,11 +25,50 @@ class GlobalViewService
         };
 
         let reqTest = {
-            url: 'http://localhost:3000/globalWealth'
+            url: 'http://localhost:3000/by_custodian'
         };
 
-        return this.$http(reqTest   ).then(function(response){
-            return response.data;
+
+        function donutDatasCleaned(donutsDatas) {
+            if (donutsDatas && donutsDatas.globalWealth) {
+                let donutsDatasTemp = [];
+                donutsDatas.globalWealth.some(function (element) {
+                    donutsDatasTemp.push({
+                        key: element.label,
+                        y: element.valuation
+                    })
+                })
+
+                return donutsDatasTemp;
+            }
+        }
+
+        function donutDatasCleanedTest(donutsDatas) {
+            console.log('.............donutsDatas ..........');
+            console.log(donutsDatas);
+
+            if (donutsDatas && donutsDatas.globalWealth) {
+                console.log('hfjjfj donutsDatas ..........');
+
+                let donutsDatasTemp = [];
+                donutsDatas.globalWealth.some(function (element) {
+                    console.log(element);
+
+                    donutsDatasTemp.push({
+                        key: element.label,
+                        y: element.valuation
+                    })
+                })
+
+                console.log(donutsDatasTemp);
+
+
+                return donutsDatasTemp;
+            }
+        }
+
+        return this.$http(reqTest).then(function(response){
+            return donutDatasCleanedTest(response.data);
         })
     }
 

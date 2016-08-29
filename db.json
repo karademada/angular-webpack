@@ -1,166 +1,386 @@
 {
-  "globalWealth": [
-    {
-      "id": "DRT ",
-      "label": "DRT",
-      "valuation": 0,
-      "financial": true,
-      "assetDomain": "Mon label défaut",
-      "assetDomainId": 1
+    "by_custodian": {
+        "globalWealth": [{
+            "id": "5",
+            "label": "Actif non financier",
+            "valuation": 233500,
+            "financial": false,
+            "assetDomain": null,
+            "assetDomainId": 0
+        }, {
+            "id": "5",
+            "label": "Actif non financier",
+            "valuation": 150000,
+            "financial": false,
+            "assetDomain": "MyWealth",
+            "assetDomainId": 10
+        }, {
+            "id": "4",
+            "label": "Banque de Luxembourg",
+            "valuation": 4242973.33,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "5",
+            "label": "Actif non financier",
+            "valuation": 45000,
+            "financial": false,
+            "assetDomain": "mamadou",
+            "assetDomainId": 2
+        }, {
+            "id": "3",
+            "label": "BGL BNP Paribas",
+            "valuation": 181300,
+            "financial": true,
+            "assetDomain": "mamadou",
+            "assetDomainId": 2
+        }, {
+            "id": "5",
+            "label": "Actif non financier",
+            "valuation": 125000,
+            "financial": false,
+            "assetDomain": "Voiture",
+            "assetDomainId": 31
+        }, {
+            "id": "1",
+            "label": "BIL",
+            "valuation": 7697682.45,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "2",
+            "label": "BCEE",
+            "valuation": 4315102.06,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "3",
+            "label": "BGL BNP Paribas",
+            "valuation": 254754437.11,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "5",
+            "label": "Actif non financier",
+            "valuation": 46500,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }],
+        "liabilities": []
     },
-    {
-      "id": "OLO ",
-      "label": "OLO",
-      "valuation": 55454529.6,
-      "financial": true,
-      "assetDomain": "Mon label défaut",
-      "assetDomainId": 1
+    "by_label": {
+        "globalWealth": [{
+            "id": "1",
+            "label": "test",
+            "valuation": 271056694.95,
+            "financial": false,
+            "assetDomain": null,
+            "assetDomainId": 0
+        }, {
+            "id": "10",
+            "label": "MyWealth",
+            "valuation": 155250,
+            "financial": false,
+            "assetDomain": null,
+            "assetDomainId": 0
+        }, {
+            "id": "31",
+            "label": "Voiture",
+            "valuation": 125000,
+            "financial": false,
+            "assetDomain": null,
+            "assetDomainId": 0
+        }, {
+            "id": "2",
+            "label": "mamadou",
+            "valuation": 226300,
+            "financial": false,
+            "assetDomain": null,
+            "assetDomainId": 0
+        }],
+        "liabilities": [{
+            "id": "2",
+            "label": "mamadou",
+            "valuation": 5250,
+            "financial": false,
+            "assetDomain": null,
+            "assetDomainId": 0
+        }]
     },
-    {
-      "id": "**** ",
-      "label": "****",
-      "valuation": 0,
-      "financial": true,
-      "assetDomain": "Mon label défaut",
-      "assetDomainId": 1
+    "by_geography": {
+        "globalWealth": [{
+            "id": "EUR ",
+            "label": "Europe",
+            "valuation": 261346822.39,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "NAM ",
+            "label": "Amérique du Nord",
+            "valuation": 6108875.96,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "ASI ",
+            "label": "Asie",
+            "valuation": 1617642.67,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "UND ",
+            "label": "Indéfini",
+            "valuation": 1936853.93,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "EUR ",
+            "label": "Europe",
+            "valuation": 181300,
+            "financial": false,
+            "assetDomain": "mamadou",
+            "assetDomainId": 2
+        }],
+        "liabilities": []
     },
-    {
-      "id": "OBL ",
-      "label": "OBL",
-      "valuation": 167636093.87,
-      "financial": true,
-      "assetDomain": "Mon label défaut",
-      "assetDomainId": 1
+    "by_currency": {
+        "globalWealth": [{
+            "id": "AUD",
+            "label": "AUSTRALIE DOLLAR ",
+            "valuation": 325234.88,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "EUR",
+            "label": "EUROPE EURO ",
+            "valuation": 125000,
+            "financial": false,
+            "assetDomain": "Voiture",
+            "assetDomainId": 31
+        }, {
+            "id": "GBP",
+            "label": "ROYAUME-UNI LIVRE ",
+            "valuation": 172811.39,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "MXN",
+            "label": "MEXIQUE PESO ",
+            "valuation": 6128666.67,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "CNY",
+            "label": "CHINE YUAN REN MIN BI ",
+            "valuation": 4960640.48,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "TRY",
+            "label": "TURQUIE NOUVELLE LIVRE ",
+            "valuation": 135722.79,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "USD",
+            "label": "ETATS-UNIS DOLLAR ",
+            "valuation": 8416357.95,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "EUR",
+            "label": "EUROPE EURO ",
+            "valuation": 271056694.95,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "EUR",
+            "label": "EUROPE EURO ",
+            "valuation": 155250,
+            "financial": false,
+            "assetDomain": "MyWealth",
+            "assetDomainId": 10
+        }, {
+            "id": "CHF",
+            "label": "SUISSE FRANC ",
+            "valuation": 2951983.6,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "EUR",
+            "label": "EUROPE EURO ",
+            "valuation": 241000,
+            "financial": false,
+            "assetDomain": null,
+            "assetDomainId": 0
+        }, {
+            "id": "EUR",
+            "label": "EUROPE EURO ",
+            "valuation": 226300,
+            "financial": false,
+            "assetDomain": "mamadou",
+            "assetDomainId": 2
+        }],
+        "liabilities": [{
+            "id": "EUR",
+            "label": "EUROPE EURO ",
+            "valuation": 5250,
+            "financial": false,
+            "assetDomain": null,
+            "assetDomainId": 0
+        }]
     },
-    {
-      "id": "VEH ",
-      "label": "Voiture",
-      "valuation": 7890,
-      "financial": false,
-      "assetDomain": null,
-      "assetDomainId": 0
-    },
-    {
-      "id": "ACT ",
-      "label": "ACT",
-      "valuation": 10126195.71,
-      "financial": true,
-      "assetDomain": "Mon label défaut",
-      "assetDomainId": 1
-    },
-    {
-      "id": "PS ",
-      "label": "PS",
-      "valuation": 1691533.9,
-      "financial": true,
-      "assetDomain": "Mon label défaut",
-      "assetDomainId": 1
-    },
-    {
-      "id": "SCF ",
-      "label": "SCF",
-      "valuation": 296887.47,
-      "financial": true,
-      "assetDomain": "Mon label défaut",
-      "assetDomainId": 1
-    },
-    {
-      "id": "ELN ",
-      "label": "ELN",
-      "valuation": 682606.14,
-      "financial": true,
-      "assetDomain": "Mon label défaut",
-      "assetDomainId": 1
-    },
-    {
-      "id": "OBL ",
-      "label": "OBL",
-      "valuation": 1012050,
-      "financial": true,
-      "assetDomain": "MyWealth",
-      "assetDomainId": 31
-    },
-    {
-      "id": "SCV ",
-      "label": "SCV",
-      "valuation": 9622576.33,
-      "financial": true,
-      "assetDomain": "Mon label défaut",
-      "assetDomainId": 1
-    },
-    {
-      "id": "OR ",
-      "label": "OR",
-      "valuation": 35834.62,
-      "financial": true,
-      "assetDomain": "Mon label défaut",
-      "assetDomainId": 1
-    },
-    {
-      "id": "PRT ",
-      "label": "PRT",
-      "valuation": 18497147.52,
-      "financial": true,
-      "assetDomain": "Mon label défaut",
-      "assetDomainId": 1
-    },
-    {
-      "id": "a9882856-a1e7-4151-b769-fd822f802859"
-    },
-    {
-      "id": "e9f4e699-ca04-4a9c-b2bf-8916b573e0ac"
-    },
-    {
-      "id": "0636d3f8-1e7a-4d0a-a04c-52bf2b7cb6be"
-    },
-    {
-      "id": "612e8ba6-459e-4925-8c96-75d3d1d7cdfe"
-    },
-    {
-      "id": "e3ee44a7-8db0-4e4d-8a8b-6afd3aefacb6"
-    },
-    {
-      "id": "c25fbce3-b24c-4ab8-9411-4e3a268eae6a"
-    },
-    {
-      "id": "cabaca5e-0185-46b8-a65f-8a7254cbe4c2"
-    },
-    {
-      "id": "84380bc4-2a74-47e5-8a30-b125a6d8844d"
-    },
-    {
-      "id": "379596e5-6efd-45f9-a228-fdce49ea582c"
-    },
-    {
-      "id": "a6dfafc6-9d23-4836-bf08-82bd8b5421fb"
-    },
-    {
-      "id": "2eab55ae-8276-4266-9d66-e770dab061b1"
-    },
-    {
-      "id": "be3f5717-8674-4096-899b-582bbd6369c2"
-    },
-    {
-      "id": "e44db700-2f60-4347-aa2f-5d068eb7992a"
-    },
-    {
-      "id": "ed2e94dd-5005-4bae-84bd-957f0161cd69"
-    },
-    {
-      "id": "dd83e1f7-e1a4-493b-987b-80eac093325b"
-    },
-    {
-      "id": "66627d7a-8e60-4f67-b6d2-6115bfeaa309"
-    },
-    {
-      "id": "5ce07ace-b7f0-4910-af9e-df126932744a"
-    },
-    {
-      "id": "16cd6690-8471-4c56-9f90-484a5d471ccc"
-    },
-    {
-      "id": "4e7b3cac-5cc3-4cec-a1f9-63170264ab23"
+    "by_asset_type": {
+        "globalWealth": [{
+            "id": "SCF ",
+            "label": "SCF",
+            "valuation": 296887.47,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "PRT ",
+            "label": "PRT",
+            "valuation": 18497147.52,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "VEH ",
+            "label": "Voiture",
+            "valuation": 155250,
+            "financial": false,
+            "assetDomain": "MyWealth",
+            "assetDomainId": 10
+        }, {
+            "id": "OLO ",
+            "label": "OLO",
+            "valuation": 55454529.6,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "VEH ",
+            "label": "Voiture",
+            "valuation": 46500,
+            "financial": false,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "OBL ",
+            "label": "OBL",
+            "valuation": 168041183.87,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "**** ",
+            "label": "****",
+            "valuation": 0,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "VEH ",
+            "label": "Voiture",
+            "valuation": 125000,
+            "financial": false,
+            "assetDomain": "Voiture",
+            "assetDomainId": 31
+        }, {
+            "id": "VEH ",
+            "label": "Voiture",
+            "valuation": 221000,
+            "financial": false,
+            "assetDomain": null,
+            "assetDomainId": 0
+        }, {
+            "id": "WIN ",
+            "label": "Vin",
+            "valuation": 45000,
+            "financial": false,
+            "assetDomain": "mamadou",
+            "assetDomainId": 2
+        }, {
+            "id": "ACT ",
+            "label": "ACT",
+            "valuation": 181300,
+            "financial": true,
+            "assetDomain": "mamadou",
+            "assetDomainId": 2
+        }, {
+            "id": "DRT ",
+            "label": "DRT",
+            "valuation": 0,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "OR ",
+            "label": "OR",
+            "valuation": 35834.62,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "ELN ",
+            "label": "ELN",
+            "valuation": 682606.14,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "SCV ",
+            "label": "SCV",
+            "valuation": 9622576.33,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "PS ",
+            "label": "PS",
+            "valuation": 1691533.9,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "ACT ",
+            "label": "ACT",
+            "valuation": 9944895.71,
+            "financial": true,
+            "assetDomain": "test",
+            "assetDomainId": 1
+        }, {
+            "id": "LAN ",
+            "label": "Terrain",
+            "valuation": 20000,
+            "financial": false,
+            "assetDomain": null,
+            "assetDomainId": 0
+        }],
+        "liabilities": [{
+            "id": "VEH ",
+            "label": "Voiture",
+            "valuation": 5250,
+            "financial": false,
+            "assetDomain": null,
+            "assetDomainId": 0
+        }]
     }
-  ],
-  "liabilities": []
 }
