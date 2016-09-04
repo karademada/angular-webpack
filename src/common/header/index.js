@@ -5,7 +5,7 @@ const header = angular
 
     ])
     .run(function runHeader($log) {
-        $log.info('My Eagle Vision is running')
+        $log.debug('Header is running')
     })
     .component('header',HeaderComponent)
     .controller('headerCtrl',HeaderController)

@@ -7,6 +7,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
+var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+
 var path = require('path');
 
 /**
@@ -105,7 +107,11 @@ module.exports = function makeWebpackConfig() {
             // Compiles ES6 and ES7 into ES5 code
             test: /\.js$/,
             loader: 'babel',
-            exclude: /node_modules/
+            exclude: /node_modules/,
+            'query': {
+                'plugins': ['lodash'],
+                'presets': ['es2015']
+            }
         }, {
             // CSS LOADER
             // Reference: https://github.com/webpack/css-loader
@@ -188,7 +194,8 @@ module.exports = function makeWebpackConfig() {
             // Reference: https://github.com/webpack/extract-text-webpack-plugin
             // Extract css files
             // Disabled when in test mode or not in build mode
-            new ExtractTextPlugin('[name].[hash].css')
+            new ExtractTextPlugin('[name].[hash].css'),
+            new LodashModuleReplacementPlugin
         )
     }
 

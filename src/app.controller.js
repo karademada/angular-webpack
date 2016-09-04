@@ -8,25 +8,21 @@ class AppController {
     $onInit() {
     }
 
-    $onChanges() {
-        console.log('on change');
+    $onChanges(changes) {
+        console.log('on change : ',changes);
     }
 
     clickMenu() {
         this.sidePanelService.isClosed = ! this.sidePanelService.isClosed;
+    }
+
+    chooseDate(date){
+        "use strict";
+        console.log(this,' : chooseDate method',date);
     }
 }
 
 AppController.$inject = ['sidePanelService'];
 
 export default AppController;
-
-/*
-
- function myAppController($log, sidePanelService){
- $log.info('App component is logged');
- this.sidePanelService = sidePanelService;
- this.isClosed = this.sidePanelService.isClosed;
- }
- */
 

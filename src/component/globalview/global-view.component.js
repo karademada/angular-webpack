@@ -4,7 +4,11 @@ import controller from './global-view.controller'
 
 const GlobalViewComponent = {
     bindings: {
-        donutsDatas: '<'
+        donutsDatas: '<',
+        selectDate:'@'
+    },
+    require:{
+        parent:'^app'
     },
     template: template,
     controller

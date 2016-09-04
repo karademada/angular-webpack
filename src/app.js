@@ -11,11 +11,13 @@ import 'angular-loading-bar';
 import 'd3';
 import 'nvd3';
 import 'angular-nvd3';
+import 'angular-cache';
 import '../node_modules/angular-loading-bar/build/loading-bar.min.css';
 import './style/app.css';
 import '../node_modules/nvd3/build/nv.d3.css';
 
 import AppController from './app.controller';
+import appService from './app.service.js';
 
 const root = angular
     .module('app', [
@@ -23,13 +25,18 @@ const root = angular
         Components,
         uiRouter,
         uiRouterResolve,
+        'angular-cache',
         'ngMaterial',
         'ncy-angular-breadcrumb',
         'angular-loading-bar',
         'ngAnimate'
     ])
     .run(function runApp($log) {
-        $log.info('My Eagle Vision is running')
+        $log.debug('My Eagle Vision is running')
+    })
+    // use in views, ng-repeat="x in _.range(3)"
+    .run(function ($rootScope) {
+        $rootScope._ = window._;
     })
     .config(function configTheme($mdThemingProvider, $logProvider){
         let bglGreyMap = $mdThemingProvider.extendPalette('grey', {
@@ -41,10 +48,14 @@ const root = angular
         $mdThemingProvider.definePalette('bglGrey', bglGreyMap);
         $mdThemingProvider.theme('default').primaryPalette('bglGrey');
 
-        $logProvider.debugEnabled(true);
+        $logProvider.debugEnabled(false);
 
     })
+    .config(function (CacheFactoryProvider) {
+        angular.extend(CacheFactoryProvider.defaults, { maxAge: 15 * 60 * 1000 });
+    })
     .component('app', AppComponent)
-    .controller('AppController', AppController);
+    .controller('AppController', AppController)
+    .service('appService',appService);
 
 export default root;

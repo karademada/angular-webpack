@@ -60,14 +60,13 @@ class GlobalViewController {
                 callback: function (chart) {
                     this.chart = chart; //global var
                     // do smth
-                    console.log(this.chart)
+                    //console.log(this.chart)
                 }.bind(this)
             }
         };
     }
 
     $onInit() {
-        console.log('init this.donutsDatas..............');
         this.donutsDatas = null;
         this.datas = [
             {
@@ -100,10 +99,7 @@ class GlobalViewController {
             }
         ];
 
-        this.donutsDatas = this.$resolves.donutsDatas;
-
-        //this.globalViewService.getDonuts().then((result)=>this.donutsDatas = result)
-
+        this.donutsDatas = this.$resolves.donutsDatas; // use resolve in ctrl
     }
 
     $onChanges(changes) {
@@ -128,6 +124,11 @@ class GlobalViewController {
 
         }
         //this._chart.legend
+    }
+
+    testCallBack(){
+        "use strict";
+        console.log('allah akbar');
     }
 
 }

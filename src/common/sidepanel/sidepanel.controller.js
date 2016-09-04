@@ -2,7 +2,6 @@ import sidePanelService from './sidepanel.service';
 
 class SidePanelController{
     constructor(sidePanelService){
-        console.log('SidepanelController');
         this.sidePanelService = sidePanelService;
     }
 

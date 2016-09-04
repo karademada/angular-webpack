@@ -1,11 +1,23 @@
+import AppService  from '../../app.service.js';
+
 
 class SubHeaderController{
-    constructor(){
+    constructor(AppService){
         this.littleMenu = true;
-        console.log(this,' this.littleMenu : ',this.littleMenu);
+    }
+
+    $onInit(){
+        "use strict";
+    }
+
+    onChange(){
+        "use strict";
+        console.log('date : ',this.currentDate);
+        this.parent.chooseDate(this.currentDate);
+
     }
 }
 
-SubHeaderController.$inject = []
+SubHeaderController.$inject = [];
 
 export default SubHeaderController;

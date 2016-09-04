@@ -1,6 +1,6 @@
 class HeaderController{
     constructor($log){
-       $log.info('HeaderController');
+       $log.debug('HeaderController');
     }
 }
 

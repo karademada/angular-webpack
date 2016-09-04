@@ -17,24 +17,26 @@ const globalview = angular
         uiRouter,
         'nvd3'
     ])
+    .constant('_', window._)
     .component('globalview', GlobalViewComponent)
     .service('globalViewService', globalViewService)
     .config(function configApp($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider
             .state('home', {
-                template: '<globalview donutsDatas="$resolve.donutsDatas"></globalview>',
+                template: '<globalview donutsDatas="$resolve.donutsDatas" ></globalview>',
                 url: '/',
                 ncyBreadcrumb: {
                     label: 'Home Page'
                 },
+                controller,
                 resolve:{
                     donutsDatas:(globalViewService) => globalViewService.getDonuts()
                 }
             })
     })
     .run(function runGlobalView($log) {
-        $log.info('My Global View is running')
+        $log.debug('Global View is running')
     })
     .name;
 
